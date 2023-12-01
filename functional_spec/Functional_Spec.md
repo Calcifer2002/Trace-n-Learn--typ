@@ -253,7 +253,7 @@ In the data flow diagram, there are three cases: when the user logs in, when the
    - Interdependencies: None
 
 ## 6.2 Project Plan
-![GANTT CHART](images/GANNT_CHART.png)
+![GANTT CHART](images/GANTT_CHART.png)
 **Figure 6. - Gantt Chart Diagram**
 
 The orange section is allocated for combined work. The green section is allocated work for Dzastina. The pink section is allocated work for Malavika.
