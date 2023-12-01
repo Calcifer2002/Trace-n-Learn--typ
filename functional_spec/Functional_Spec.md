@@ -167,7 +167,7 @@ The system architecture is scalable and modular in order to support both present
 The system architecture is designed with scalability in mind allowing for the addition of new features in future releases. The system architecture provides a robust and flexible base for the development of the alphabet tracing app. It ensures efficient data management, accurate tracing interactions, and a positive user experience. Future features may include advanced analytics for detailed user progress and expanding language support.
 <br><br>
 # 5. High-Level Design
-![ULM Sensory Feedback Module](images/SENSORY.png)
+![ULM Sensory Feedback Module](images/SENSORY_FEEDBACK.png)
 **Figure 1. - Object Model of Sensory Feedback**
 
 The 'Sensory Feedback Module' receives signals from the 'Tracing Engine' which show events like the completion of an alphabet being traced. The recieved signals from the 'Sensory Feedback Manager' activates or deactivates the relevant controllers. The 'Vibraton Controller', 'Coloured Lines Controller', and 'Sound Controller' adjust their settings and give feedback accotding to those settings.
@@ -198,6 +198,7 @@ In the data flow diagram, there are three cases: when the user logs in, when the
 
 <br><br>
 ![Use Case Diagram](images/USECASE.png)
+
 **Figure 6. - Use Case Diagram**
 
 # 6. Preliminary Schedule
