@@ -200,6 +200,7 @@ In the data flow diagram, there are three cases: when the user logs in, when the
 ![Use Case Diagram](images/USECASE.png)
 
 **Figure 6. - Use Case Diagram**
+
 Users can access the app through a login screen, where they have the option to sign up or sign in. The app allows users to trace either letters or words, and parents can monitor their kids' accuracy and track their learning progress. To enhance inclusivity, the app features a color-blind mode triggered by the user. Users also have the flexibility to customize the colors of swipes and choose the difficulty level.
 <br><br>
 
