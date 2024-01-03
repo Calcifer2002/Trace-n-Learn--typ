@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/idEdtPhoneNumber"
         android:layout_margin="10dp"
-        android:text="Get OTP"
+        android:text="Send OTP"
         android:textAllCaps="false" />
 
     <!--Edittext for getting otp from user-->
