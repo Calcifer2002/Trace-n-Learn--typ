@@ -1,4 +1,5 @@
-package com.yp.tracenlearn;// CustomCanvasView.java
+package com.yp.tracenlearn;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -6,22 +7,16 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
-import android.graphics.RectF;
-import android.graphics.Region;
 import android.graphics.drawable.BitmapDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
-
-import com.yp.tracenlearn.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomView extends View {
-
+public class TCustomView extends View {
     private Bitmap mBitmap;
 
     private Bitmap additionalBitmap;
@@ -33,7 +28,7 @@ public class CustomView extends View {
     private List<Point> strokeCoordinates = new ArrayList<>();
 
 
-    public CustomView(Context context, AttributeSet attrs) {
+    public TCustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
@@ -54,7 +49,7 @@ public class CustomView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
 
         // Load the background image
-        BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.i_letter_png_picture);
+        BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.letter_t);
         mBitmap = drawable.getBitmap();
 
         // Scale the background image to fit the new size
@@ -77,6 +72,7 @@ public class CustomView extends View {
         // Optionally, trigger a redraw after loading the background image
         invalidate();
     }
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -100,6 +96,9 @@ public class CustomView extends View {
     // Declare a global variable to store the entire path drawn so far
     private List<Path> mPaths = new ArrayList<>();
     private Path mCurrentPath;
+    private int strokeCount = 0;
+
+    private static final int TARGET_STROKES = 3;
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -120,9 +119,18 @@ public class CustomView extends View {
                 // Add the current path to the list of paths
                 mPaths.add(mCurrentPath);
 
-                // Check if the complete path covers the entire bitmap
-                logCoordinates();
+                // Increment stroke count
+                strokeCount++;
+                Log.d("CustomView", "Stroke Coordinates Size: " + strokeCoordinates.size());
+
+
+                // Check if the required number of strokes is reached
+
+                // Calculate and log accuracy after the specified number of strokes
                 calculateAndLogAccuracy();
+                // Reset stroke count for future calculations
+
+
                 break;
             default:
                 return false;
@@ -131,6 +139,7 @@ public class CustomView extends View {
         invalidate();
         return true;
     }
+
 
 
     // Method to check if the complete path covers the entire bitmap
@@ -154,21 +163,26 @@ public class CustomView extends View {
 
                 }
 
-                }
             }
         }
+    }
+
     public void logCoordinates() {
         // Log both stroke and non-transparent pixel coordinates
         Log.d("CustomView", "Stroke Coordinates: " + strokeCoordinates.toString());
-         // Ensure non-transparent pixel coordinates are updated
+        // Ensure non-transparent pixel coordinates are updated
         Log.d("CustomView", "Non-Transparent Pixel Coordinates: " + nonTransparentPixels.toString());
     }
+
     private void calculateAndLogAccuracy() {
-         // Ensure non-transparent pixel coordinates are updated
+        // Ensure non-transparent pixel coordinates are updated
 
         int matchingCount = 0;
         int totalStrokeCoordinates = strokeCoordinates.size();
         int totalBitMapCoordinates = nonTransparentPixels.size();
+        int diff = totalStrokeCoordinates - totalBitMapCoordinates;
+        Log.d("CustomView", "Coordinate Difference: " + diff);
+
 
         for (Point strokePoint : strokeCoordinates) {
             if (nonTransparentPixels.contains(strokePoint)) {
@@ -177,17 +191,15 @@ public class CustomView extends View {
         }
 
         // Calculate accuracy percentage
-        double accuracy = (double) matchingCount / totalStrokeCoordinates* 100;
+        double accuracy = (double) matchingCount / totalStrokeCoordinates* 100 ;
 
         // Log the accuracy score
-        Log.d("CustomView", "Accuracy Score: " + accuracy + "%");
+
+
+        if (strokeCount == 2 && totalStrokeCoordinates > 50) {
+            Log.d("CustomView", "Accuracy Score: " + accuracy + "%");}
+        else{
+            Log.d("CustomView", "NO " + accuracy + "%");
+        }
     }
-
-    }
-
-
-
-
-
-
-
+}

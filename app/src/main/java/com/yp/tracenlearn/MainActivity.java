@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -94,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
                                         if (dataSnapshot.child("username").exists()) {
 
-                                            Intent i = new Intent(MainActivity.this, HomeActivity.class);
+                                            Intent i = new Intent(MainActivity.this, IActivity.class);
                                             startActivity(i);
                                             finish();
                                         } else {
