@@ -4,27 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/UI_background"
     tools:context=".MainActivity">
 
-
-    <ImageView
-        android:id="@+id/imageView38"
-        android:layout_width="382dp"
-        android:layout_height="783dp"
-        app:srcCompat="@drawable/Tree2"
-        tools:layout_editor_absoluteX="-190dp"
-        tools:layout_editor_absoluteY="212dp" />
 
     <Button
         android:id="@+id/sendOTPButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="512dp"
+        android:layout_marginBottom="460dp"
         android:text="Send OTP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -35,10 +26,10 @@
         android:inputType="phone"
         app:layout_constraintBottom_toTopOf="@+id/sendOTPButton"
         app:layout_constraintEnd_toEndOf="@+id/sendOTPButton"
-        app:layout_constraintHorizontal_bias="0.585"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="@+id/sendOTPButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.826" />
+        app:layout_constraintVertical_bias="0.775" />
 
     <EditText
         android:id="@+id/editTextOTP"
@@ -50,10 +41,10 @@
         android:inputType="phone"
         app:layout_constraintBottom_toTopOf="@+id/verifyOTPButton"
         app:layout_constraintEnd_toEndOf="@+id/sendOTPButton"
-        app:layout_constraintHorizontal_bias="0.585"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="@+id/sendOTPButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.419" />
+        app:layout_constraintVertical_bias="0.767" />
 
     <Button
         android:id="@+id/verifyOTPButton"
@@ -65,41 +56,9 @@
         android:text="Verify OTP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.539"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sendOTPButton"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView17"
-        android:layout_width="585dp"
-        android:layout_height="1284dp"
-        app:srcCompat="@drawable/Grass2"
-        tools:layout_editor_absoluteX="-158dp"
-        tools:layout_editor_absoluteY="100dp" />
-
-    <ImageView
-        android:id="@+id/imageView34"
-        android:layout_width="211dp"
-        android:layout_height="586dp"
-        app:srcCompat="@drawable/Clouds1"
-        tools:layout_editor_absoluteX="-18dp"
-        tools:layout_editor_absoluteY="-234dp" />
-
-    <ImageView
-        android:id="@+id/imageView35"
-        android:layout_width="279dp"
-        android:layout_height="543dp"
-        app:srcCompat="@drawable/Clouds2"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="-190dp" />
-
-    <ImageView
-        android:id="@+id/imageView40"
-        android:layout_width="117dp"
-        android:layout_height="281dp"
-        app:srcCompat="@drawable/Parrot"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="524dp" />
+        app:layout_constraintVertical_bias="0.363" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
