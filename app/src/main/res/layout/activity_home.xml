@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/UI_background">
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="446dp"
+        android:layout_height="898dp"
+        app:srcCompat="@drawable/Tree2"
+        tools:layout_editor_absoluteX="-214dp"
+        tools:layout_editor_absoluteY="125dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="451dp"
+        android:layout_height="463dp"
+        app:srcCompat="@drawable/Grass1"
+        tools:layout_editor_absoluteX="-29dp"
+        tools:layout_editor_absoluteY="511dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="226dp"
+        android:layout_height="490dp"
+        app:srcCompat="@drawable/Giraffe"
+        tools:layout_editor_absoluteX="181dp"
+        tools:layout_editor_absoluteY="388dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="189dp"
+        android:layout_height="275dp"
+        app:srcCompat="@drawable/Clouds1"
+        tools:layout_editor_absoluteX="199dp"
+        tools:layout_editor_absoluteY="-6dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="114dp"
+        android:layout_height="341dp"
+        app:srcCompat="@drawable/Clouds2"
+        tools:layout_editor_absoluteX="233dp"
+        tools:layout_editor_absoluteY="-128dp" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="197dp"
+        android:layout_height="327dp"
+        app:srcCompat="@drawable/Clouds3"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="-86dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="118dp"
+        android:layout_height="36dp"
+        android:text="Trace 'N Learn"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:typeface="normal"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="242dp" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="71dp"
+        android:layout_height="99dp"
+        android:rotation="-10"
+        app:srcCompat="@drawable/A"
+        tools:layout_editor_absoluteX="290dp"
+        tools:layout_editor_absoluteY="242dp" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="67dp"
+        android:layout_height="56dp"
+        android:rotation="-20"
+        app:srcCompat="@drawable/E"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="620dp" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="75dp"
+        android:layout_height="98dp"
+        android:rotation="20"
+        app:srcCompat="@drawable/O"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="144dp" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="70dp"
+        android:layout_height="86dp"
+        android:rotation="-10"
+        app:srcCompat="@drawable/U"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="269dp" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="50dp"
+        android:layout_height="111dp"
+        android:rotation="10"
+        app:srcCompat="@drawable/I"
+        tools:layout_editor_absoluteX="304dp"
+        tools:layout_editor_absoluteY="412dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Learn you ABC's"
+        android:textColor="@color/black"
+        android:textStyle="bold|italic"
+        android:typeface="normal"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="277dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="340dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
