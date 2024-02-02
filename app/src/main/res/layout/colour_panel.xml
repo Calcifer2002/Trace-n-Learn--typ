@@ -1,0 +1,69 @@
+<!-- res/layout/color_panel_layout.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <!-- First Line -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- Red -->
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/blue" />
+
+        <!-- Yellow -->
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/yellow"
+            android:layout_marginStart="16dp" />
+
+        <!-- Green -->
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/green"
+            android:layout_marginStart="16dp" />
+    </LinearLayout>
+
+    <!-- Second Line with Padding -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <!-- Orange -->
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/orange" />
+
+        <!-- Purple -->
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/purple"
+            android:layout_marginStart="16dp" />
+
+        <!-- Turquoise -->
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/turqouise"
+            android:layout_marginStart="16dp" />
+    </LinearLayout>
+
+    <!-- Add more color buttons as needed -->
+
+</LinearLayout>

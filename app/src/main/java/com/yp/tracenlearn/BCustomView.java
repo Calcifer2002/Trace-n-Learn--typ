@@ -30,6 +30,7 @@ public class BCustomView extends View {
     private List<Point> nonTransparentPixels = new ArrayList<>();
     private List<Point> strokeCoordinates = new ArrayList<>();
 
+    private int strokeColor = Color.BLACK;
 
     public BCustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -40,13 +41,17 @@ public class BCustomView extends View {
         mPath = new Path();
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
-        mPaint.setColor(Color.BLACK);
+        mPaint.setColor(strokeColor);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeWidth(70f);
         // Do not load the background image here
     }
-
+    public void setStrokeColor(int color) {
+        this.strokeColor = color;
+        mPaint.setColor(color); // Set the stroke color for drawing paths
+        invalidate(); // Redraw the canvas with the new stroke color
+    }
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
