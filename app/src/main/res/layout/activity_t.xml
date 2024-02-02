@@ -24,7 +24,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.241" />
+        app:layout_constraintVertical_bias="0.375" />
 
     <ImageView
         android:id="@+id/imageView36"
@@ -62,32 +62,19 @@
         tools:layout_editor_absoluteX="239dp"
         tools:layout_editor_absoluteY="537dp" />
 
-    <ImageView
-        android:id="@+id/imageView47"
-        android:layout_width="207dp"
-        android:layout_height="440dp"
-        app:srcCompat="@drawable/Clouds1"
-        tools:layout_editor_absoluteX="-10dp"
-        tools:layout_editor_absoluteY="-164dp" />
-
-    <ImageView
-        android:id="@+id/imageView48"
-        android:layout_width="179dp"
-        android:layout_height="246dp"
-        app:srcCompat="@drawable/Clouds2"
-        tools:layout_editor_absoluteX="197dp"
-        tools:layout_editor_absoluteY="-51dp" />
-
     <include
         android:id="@+id/colorPanel"
         layout="@layout/colour_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/customTCanvas"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customTCanvas"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintBottom_toTopOf="@+id/customTCanvas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.754" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

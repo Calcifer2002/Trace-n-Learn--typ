@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IActivity"
-    android:background="@drawable/UI_background">
+    android:background="@drawable/UI_background"
+    tools:context=".IActivity">
 
     <ImageView
         android:id="@+id/imageView37"
@@ -14,14 +14,6 @@
         app:srcCompat="@drawable/Tree2"
         tools:layout_editor_absoluteX="-188dp"
         tools:layout_editor_absoluteY="196dp" />
-
-    <ImageView
-        android:id="@+id/imageView42"
-        android:layout_width="306dp"
-        android:layout_height="281dp"
-        app:srcCompat="@drawable/Clouds2"
-        tools:layout_editor_absoluteX="139dp"
-        tools:layout_editor_absoluteY="-54dp" />
 
     <com.yp.tracenlearn.ICustomView
         android:id="@+id/customICanvas"
@@ -32,7 +24,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.246" />
+        app:layout_constraintVertical_bias="0.367" />
 
     <ImageView
         android:id="@+id/imageView32"
@@ -70,24 +62,18 @@
         tools:layout_editor_absoluteX="235dp"
         tools:layout_editor_absoluteY="548dp" />
 
-    <ImageView
-        android:id="@+id/imageView41"
-        android:layout_width="271dp"
-        android:layout_height="264dp"
-        app:srcCompat="@drawable/Clouds1"
-        tools:layout_editor_absoluteX="-36dp"
-        tools:layout_editor_absoluteY="-80dp" />
-
     <include
         android:id="@+id/colorPanel"
         layout="@layout/colour_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/customICanvas"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customICanvas"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintBottom_toTopOf="@+id/customICanvas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.754" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
