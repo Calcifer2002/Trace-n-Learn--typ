@@ -32,7 +32,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.303" />
+        app:layout_constraintVertical_bias="0.246" />
 
     <ImageView
         android:id="@+id/imageView32"
@@ -78,6 +78,16 @@
         tools:layout_editor_absoluteX="-36dp"
         tools:layout_editor_absoluteY="-80dp" />
 
+    <include
+        android:id="@+id/colorPanel"
+        layout="@layout/colour_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customBCanvas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customICanvas"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
