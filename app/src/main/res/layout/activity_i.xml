@@ -83,7 +83,7 @@
         layout="@layout/colour_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/customBCanvas"
+        android:layout_below="@id/customICanvas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customICanvas"
         app:layout_constraintVertical_bias="0.0"
