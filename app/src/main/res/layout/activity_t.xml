@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".T_Activity"
-    android:background="@drawable/UI_background">
+    android:background="@drawable/ui_background">
 
     <ImageView
         android:id="@+id/imageView44"
         android:layout_width="403dp"
         android:layout_height="855dp"
-        app:srcCompat="@drawable/Tree2"
+        app:srcCompat="@drawable/tree2"
         tools:layout_editor_absoluteX="-190dp"
         tools:layout_editor_absoluteY="145dp" />
 
@@ -30,7 +30,7 @@
         android:id="@+id/imageView36"
         android:layout_width="446dp"
         android:layout_height="851dp"
-        app:srcCompat="@drawable/Grass1"
+        app:srcCompat="@drawable/grass1"
         tools:layout_editor_absoluteX="-36dp"
         tools:layout_editor_absoluteY="316dp" />
 
@@ -38,7 +38,7 @@
         android:id="@+id/imageView43"
         android:layout_width="142dp"
         android:layout_height="246dp"
-        app:srcCompat="@drawable/Parrot"
+        app:srcCompat="@drawable/parrot"
         tools:layout_editor_absoluteX="26dp"
         tools:layout_editor_absoluteY="520dp" />
 
@@ -47,7 +47,7 @@
         android:layout_width="198dp"
         android:layout_height="197dp"
         android:rotation="10"
-        app:srcCompat="@drawable/Speech_b"
+        app:srcCompat="@drawable/speech_b"
         tools:layout_editor_absoluteX="197dp"
         tools:layout_editor_absoluteY="469dp" />
 

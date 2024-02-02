@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/UI_background"
+    android:background="@drawable/ui_background"
     tools:context=".A_Activity">
 
 
@@ -23,7 +23,7 @@
         android:id="@+id/imageView26"
         android:layout_width="335dp"
         android:layout_height="743dp"
-        app:srcCompat="@drawable/Tree2"
+        app:srcCompat="@drawable/tree2"
         tools:layout_editor_absoluteX="-160dp"
         tools:layout_editor_absoluteY="221dp" />
 
@@ -31,7 +31,7 @@
         android:id="@+id/imageView3"
         android:layout_width="437dp"
         android:layout_height="852dp"
-        app:srcCompat="@drawable/Grass1"
+        app:srcCompat="@drawable/grass1"
         tools:layout_editor_absoluteX="-32dp"
         tools:layout_editor_absoluteY="321dp" />
 
@@ -39,7 +39,7 @@
         android:id="@+id/imageView19"
         android:layout_width="191dp"
         android:layout_height="417dp"
-        app:srcCompat="@drawable/Moose"
+        app:srcCompat="@drawable/moose"
         tools:layout_editor_absoluteX="29dp"
         tools:layout_editor_absoluteY="497dp" />
 
@@ -48,7 +48,7 @@
         android:layout_width="169dp"
         android:layout_height="249dp"
         android:rotation="5"
-        app:srcCompat="@drawable/Speech_b"
+        app:srcCompat="@drawable/speech_b"
         tools:layout_editor_absoluteX="208dp"
         tools:layout_editor_absoluteY="475dp" />
 

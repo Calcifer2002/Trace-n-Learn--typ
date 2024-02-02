@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/UI_background">
+    android:background="@drawable/ui_background">
 
     <ImageView
         android:id="@+id/imageView16"
         android:layout_width="446dp"
         android:layout_height="898dp"
-        app:srcCompat="@drawable/Tree2"
+        app:srcCompat="@drawable/tree2"
         tools:layout_editor_absoluteX="-214dp"
         tools:layout_editor_absoluteY="125dp" />
 
@@ -18,7 +18,7 @@
         android:id="@+id/imageView"
         android:layout_width="451dp"
         android:layout_height="463dp"
-        app:srcCompat="@drawable/Grass1"
+        app:srcCompat="@drawable/grass1"
         tools:layout_editor_absoluteX="-29dp"
         tools:layout_editor_absoluteY="511dp" />
 
@@ -26,7 +26,7 @@
         android:id="@+id/imageView2"
         android:layout_width="226dp"
         android:layout_height="490dp"
-        app:srcCompat="@drawable/Giraffe"
+        app:srcCompat="@drawable/giraffe"
         tools:layout_editor_absoluteX="181dp"
         tools:layout_editor_absoluteY="388dp" />
 
@@ -34,7 +34,7 @@
         android:id="@+id/imageView4"
         android:layout_width="189dp"
         android:layout_height="275dp"
-        app:srcCompat="@drawable/Clouds1"
+        app:srcCompat="@drawable/clouds1"
         tools:layout_editor_absoluteX="199dp"
         tools:layout_editor_absoluteY="-6dp" />
 
@@ -42,7 +42,7 @@
         android:id="@+id/imageView5"
         android:layout_width="114dp"
         android:layout_height="341dp"
-        app:srcCompat="@drawable/Clouds2"
+        app:srcCompat="@drawable/clouds2"
         tools:layout_editor_absoluteX="233dp"
         tools:layout_editor_absoluteY="-128dp" />
 
@@ -50,7 +50,7 @@
         android:id="@+id/imageView6"
         android:layout_width="197dp"
         android:layout_height="327dp"
-        app:srcCompat="@drawable/Clouds3"
+        app:srcCompat="@drawable/clouds3"
         tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="-86dp" />
 
@@ -71,7 +71,7 @@
         android:layout_width="71dp"
         android:layout_height="99dp"
         android:rotation="-10"
-        app:srcCompat="@drawable/A"
+        app:srcCompat="@drawable/a_home"
         tools:layout_editor_absoluteX="290dp"
         tools:layout_editor_absoluteY="242dp" />
 
@@ -80,7 +80,7 @@
         android:layout_width="67dp"
         android:layout_height="56dp"
         android:rotation="-20"
-        app:srcCompat="@drawable/E"
+        app:srcCompat="@drawable/e_home"
         tools:layout_editor_absoluteX="114dp"
         tools:layout_editor_absoluteY="620dp" />
 
@@ -89,7 +89,7 @@
         android:layout_width="75dp"
         android:layout_height="98dp"
         android:rotation="20"
-        app:srcCompat="@drawable/O"
+        app:srcCompat="@drawable/o_home"
         tools:layout_editor_absoluteX="76dp"
         tools:layout_editor_absoluteY="144dp" />
 
@@ -98,7 +98,7 @@
         android:layout_width="70dp"
         android:layout_height="86dp"
         android:rotation="-10"
-        app:srcCompat="@drawable/U"
+        app:srcCompat="@drawable/u_home"
         tools:layout_editor_absoluteX="44dp"
         tools:layout_editor_absoluteY="269dp" />
 
@@ -107,7 +107,7 @@
         android:layout_width="50dp"
         android:layout_height="111dp"
         android:rotation="10"
-        app:srcCompat="@drawable/I"
+        app:srcCompat="@drawable/i_home"
         tools:layout_editor_absoluteX="304dp"
         tools:layout_editor_absoluteY="412dp" />
 

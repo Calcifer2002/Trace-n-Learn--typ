@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/UI_background"
+    android:background="@drawable/ui_background"
     tools:context=".MainActivity">
 
 
@@ -12,7 +12,7 @@
         android:id="@+id/imageView38"
         android:layout_width="382dp"
         android:layout_height="783dp"
-        app:srcCompat="@drawable/Tree2"
+        app:srcCompat="@drawable/tree2"
         tools:layout_editor_absoluteX="-190dp"
         tools:layout_editor_absoluteY="212dp" />
 
@@ -74,7 +74,7 @@
         android:id="@+id/imageView17"
         android:layout_width="585dp"
         android:layout_height="1284dp"
-        app:srcCompat="@drawable/Grass2"
+        app:srcCompat="@drawable/grass2"
         tools:layout_editor_absoluteX="-158dp"
         tools:layout_editor_absoluteY="100dp" />
 
@@ -82,7 +82,7 @@
         android:id="@+id/imageView34"
         android:layout_width="211dp"
         android:layout_height="586dp"
-        app:srcCompat="@drawable/Clouds1"
+        app:srcCompat="@drawable/clouds1"
         tools:layout_editor_absoluteX="-18dp"
         tools:layout_editor_absoluteY="-234dp" />
 
@@ -90,7 +90,7 @@
         android:id="@+id/imageView35"
         android:layout_width="279dp"
         android:layout_height="543dp"
-        app:srcCompat="@drawable/Clouds2"
+        app:srcCompat="@drawable/clouds2"
         tools:layout_editor_absoluteX="149dp"
         tools:layout_editor_absoluteY="-190dp" />
 
@@ -98,7 +98,7 @@
         android:id="@+id/imageView40"
         android:layout_width="117dp"
         android:layout_height="281dp"
-        app:srcCompat="@drawable/Parrot"
+        app:srcCompat="@drawable/parrot"
         tools:layout_editor_absoluteX="6dp"
         tools:layout_editor_absoluteY="524dp" />
 
