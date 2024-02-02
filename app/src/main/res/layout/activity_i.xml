@@ -4,7 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IActivity">
+    tools:context=".IActivity"
+    android:background="@drawable/UI_background">
+
+    <ImageView
+        android:id="@+id/imageView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/Tree2"
+        tools:layout_editor_absoluteX="-188dp"
+        tools:layout_editor_absoluteY="196dp" />
+
+    <ImageView
+        android:id="@+id/imageView42"
+        android:layout_width="306dp"
+        android:layout_height="281dp"
+        app:srcCompat="@drawable/Clouds2"
+        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteY="-54dp" />
 
     <com.yp.tracenlearn.ICustomView
         android:id="@+id/customICanvas"
@@ -12,9 +29,54 @@
         android:layout_height="257dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="79dp" />
+        app:layout_constraintVertical_bias="0.303" />
+
+    <ImageView
+        android:id="@+id/imageView32"
+        android:layout_width="466dp"
+        android:layout_height="926dp"
+        app:srcCompat="@drawable/Grass1"
+        tools:layout_editor_absoluteX="-37dp"
+        tools:layout_editor_absoluteY="275dp" />
+
+    <ImageView
+        android:id="@+id/imageView33"
+        android:layout_width="147dp"
+        android:layout_height="195dp"
+        app:srcCompat="@drawable/Penguin"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="605dp" />
+
+    <ImageView
+        android:id="@+id/imageView39"
+        android:layout_width="182dp"
+        android:layout_height="383dp"
+        android:rotation="7"
+        app:srcCompat="@drawable/Speech_b"
+        tools:layout_editor_absoluteX="204dp"
+        tools:layout_editor_absoluteY="385dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trace and Learn \n the letter I!"
+        android:textColor="@color/black"
+        android:textSize="47px"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="235dp"
+        tools:layout_editor_absoluteY="548dp" />
+
+    <ImageView
+        android:id="@+id/imageView41"
+        android:layout_width="271dp"
+        android:layout_height="264dp"
+        app:srcCompat="@drawable/Clouds1"
+        tools:layout_editor_absoluteX="-36dp"
+        tools:layout_editor_absoluteY="-80dp" />
 
 
 

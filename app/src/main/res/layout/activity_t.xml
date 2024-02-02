@@ -4,7 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".T_Activity">
+    tools:context=".T_Activity"
+    android:background="@drawable/UI_background">
+
+    <ImageView
+        android:id="@+id/imageView44"
+        android:layout_width="403dp"
+        android:layout_height="855dp"
+        app:srcCompat="@drawable/Tree2"
+        tools:layout_editor_absoluteX="-190dp"
+        tools:layout_editor_absoluteY="145dp" />
 
     <com.yp.tracenlearn.TCustomView
         android:id="@+id/customTCanvas"
@@ -12,7 +21,61 @@
         android:layout_height="257dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="79dp" />
+        app:layout_constraintVertical_bias="0.241" />
+
+    <ImageView
+        android:id="@+id/imageView36"
+        android:layout_width="446dp"
+        android:layout_height="851dp"
+        app:srcCompat="@drawable/Grass1"
+        tools:layout_editor_absoluteX="-36dp"
+        tools:layout_editor_absoluteY="316dp" />
+
+    <ImageView
+        android:id="@+id/imageView43"
+        android:layout_width="142dp"
+        android:layout_height="246dp"
+        app:srcCompat="@drawable/Parrot"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="520dp" />
+
+    <ImageView
+        android:id="@+id/imageView46"
+        android:layout_width="198dp"
+        android:layout_height="197dp"
+        android:rotation="10"
+        app:srcCompat="@drawable/Speech_b"
+        tools:layout_editor_absoluteX="197dp"
+        tools:layout_editor_absoluteY="469dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trace and Learn \n the letter T!"
+        android:textColor="@color/black"
+        android:textSize="47px"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="239dp"
+        tools:layout_editor_absoluteY="537dp" />
+
+    <ImageView
+        android:id="@+id/imageView47"
+        android:layout_width="207dp"
+        android:layout_height="440dp"
+        app:srcCompat="@drawable/Clouds1"
+        tools:layout_editor_absoluteX="-10dp"
+        tools:layout_editor_absoluteY="-164dp" />
+
+    <ImageView
+        android:id="@+id/imageView48"
+        android:layout_width="179dp"
+        android:layout_height="246dp"
+        app:srcCompat="@drawable/Clouds2"
+        tools:layout_editor_absoluteX="197dp"
+        tools:layout_editor_absoluteY="-51dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

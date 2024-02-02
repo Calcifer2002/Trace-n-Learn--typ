@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".A_Activity">
+    tools:context=".A_Activity"
+    android:background="@drawable/UI_background">
 
 
     <com.yp.tracenlearn.ACustomView
@@ -13,8 +14,69 @@
         android:layout_height="257dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="79dp" />
+        app:layout_constraintVertical_bias="0.318" />
+
+    <ImageView
+        android:id="@+id/imageView26"
+        android:layout_width="335dp"
+        android:layout_height="743dp"
+        app:srcCompat="@drawable/Tree2"
+        tools:layout_editor_absoluteX="-160dp"
+        tools:layout_editor_absoluteY="221dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="437dp"
+        android:layout_height="852dp"
+        app:srcCompat="@drawable/Grass1"
+        tools:layout_editor_absoluteX="-32dp"
+        tools:layout_editor_absoluteY="321dp" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="191dp"
+        android:layout_height="417dp"
+        app:srcCompat="@drawable/Moose"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="497dp" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="169dp"
+        android:layout_height="249dp"
+        android:rotation="5"
+        app:srcCompat="@drawable/Speech_b"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="475dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trace and Learn \n the letter A!"
+        android:textColor="@color/black"
+        android:textSize="47px"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="235dp"
+        tools:layout_editor_absoluteY="573dp" />
+
+    <ImageView
+        android:id="@+id/imageView23"
+        android:layout_width="240dp"
+        android:layout_height="221dp"
+        app:srcCompat="@drawable/Clouds1"
+        tools:layout_editor_absoluteX="-12dp"
+        tools:layout_editor_absoluteY="-60dp" />
+
+    <ImageView
+        android:id="@+id/imageView25"
+        android:layout_width="228dp"
+        android:layout_height="307dp"
+        app:srcCompat="@drawable/Clouds2"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="-60dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
