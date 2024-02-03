@@ -23,13 +23,13 @@ import java.util.List;
 public class BCustomView extends View {
     private Bitmap mBitmap;
 
-    private Bitmap additionalBitmap;
+
     private Canvas mCanvas;
     private Path mPath;
     private Paint mPaint;
 
-    private List<Point> nonTransparentPixels = new ArrayList<>();
-    private List<Point> strokeCoordinates = new ArrayList<>();
+    private List<Point> nonTransparentPixels = new ArrayList<>(); //to check where the letter bitmap is
+    private List<Point> strokeCoordinates = new ArrayList<>(); //to check where the user drawings are
 
     private int strokeColor = Color.BLACK;
     public interface NoStrokesCallback {
@@ -47,29 +47,29 @@ public class BCustomView extends View {
         mPath = new Path();
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
-        mPaint.setColor(strokeColor);
+        mPaint.setColor(strokeColor); //designing the look for the stroke - which is customisable ofc
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeWidth(70f);
-        // Do not load the background image here
+
     }
     public void setStrokeColor(int color) {
         this.strokeColor = color;
-        mPaint.setColor(color); // Set the stroke color for drawing paths
-        invalidate(); // Redraw the canvas with the new stroke color
+        mPaint.setColor(color); //we get the int from the colour panel and set it
+        invalidate(); // redraw the canvas with the new stroke color
     }
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
 
-        // Load the background image
+        // load the background image
         BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.letter_b);
         mBitmap = drawable.getBitmap();
 
-        // Scale the background image to fit the new size
+        // scale the background image to fit the new size
         mBitmap = Bitmap.createScaledBitmap(mBitmap, w, h, true);
 
-        // Center the image in the canvas
+        // center the image in the canvas
         int canvasWidth = getWidth();
         int canvasHeight = getHeight();
         int imageWidth = mBitmap.getWidth();
@@ -92,9 +92,6 @@ public class BCustomView extends View {
         super.onDraw(canvas);
 
         canvas.drawBitmap(mBitmap, 0, 0, null);
-        if (additionalBitmap != null) {
-            canvas.drawBitmap(additionalBitmap, 0, 0, null);
-        }
 
         // Draw all paths on the canvas
         for (Path path : mPaths) {
@@ -112,13 +109,13 @@ public class BCustomView extends View {
     private Path mCurrentPath;
     private int strokeCount = 0;
 
-    private static final int TARGET_STROKES = 3;
+
     private void startNoStrokesCountdown() {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 showNoStrokesDialog();
-            }
+            } //to help with showing the dialog pop up
         }, 3000);
     }
     private void showNoStrokesDialog() {
@@ -141,8 +138,7 @@ public class BCustomView extends View {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 vb.vibrate(10000);
-                // Start a new path for the current stroke
-                mCurrentPath = new Path();
+                mCurrentPath = new Path();  // start a new path for the current stroke
                 mCurrentPath.moveTo(x, y);
                 handler.removeCallbacksAndMessages(null);
                 break;
@@ -151,21 +147,19 @@ public class BCustomView extends View {
                 strokeCoordinates.add(new Point((int) x, (int) y));
                 break;
             case MotionEvent.ACTION_UP:
-                // Add the current path to the list of paths
+                // add the current path to the list of paths
                 vb.cancel();
                 mPaths.add(mCurrentPath);
 
-                // Increment stroke count
+                //keeping track of count of strokes
                 strokeCount++;
                 Log.d("CustomView", "Stroke Coordinates Size: " + strokeCoordinates.size());
 
 
-                // Check if the required number of strokes is reached
 
-                // Calculate and log accuracy after the specified number of strokes
 
                 startNoStrokesCountdown();
-                // Reset stroke count for future calculations
+                // reset countdown
 
 
                 break;
@@ -179,17 +173,11 @@ public class BCustomView extends View {
 
 
 
-    // Method to check if the complete path covers the entire bitmap
-    // Method to check if the complete path covers the entire bitmap
-    // Method to check if the complete path covers the entire bitmap
-    // Method to check if the complete path covers the entire bitmap
-    private static final float ERROR_THRESHOLD_PERCENTAGE = 90f; // Adjust this value as needed
 
-    // Method to check if the complete path covers the majority of the bitmap
-    // Adjust this value as needed
 
-    // Method to check if the complete path covers the majority of the bitmap
 
+
+//,ethod to find where the bitmap is
     private void getNonTransparentPixels() {
         nonTransparentPixels.clear();
         for (int x = 0; x < mBitmap.getWidth(); x++) {
@@ -227,15 +215,15 @@ public class BCustomView extends View {
             }
         }
 
-        // Calculate accuracy percentage
+        //accuracy percentage
         double accuracy = (double) matchingCount / totalStrokeCoordinates* 100 ;
 
 
         if (strokeCount <= 2 && totalStrokeCoordinates > 50) {
-            return "Accuracy Score: " + accuracy + "%";
+            return "Accuracy Score: " + accuracy + "%"; //letter is proper but also accuracy rate
             }
         else{
-            return "NO " + accuracy + "%";
+            return "NO: " + accuracy + "%"; //if letter is not proper
         }
     }
 
