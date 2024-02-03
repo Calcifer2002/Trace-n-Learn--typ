@@ -10,6 +10,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Handler;
 import android.os.Vibrator;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -31,6 +32,11 @@ public class BCustomView extends View {
     private List<Point> strokeCoordinates = new ArrayList<>();
 
     private int strokeColor = Color.BLACK;
+    public interface NoStrokesCallback {
+        void onNoStrokesDetected(String accuracyInfo);
+    }
+    private NoStrokesCallback noStrokesCallback;
+    private Handler handler = new Handler();
 
     public BCustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -77,7 +83,7 @@ public class BCustomView extends View {
 
         getNonTransparentPixels();
 
-        // Optionally, trigger a redraw after loading the background image
+
         invalidate();
     }
 
@@ -107,7 +113,24 @@ public class BCustomView extends View {
     private int strokeCount = 0;
 
     private static final int TARGET_STROKES = 3;
-
+    private void startNoStrokesCountdown() {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                showNoStrokesDialog();
+            }
+        }, 3000);
+    }
+    private void showNoStrokesDialog() {
+        // Notify the callback that no strokes were detected
+        if (noStrokesCallback != null) {
+            String accuracyInfo = getAccuracyInfo();
+            noStrokesCallback.onNoStrokesDetected(accuracyInfo);
+        }
+    }
+    public void setOnNoStrokesDetectedCallback(NoStrokesCallback callback) {
+        this.noStrokesCallback = callback;
+    }
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
@@ -121,6 +144,7 @@ public class BCustomView extends View {
                 // Start a new path for the current stroke
                 mCurrentPath = new Path();
                 mCurrentPath.moveTo(x, y);
+                handler.removeCallbacksAndMessages(null);
                 break;
             case MotionEvent.ACTION_MOVE:
                 mCurrentPath.lineTo(x, y);
@@ -139,7 +163,8 @@ public class BCustomView extends View {
                 // Check if the required number of strokes is reached
 
                 // Calculate and log accuracy after the specified number of strokes
-                calculateAndLogAccuracy();
+
+                startNoStrokesCountdown();
                 // Reset stroke count for future calculations
 
 
@@ -186,7 +211,7 @@ public class BCustomView extends View {
         Log.d("CustomView", "Non-Transparent Pixel Coordinates: " + nonTransparentPixels.toString());
     }
 
-    private void calculateAndLogAccuracy() {
+    private String getAccuracyInfo() {
         // Ensure non-transparent pixel coordinates are updated
 
         int matchingCount = 0;
@@ -205,14 +230,14 @@ public class BCustomView extends View {
         // Calculate accuracy percentage
         double accuracy = (double) matchingCount / totalStrokeCoordinates* 100 ;
 
-        // Log the accuracy score
 
-
-        if (strokeCount == 2 && totalStrokeCoordinates > 50) {
-            Log.d("CustomView", "Accuracy Score: " + accuracy + "%");}
+        if (strokeCount <= 2 && totalStrokeCoordinates > 50) {
+            return "Accuracy Score: " + accuracy + "%";
+            }
         else{
-            Log.d("CustomView", "NO " + accuracy + "%");
+            return "NO " + accuracy + "%";
         }
     }
+
 }
 

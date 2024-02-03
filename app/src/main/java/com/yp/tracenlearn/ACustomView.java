@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Vibrator;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -26,24 +27,30 @@ public class ACustomView extends View {
 
     private List<Point> nonTransparentPixels = new ArrayList<>();
     private List<Point> strokeCoordinates = new ArrayList<>();
-
+    private int strokeColor = Color.BLACK;
 
     public ACustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
+
     private void init() {
         mPath = new Path();
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
-        mPaint.setColor(Color.BLACK);
+        mPaint.setColor(strokeColor);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeWidth(70f);
         // Do not load the background image here
     }
 
+    public void setStrokeColor(int color) {
+        this.strokeColor = color;
+        mPaint.setColor(color); // Set the stroke color for drawing paths
+        invalidate(); // Redraw the canvas with the new stroke color
+    }
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
@@ -102,11 +109,13 @@ public class ACustomView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        Vibrator vb = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
         float x = event.getX();
         float y = event.getY();
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                vb.vibrate(10000);
                 // Start a new path for the current stroke
                 mCurrentPath = new Path();
                 mCurrentPath.moveTo(x, y);
@@ -116,6 +125,7 @@ public class ACustomView extends View {
                 strokeCoordinates.add(new Point((int) x, (int) y));
                 break;
             case MotionEvent.ACTION_UP:
+                vb.cancel();
                 // Add the current path to the list of paths
                 mPaths.add(mCurrentPath);
 
@@ -196,7 +206,7 @@ public class ACustomView extends View {
         // Log the accuracy score
 
 
-     if (strokeCount == 2 && totalStrokeCoordinates > 50) {
+     if (strokeCount <= 3 && totalStrokeCoordinates > 50) {
         Log.d("CustomView", "Accuracy Score: " + accuracy + "%");}
         else{
         Log.d("CustomView", "NO " + accuracy + "%");
