@@ -8,6 +8,8 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Handler;
+import android.os.Vibrator;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -19,14 +21,20 @@ import java.util.List;
 public class TCustomView extends View {
     private Bitmap mBitmap;
 
-    private Bitmap additionalBitmap;
+
     private Canvas mCanvas;
     private Path mPath;
     private Paint mPaint;
 
-    private List<Point> nonTransparentPixels = new ArrayList<>();
-    private List<Point> strokeCoordinates = new ArrayList<>();
+    private List<Point> nonTransparentPixels = new ArrayList<>(); //to check where the letter bitmap is
+    private List<Point> strokeCoordinates = new ArrayList<>(); //to check where the user drawings are
 
+    private int strokeColor = Color.BLACK;
+    public interface NoStrokesCallback {
+        void onNoStrokesDetected(String accuracyInfo);
+    }
+    private TCustomView.NoStrokesCallback noStrokesCallback;
+    private Handler handler = new Handler();
 
     public TCustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -37,25 +45,29 @@ public class TCustomView extends View {
         mPath = new Path();
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
-        mPaint.setColor(Color.BLACK);
+        mPaint.setColor(strokeColor); //designing the look for the stroke - which is customisable ofc
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeWidth(70f);
-        // Do not load the background image here
-    }
 
+    }
+    public void setStrokeColor(int color) {
+        this.strokeColor = color;
+        mPaint.setColor(color); //we get the int from the colour panel and set it
+        invalidate(); // redraw the canvas with the new stroke color
+    }
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
 
-        // Load the background image
+        // load the background image
         BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.letter_t);
         mBitmap = drawable.getBitmap();
 
-        // Scale the background image to fit the new size
+        // scale the background image to fit the new size
         mBitmap = Bitmap.createScaledBitmap(mBitmap, w, h, true);
 
-        // Center the image in the canvas
+        // center the image in the canvas
         int canvasWidth = getWidth();
         int canvasHeight = getHeight();
         int imageWidth = mBitmap.getWidth();
@@ -69,7 +81,7 @@ public class TCustomView extends View {
 
         getNonTransparentPixels();
 
-        // Optionally, trigger a redraw after loading the background image
+
         invalidate();
     }
 
@@ -78,9 +90,6 @@ public class TCustomView extends View {
         super.onDraw(canvas);
 
         canvas.drawBitmap(mBitmap, 0, 0, null);
-        if (additionalBitmap != null) {
-            canvas.drawBitmap(additionalBitmap, 0, 0, null);
-        }
 
         // Draw all paths on the canvas
         for (Path path : mPaths) {
@@ -98,37 +107,57 @@ public class TCustomView extends View {
     private Path mCurrentPath;
     private int strokeCount = 0;
 
-    private static final int TARGET_STROKES = 3;
 
+    private void startNoStrokesCountdown() {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                showNoStrokesDialog();
+            } //to help with showing the dialog pop up
+        }, 3000);
+    }
+    private void showNoStrokesDialog() {
+        // Notify the callback that no strokes were detected
+        if (noStrokesCallback != null) {
+            String accuracyInfo = getAccuracyInfo();
+            noStrokesCallback.onNoStrokesDetected(accuracyInfo);
+        }
+    }
+    public void setOnNoStrokesDetectedCallback(TCustomView.NoStrokesCallback callback) {
+        this.noStrokesCallback = callback;
+    }
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+
+        Vibrator vb = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
         float x = event.getX();
         float y = event.getY();
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                // Start a new path for the current stroke
-                mCurrentPath = new Path();
+                vb.vibrate(10000);
+                mCurrentPath = new Path();  // start a new path for the current stroke
                 mCurrentPath.moveTo(x, y);
+                handler.removeCallbacksAndMessages(null);
                 break;
             case MotionEvent.ACTION_MOVE:
                 mCurrentPath.lineTo(x, y);
                 strokeCoordinates.add(new Point((int) x, (int) y));
                 break;
             case MotionEvent.ACTION_UP:
-                // Add the current path to the list of paths
+                // add the current path to the list of paths
+                vb.cancel();
                 mPaths.add(mCurrentPath);
 
-                // Increment stroke count
+                //keeping track of count of strokes
                 strokeCount++;
                 Log.d("CustomView", "Stroke Coordinates Size: " + strokeCoordinates.size());
 
 
-                // Check if the required number of strokes is reached
 
-                // Calculate and log accuracy after the specified number of strokes
-                calculateAndLogAccuracy();
-                // Reset stroke count for future calculations
+
+                startNoStrokesCountdown();
+                // reset countdown
 
 
                 break;
@@ -142,17 +171,11 @@ public class TCustomView extends View {
 
 
 
-    // Method to check if the complete path covers the entire bitmap
-    // Method to check if the complete path covers the entire bitmap
-    // Method to check if the complete path covers the entire bitmap
-    // Method to check if the complete path covers the entire bitmap
-    private static final float ERROR_THRESHOLD_PERCENTAGE = 90f; // Adjust this value as needed
 
-    // Method to check if the complete path covers the majority of the bitmap
-    // Adjust this value as needed
 
-    // Method to check if the complete path covers the majority of the bitmap
 
+
+    //,ethod to find where the bitmap is
     private void getNonTransparentPixels() {
         nonTransparentPixels.clear();
         for (int x = 0; x < mBitmap.getWidth(); x++) {
@@ -174,7 +197,7 @@ public class TCustomView extends View {
         Log.d("CustomView", "Non-Transparent Pixel Coordinates: " + nonTransparentPixels.toString());
     }
 
-    private void calculateAndLogAccuracy() {
+    private String getAccuracyInfo() {
         // Ensure non-transparent pixel coordinates are updated
 
         int matchingCount = 0;
@@ -190,16 +213,16 @@ public class TCustomView extends View {
             }
         }
 
-        // Calculate accuracy percentage
+        //accuracy percentage
         double accuracy = (double) matchingCount / totalStrokeCoordinates* 100 ;
 
-        // Log the accuracy score
 
-
-        if (strokeCount == 2 && totalStrokeCoordinates > 50) {
-            Log.d("CustomView", "Accuracy Score: " + accuracy + "%");}
+        if (strokeCount <= 3 && totalStrokeCoordinates > 50) {
+            return "Accuracy Score: " + accuracy + "%"; //letter is proper but also accuracy rate
+        }
         else{
-            Log.d("CustomView", "NO " + accuracy + "%");
+            return "NO: " + accuracy + "%"; //if letter is not proper
         }
     }
+
 }
