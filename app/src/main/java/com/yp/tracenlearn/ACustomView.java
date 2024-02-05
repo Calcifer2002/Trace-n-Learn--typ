@@ -217,7 +217,7 @@ public class ACustomView extends View {
         double accuracy = (double) matchingCount / totalStrokeCoordinates* 100 ;
 
 
-        if (strokeCount <= 4 && totalStrokeCoordinates > 90) {
+        if (strokeCount <= 4 && totalStrokeCoordinates > 120 && accuracy > 90) {
             return "Accuracy Score: " + accuracy + "%"; //letter is proper but also accuracy rate
         }
         else{

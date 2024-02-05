@@ -1,7 +1,5 @@
 package com.yp.tracenlearn;
 
-import static androidx.core.content.ContextCompat.getSystemService;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -11,7 +9,6 @@ import android.graphics.Path;
 import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Handler;
-import android.os.SystemClock;
 import android.os.Vibrator;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -21,11 +18,10 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BCustomView extends View {
+public class FCustomView extends View {
     private Bitmap mBitmap;
-    int timeThreshold;
 
-    private long drawingStartTime = 0;
+
     private Canvas mCanvas;
     private Path mPath;
     private Paint mPaint;
@@ -37,10 +33,10 @@ public class BCustomView extends View {
     public interface NoStrokesCallback {
         void onNoStrokesDetected(String accuracyInfo);
     }
-    private NoStrokesCallback noStrokesCallback;
+    private FCustomView.NoStrokesCallback noStrokesCallback;
     private Handler handler = new Handler();
 
-    public BCustomView(Context context, AttributeSet attrs) {
+    public FCustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
@@ -65,7 +61,7 @@ public class BCustomView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
 
         // load the background image
-        BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.letter_b);
+        BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.letter_f);
         mBitmap = drawable.getBitmap();
 
         // scale the background image to fit the new size
@@ -127,7 +123,7 @@ public class BCustomView extends View {
             noStrokesCallback.onNoStrokesDetected(accuracyInfo);
         }
     }
-    public void setOnNoStrokesDetectedCallback(NoStrokesCallback callback) {
+    public void setOnNoStrokesDetectedCallback(FCustomView.NoStrokesCallback callback) {
         this.noStrokesCallback = callback;
     }
     @Override
@@ -143,7 +139,6 @@ public class BCustomView extends View {
                 mCurrentPath = new Path();  // start a new path for the current stroke
                 mCurrentPath.moveTo(x, y);
                 handler.removeCallbacksAndMessages(null);
-                drawingStartTime = SystemClock.elapsedRealtime();
                 break;
             case MotionEvent.ACTION_MOVE:
                 mCurrentPath.lineTo(x, y);
@@ -179,7 +174,8 @@ public class BCustomView extends View {
 
 
 
-//,ethod to find where the bitmap is
+
+    //,ethod to find where the bitmap is
     private void getNonTransparentPixels() {
         nonTransparentPixels.clear();
         for (int x = 0; x < mBitmap.getWidth(); x++) {
@@ -221,14 +217,12 @@ public class BCustomView extends View {
         double accuracy = (double) matchingCount / totalStrokeCoordinates* 100 ;
 
 
-        if (strokeCount <= 2 && totalStrokeCoordinates > 120 && accuracy > 90) {
-            //kids shud use two strokes
+        if (strokeCount <= 4 && totalStrokeCoordinates > 100 && accuracy > 90) {
             return "Accuracy Score: " + accuracy + "%"; //letter is proper but also accuracy rate
-            }
+        }
         else{
             return "NO: " + accuracy + "%"; //if letter is not proper
         }
     }
 
 }
-

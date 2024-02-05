@@ -217,7 +217,7 @@ public class TCustomView extends View {
         double accuracy = (double) matchingCount / totalStrokeCoordinates* 100 ;
 
 
-        if (strokeCount <= 3 && totalStrokeCoordinates > 50) {
+        if (strokeCount <= 3 && totalStrokeCoordinates > 50 && accuracy > 90) {
             return "Accuracy Score: " + accuracy + "%"; //letter is proper but also accuracy rate
         }
         else{

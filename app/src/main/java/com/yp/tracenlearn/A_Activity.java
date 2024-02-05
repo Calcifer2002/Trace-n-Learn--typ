@@ -84,6 +84,7 @@ public class A_Activity extends AppCompatActivity {
 
                                     float rated = Float.parseFloat(rate);
                                     databaseReference.child("users").child(uid).child("a-incorrect").setValue(rated);
+                                    databaseReference.child("users").child(uid).child("a-flower").setValue(0);
                                     Intent intent = new Intent(A_Activity.this, A_Activity.class);
                                     startActivity(intent);
                                     finish(); //reload activity for kid to retry
@@ -104,7 +105,8 @@ public class A_Activity extends AppCompatActivity {
 
 
                             Log.d("accu", accuracyInfo);
-                            databaseReference.child("users").child(uid).child("a").setValue(rated); //we save the accuracy rate for that letter in the db
+                            databaseReference.child("users").child(uid).child("a").setValue(rated);
+                            databaseReference.child("users").child(uid).child("a-flower").setValue(1);//we save the accuracy rate for that letter in the db
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {

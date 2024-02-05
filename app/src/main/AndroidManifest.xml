@@ -16,17 +16,20 @@
         android:theme="@style/Theme.Tracenlearn"
         tools:targetApi="31">
         <activity
+            android:name=".F_Activity"
+            android:exported="false" />
+        <activity
             android:name=".E_Activity"
             android:exported="false" />
         <activity
             android:name=".B_Activity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".T_Activity"
             android:exported="false" />
         <activity
             android:name=".A_Activity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".I_Activity"
             android:exported="false" />
