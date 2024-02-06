@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Tracenlearn"
         tools:targetApi="31">
         <activity
+            android:name=".H_Activity"
+            android:exported="false" />
+        <activity
             android:name=".D_Activity"
             android:exported="false" />
         <activity

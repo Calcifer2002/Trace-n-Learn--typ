@@ -19,7 +19,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DCustomView extends View {
+public class HCustomView extends View {
     private Bitmap mBitmap;
 
 
@@ -40,7 +40,7 @@ public class DCustomView extends View {
     private NoStrokesCallback noStrokesCallback;
     private Handler handler = new Handler();
 
-    public DCustomView(Context context, AttributeSet attrs) {
+    public HCustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
@@ -70,7 +70,7 @@ public class DCustomView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
 
         // load the background image
-        BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.letter_d);
+        BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.letter_h);
         mBitmap = drawable.getBitmap();
 
         // scale the background image to fit the new size
@@ -236,7 +236,7 @@ public class DCustomView extends View {
         double accuracy = (double) matchingCount / totalStrokeCoordinates* 100 ;
 
 
-        if (strokeCount <= 2 && totalStrokeCoordinates > 120 && accuracy > 90) {
+        if (strokeCount <= 3 && totalStrokeCoordinates > 140 && accuracy > 90) {
             //kids shud use two strokes
 
             return "Accuracy Score: " + accuracy + "%";
