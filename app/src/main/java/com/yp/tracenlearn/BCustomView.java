@@ -1,7 +1,11 @@
 package com.yp.tracenlearn;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
+
 import static androidx.core.content.ContextCompat.getSystemService;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -17,17 +21,40 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.mlkit.common.MlKitException;
+import com.google.mlkit.common.model.DownloadConditions;
+import com.google.mlkit.common.model.RemoteModelManager;
+import com.google.mlkit.vision.digitalink.DigitalInkRecognition;
+import com.google.mlkit.vision.digitalink.DigitalInkRecognitionModel;
+
+import com.google.mlkit.vision.digitalink.DigitalInkRecognitionModelIdentifier;
+import com.google.mlkit.vision.digitalink.DigitalInkRecognizer;
+import com.google.mlkit.vision.digitalink.DigitalInkRecognizerOptions;
+import com.google.mlkit.vision.digitalink.Ink;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class BCustomView extends View {
     private Bitmap mBitmap;
-    int timeThreshold;
+
 
     private long drawingStartTime = 0;
     private Canvas mCanvas;
     private Path mPath;
+
+
     private Paint mPaint;
 
     private List<Point> nonTransparentPixels = new ArrayList<>(); //to check where the letter bitmap is
@@ -48,6 +75,7 @@ public class BCustomView extends View {
     private void init() {
         mPath = new Path();
         mPaint = new Paint();
+
         mPaint.setAntiAlias(true);
         mPaint.setColor(strokeColor); //designing the look for the stroke - which is customisable ofc
         mPaint.setStyle(Paint.Style.STROKE);
@@ -55,6 +83,10 @@ public class BCustomView extends View {
         mPaint.setStrokeWidth(70f);
 
     }
+
+
+
+
     public void setStrokeColor(int color) {
         this.strokeColor = color;
         mPaint.setColor(color); //we get the int from the colour panel and set it
@@ -130,13 +162,14 @@ public class BCustomView extends View {
     public void setOnNoStrokesDetectedCallback(NoStrokesCallback callback) {
         this.noStrokesCallback = callback;
     }
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
         Vibrator vb = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
         float x = event.getX();
         float y = event.getY();
-
+        long t = System.currentTimeMillis();
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 vb.vibrate(10000);
@@ -144,15 +177,18 @@ public class BCustomView extends View {
                 mCurrentPath.moveTo(x, y);
                 handler.removeCallbacksAndMessages(null);
                 drawingStartTime = SystemClock.elapsedRealtime();
+
                 break;
             case MotionEvent.ACTION_MOVE:
                 mCurrentPath.lineTo(x, y);
                 strokeCoordinates.add(new Point((int) x, (int) y));
+
                 break;
             case MotionEvent.ACTION_UP:
                 // add the current path to the list of paths
                 vb.cancel();
                 mPaths.add(mCurrentPath);
+
 
                 //keeping track of count of strokes
                 strokeCount++;
@@ -173,6 +209,12 @@ public class BCustomView extends View {
         invalidate();
         return true;
     }
+
+
+
+    // Get the drawing bitmap from your custom view
+
+
 
 
 
@@ -221,9 +263,11 @@ public class BCustomView extends View {
         double accuracy = (double) matchingCount / totalStrokeCoordinates* 100 ;
 
 
-        if (strokeCount <= 2 && totalStrokeCoordinates > 120 && accuracy > 90) {
+        if (strokeCount <= 2 && totalStrokeCoordinates > 130 && accuracy > 90) {
             //kids shud use two strokes
-            return "Accuracy Score: " + accuracy + "%"; //letter is proper but also accuracy rate
+
+            return "Accuracy Score: " + accuracy + "%";
+            //letter is proper but also accuracy rate
             }
         else{
             return "NO: " + accuracy + "%"; //if letter is not proper

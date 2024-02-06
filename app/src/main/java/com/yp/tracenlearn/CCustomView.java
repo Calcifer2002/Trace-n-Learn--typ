@@ -1,4 +1,11 @@
-package com.yp.tracenlearn;// CustomCanvasView.java
+package com.yp.tracenlearn;
+
+import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
+
+import static androidx.core.content.ContextCompat.getSystemService;
+
+import android.content.ContentValues;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -8,22 +15,28 @@ import android.graphics.Path;
 import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.os.Vibrator;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-
+import android.widget.ImageView;
+import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class ICustomView extends View {
-
+public class CCustomView extends View {
     private Bitmap mBitmap;
 
 
+    private long drawingStartTime = 0;
     private Canvas mCanvas;
     private Path mPath;
+
+
     private Paint mPaint;
 
     private List<Point> nonTransparentPixels = new ArrayList<>(); //to check where the letter bitmap is
@@ -33,10 +46,10 @@ public class ICustomView extends View {
     public interface NoStrokesCallback {
         void onNoStrokesDetected(String accuracyInfo);
     }
-    private ICustomView.NoStrokesCallback noStrokesCallback;
+    private NoStrokesCallback noStrokesCallback;
     private Handler handler = new Handler();
 
-    public ICustomView(Context context, AttributeSet attrs) {
+    public CCustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
@@ -44,6 +57,7 @@ public class ICustomView extends View {
     private void init() {
         mPath = new Path();
         mPaint = new Paint();
+
         mPaint.setAntiAlias(true);
         mPaint.setColor(strokeColor); //designing the look for the stroke - which is customisable ofc
         mPaint.setStyle(Paint.Style.STROKE);
@@ -51,6 +65,10 @@ public class ICustomView extends View {
         mPaint.setStrokeWidth(70f);
 
     }
+
+
+
+
     public void setStrokeColor(int color) {
         this.strokeColor = color;
         mPaint.setColor(color); //we get the int from the colour panel and set it
@@ -61,7 +79,7 @@ public class ICustomView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
 
         // load the background image
-        BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.letter_i);
+        BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.letter_c);
         mBitmap = drawable.getBitmap();
 
         // scale the background image to fit the new size
@@ -123,31 +141,36 @@ public class ICustomView extends View {
             noStrokesCallback.onNoStrokesDetected(accuracyInfo);
         }
     }
-    public void setOnNoStrokesDetectedCallback(ICustomView.NoStrokesCallback callback) {
+    public void setOnNoStrokesDetectedCallback(NoStrokesCallback callback) {
         this.noStrokesCallback = callback;
     }
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
         Vibrator vb = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
         float x = event.getX();
         float y = event.getY();
-
+        long t = System.currentTimeMillis();
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 vb.vibrate(10000);
                 mCurrentPath = new Path();  // start a new path for the current stroke
                 mCurrentPath.moveTo(x, y);
                 handler.removeCallbacksAndMessages(null);
+                drawingStartTime = SystemClock.elapsedRealtime();
+
                 break;
             case MotionEvent.ACTION_MOVE:
                 mCurrentPath.lineTo(x, y);
                 strokeCoordinates.add(new Point((int) x, (int) y));
+
                 break;
             case MotionEvent.ACTION_UP:
                 // add the current path to the list of paths
                 vb.cancel();
                 mPaths.add(mCurrentPath);
+
 
                 //keeping track of count of strokes
                 strokeCount++;
@@ -168,6 +191,11 @@ public class ICustomView extends View {
         invalidate();
         return true;
     }
+
+
+
+    // Get the drawing bitmap from your custom view
+
 
 
 
@@ -217,8 +245,11 @@ public class ICustomView extends View {
         double accuracy = (double) matchingCount / totalStrokeCoordinates* 100 ;
 
 
-        if (strokeCount <= 4 && totalStrokeCoordinates > 120 && accuracy > 90) {
-            return "Accuracy Score: " + accuracy + "%"; //letter is proper but also accuracy rate
+        if (strokeCount <= 2 && totalStrokeCoordinates > 80 && accuracy > 90) {
+            //kids shud use two strokes
+
+            return "Accuracy Score: " + accuracy + "%";
+            //letter is proper but also accuracy rate
         }
         else{
             return "NO: " + accuracy + "%"; //if letter is not proper
@@ -226,3 +257,5 @@ public class ICustomView extends View {
     }
 
 }
+
+
