@@ -1,18 +1,3 @@
-image: jenkins/inbound-agent-android:latest
-
-cache:
-  paths:
-    - .m2/
-    - .gradle/
-
-variables:
-  ANDROID_COMPILE_SDK: "34"
-
-before_script:
-  - export GRADLE_USER_HOME=$(pwd)/.gradle
-  - chmod +x ./gradlew
-  - yes | sdkmanager --sdk_root=${ANDROID_HOME} --licenses || true
-
 stages:
   - build
   - test
@@ -20,8 +5,16 @@ stages:
 build:
   stage: build
   script:
+    - chmod +x ./gradlew
     - ./gradlew assembleDebug
   artifacts:
     paths:
       - app/build/outputs/
+
+test:
+  stage: test
+  script:
+    - echo "Running tests..."
+  dependencies:
+    - build
 
