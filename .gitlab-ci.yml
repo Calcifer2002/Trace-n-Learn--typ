@@ -1,0 +1,25 @@
+stages:
+  - build
+  - test
+
+variables:
+  GRADLE_OPTS: "-Dorg.gradle.java.home=/usr/lib/jvm/java-11-openjdk-amd64"
+
+build:
+  stage: build
+  script:
+    - chmod +x ./gradlew
+    - ./gradlew assembleDebug
+  artifacts:
+    paths:
+      - app/build/outputs/
+
+test:
+  stage: test
+  script:
+    - echo "Running tests..."
+  dependencies:
+    - build
+
+
+
