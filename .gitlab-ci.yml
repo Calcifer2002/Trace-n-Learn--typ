@@ -1,13 +1,8 @@
+image: openjdk:17
 stages:
   - build
   - test
 
-variables:
-  GRADLE_OPTS: "-Dorg.gradle.java.home=$CI_JAVA_HOME"
-
-before_script:
-  - export GRADLE_USER_HOME=$(pwd)/.gradle
-  - chmod +x ./gradlew
 
 build:
   stage: build
