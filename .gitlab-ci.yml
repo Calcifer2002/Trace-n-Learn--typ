@@ -8,7 +8,7 @@ build:
   stage: build
   script:
     - chmod +x ./gradlew
-    - yes | sdkmanager --sdk_root=${ANDROID_HOME} --licenses
+    - yes | tools/bin/sdkmanager --licenses || true
     - ./gradlew assembleDebug
    
   artifacts:
