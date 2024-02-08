@@ -1,6 +1,17 @@
 image: openjdk:11
 stages:
   - check_deleted_files
+  #- build
+
+#before_script:
+ # - export ANDROID_HOME="$HOME/Library/Android/sdk"
+ #  - bundle install
+
+# build:
+#  script:
+#    - chmod +x ./gradlew
+#    - echo "y" | sdkmanager --licenses                  not accepting licenses
+#    - ./gradlew assembleDebug
 
 check_deleted_files:
   stage: check_deleted_files
