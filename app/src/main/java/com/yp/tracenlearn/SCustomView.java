@@ -18,7 +18,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OCustomView extends View {
+public class SCustomView extends View {
     private Bitmap mBitmap;
 
 
@@ -30,13 +30,15 @@ public class OCustomView extends View {
     private List<Point> strokeCoordinates = new ArrayList<>(); //to check where the user drawings are
 
     private int strokeColor = Color.BLACK;
+
     public interface NoStrokesCallback {
         void onNoStrokesDetected(String accuracyInfo);
     }
-    private OCustomView.NoStrokesCallback noStrokesCallback;
+
+    private SCustomView.NoStrokesCallback noStrokesCallback;
     private Handler handler = new Handler();
 
-    public OCustomView(Context context, AttributeSet attrs) {
+    public SCustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
@@ -51,17 +53,19 @@ public class OCustomView extends View {
         mPaint.setStrokeWidth(70f);
 
     }
+
     public void setStrokeColor(int color) {
         this.strokeColor = color;
         mPaint.setColor(color); //we get the int from the colour panel and set it
         invalidate(); // redraw the canvas with the new stroke color
     }
+
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
 
         // load the background image
-        BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.letter_o);
+        BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.letter_s);
         mBitmap = drawable.getBitmap();
 
         // scale the background image to fit the new size
@@ -116,6 +120,7 @@ public class OCustomView extends View {
             } //to help with showing the dialog pop up
         }, 3000);
     }
+
     private void showNoStrokesDialog() {
         // Notify the callback that no strokes were detected
         if (noStrokesCallback != null) {
@@ -123,9 +128,11 @@ public class OCustomView extends View {
             noStrokesCallback.onNoStrokesDetected(accuracyInfo);
         }
     }
-    public void setOnNoStrokesDetectedCallback(OCustomView.NoStrokesCallback callback) {
+
+    public void setOnNoStrokesDetectedCallback(SCustomView.NoStrokesCallback callback) {
         this.noStrokesCallback = callback;
     }
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
@@ -154,8 +161,6 @@ public class OCustomView extends View {
                 Log.d("CustomView", "Stroke Coordinates Size: " + strokeCoordinates.size());
 
 
-
-
                 startNoStrokesCountdown();
                 // reset countdown
 
@@ -168,11 +173,6 @@ public class OCustomView extends View {
         invalidate();
         return true;
     }
-
-
-
-
-
 
 
     //,ethod to find where the bitmap is
@@ -214,13 +214,12 @@ public class OCustomView extends View {
         }
 
         //accuracy percentage
-        double accuracy = (double) matchingCount / totalStrokeCoordinates* 100 ;
+        double accuracy = (double) matchingCount / totalStrokeCoordinates * 100;
 
 
-        if (strokeCount <= 2 && totalStrokeCoordinates > 120 && accuracy > 90) {
+        if (strokeCount <= 4 && totalStrokeCoordinates > 120 && accuracy > 90) {
             return "Accuracy Score: " + accuracy + "%"; //letter is proper but also accuracy rate
-        }
-        else{
+        } else {
             return "NO: " + accuracy + "%"; //if letter is not proper
         }
     }

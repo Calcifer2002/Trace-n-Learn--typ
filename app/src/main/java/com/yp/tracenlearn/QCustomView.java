@@ -18,7 +18,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OCustomView extends View {
+public class QCustomView extends View {
     private Bitmap mBitmap;
 
 
@@ -33,10 +33,10 @@ public class OCustomView extends View {
     public interface NoStrokesCallback {
         void onNoStrokesDetected(String accuracyInfo);
     }
-    private OCustomView.NoStrokesCallback noStrokesCallback;
+    private QCustomView.NoStrokesCallback noStrokesCallback;
     private Handler handler = new Handler();
 
-    public OCustomView(Context context, AttributeSet attrs) {
+    public QCustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
@@ -61,7 +61,7 @@ public class OCustomView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
 
         // load the background image
-        BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.letter_o);
+        BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.letter_q);
         mBitmap = drawable.getBitmap();
 
         // scale the background image to fit the new size
@@ -123,7 +123,7 @@ public class OCustomView extends View {
             noStrokesCallback.onNoStrokesDetected(accuracyInfo);
         }
     }
-    public void setOnNoStrokesDetectedCallback(OCustomView.NoStrokesCallback callback) {
+    public void setOnNoStrokesDetectedCallback(QCustomView.NoStrokesCallback callback) {
         this.noStrokesCallback = callback;
     }
     @Override
@@ -217,7 +217,7 @@ public class OCustomView extends View {
         double accuracy = (double) matchingCount / totalStrokeCoordinates* 100 ;
 
 
-        if (strokeCount <= 2 && totalStrokeCoordinates > 120 && accuracy > 90) {
+        if (strokeCount <= 2 && totalStrokeCoordinates > 150 && accuracy > 90) {
             return "Accuracy Score: " + accuracy + "%"; //letter is proper but also accuracy rate
         }
         else{

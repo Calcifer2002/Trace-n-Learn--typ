@@ -18,6 +18,33 @@
         android:theme="@style/Theme.Tracenlearn"
         tools:targetApi="31">
         <activity
+            android:name=".X_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".W_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".V_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".U_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".U_Acitivity"
+            android:exported="false" />
+        <activity
+            android:name=".S_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".R_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Q_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".P_Activity"
+            android:exported="false" />
+        <activity
             android:name=".N_Activity"
             android:exported="false" />
         <activity
