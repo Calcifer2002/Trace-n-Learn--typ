@@ -8,6 +8,7 @@ build:
   stage: build
   script:
     - chmod +x ./gradlew
+    - apt-get install -y android-sdk
     - echo "y" | sdkmanager --licenses
     - ./gradlew assembleDebug
    
