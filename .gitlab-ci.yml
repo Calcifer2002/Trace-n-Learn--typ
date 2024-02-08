@@ -8,7 +8,9 @@ build:
   stage: build
   script:
     - chmod +x ./gradlew
+    - echo yes | sdkmanager --licenses || true 
     - ./gradlew assembleDebug
+   
   artifacts:
     paths:
       - app/build/outputs/
