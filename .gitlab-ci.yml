@@ -3,6 +3,9 @@ stages:
   - build
   - test
 
+before_script:
+  - export ANDROID_HOME="$HOME/Library/Android/sdk"
+  - bundle install
 
 build:
   stage: build
