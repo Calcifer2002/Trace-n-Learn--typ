@@ -2,9 +2,6 @@ image: openjdk:11
 stages:
   - check_deleted_files
 
-before_script:
-  - export ANDROID_HOME="$HOME/Library/Android/sdk"
-  - bundle install
 check_deleted_files:
   stage: check_deleted_files
   script:
