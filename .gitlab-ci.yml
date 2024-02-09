@@ -1,23 +1,24 @@
+image: openjdk:11
 stages:
-  - build
-  - test
+  - check_deleted_files
+  #- build
 
+#before_script:
+ # - export ANDROID_HOME="$HOME/Library/Android/sdk"
+ #  - bundle install
 
-build:
-  stage: build
+# build:
+#  script:
+#    - chmod +x ./gradlew
+#    - echo "y" | sdkmanager --licenses                  not accepting licenses
+#    - ./gradlew assembleDebug
+
+check_deleted_files:
+  stage: check_deleted_files
   script:
-    - chmod +x ./gradlew
-    - ./gradlew assembleDebug
-  artifacts:
-    paths:
-      - app/build/outputs/
-
-test:
-  stage: test
-  script:
-    - echo "Running tests..."
-  dependencies:
-    - build
-
-
+    - git diff --name-only $CI_COMMIT_BEFORE_SHA $CI_COMMIT_SHA > deleted_files.txt
+    - if [ -s deleted_files.txt ]; then echo "Deleted files found:" && cat deleted_files.txt; else echo "No files deleted."; fi
+  only:
+    changes:
+      - '**/*'
 
