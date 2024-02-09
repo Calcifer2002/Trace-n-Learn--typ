@@ -28,4 +28,61 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView43"
+        android:layout_width="397dp"
+        android:layout_height="455dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginEnd="172dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tree2" />
+
+    <ImageView
+        android:id="@+id/imageView42"
+        android:layout_width="522dp"
+        android:layout_height="275dp"
+        android:layout_marginBottom="-57dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/grass1" />
+
+    <ImageView
+        android:id="@+id/imageView44"
+        android:layout_width="255dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/penguin" />
+
+    <ImageView
+        android:id="@+id/imageView45"
+        android:layout_width="166dp"
+        android:layout_height="187dp"
+        android:layout_marginBottom="140dp"
+        android:rotation="15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/speech_b" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="224dp"
+        android:text="Trace and Learn \n the letter D!"
+        android:textColor="@color/black"
+        android:textSize="47px"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,4 +29,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView51"
+        android:layout_width="391dp"
+        android:layout_height="514dp"
+        android:layout_marginTop="336dp"
+        android:layout_marginEnd="176dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tree2" />
+
+    <ImageView
+        android:id="@+id/imageView50"
+        android:layout_width="481dp"
+        android:layout_height="264dp"
+        android:layout_marginBottom="-58dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/grass1" />
+
+    <ImageView
+        android:id="@+id/imageView52"
+        android:layout_width="308dp"
+        android:layout_height="195dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/moose" />
+
+    <ImageView
+        android:id="@+id/imageView53"
+        android:layout_width="172dp"
+        android:layout_height="246dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="136dp"
+        android:rotation="15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/speech_b" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="248dp"
+        android:text="Trace and Learn \n the letter F!"
+        android:textColor="@color/black"
+        android:textSize="47px"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView53" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

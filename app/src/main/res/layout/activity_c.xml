@@ -11,7 +11,7 @@
         android:id="@+id/customCCanvas"
         android:layout_width="258dp"
         android:layout_height="272dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="-475dp"
         app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -28,4 +28,59 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView37"
+        android:layout_width="393dp"
+        android:layout_height="452dp"
+        android:layout_marginTop="356dp"
+        android:layout_marginEnd="176dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tree2" />
+
+    <ImageView
+        android:id="@+id/imageView36"
+        android:layout_width="473dp"
+        android:layout_height="290dp"
+        android:layout_marginEnd="-45dp"
+        android:layout_marginBottom="-73dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/grass1" />
+
+    <ImageView
+        android:id="@+id/imageView39"
+        android:layout_width="189dp"
+        android:layout_height="197dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/parrot" />
+
+    <ImageView
+        android:id="@+id/imageView41"
+        android:layout_width="168dp"
+        android:layout_height="262dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="88dp"
+        android:rotation="20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/speech_b" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="560dp"
+        android:layout_marginEnd="24dp"
+        android:text="Trace and Learn \n the letter C!"
+        android:textColor="@color/black"
+        android:textSize="47px"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

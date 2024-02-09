@@ -28,4 +28,58 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView93"
+        android:layout_width="394dp"
+        android:layout_height="548dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="312dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tree2" />
+
+    <ImageView
+        android:id="@+id/imageView92"
+        android:layout_width="481dp"
+        android:layout_height="259dp"
+        android:layout_marginBottom="-55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/grass1" />
+
+    <ImageView
+        android:id="@+id/imageView94"
+        android:layout_width="340dp"
+        android:layout_height="323dp"
+        android:layout_marginStart="124dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/giraffe" />
+
+    <ImageView
+        android:id="@+id/imageView95"
+        android:layout_width="166dp"
+        android:layout_height="210dp"
+        android:layout_marginTop="432dp"
+        android:layout_marginEnd="232dp"
+        android:rotation="-15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/speech_b2" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="504dp"
+        android:text="Trace and Learn \n the letter Q!"
+        android:textColor="@color/black"
+        android:textSize="47px"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
