@@ -20,7 +20,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class A_Activity extends AppCompatActivity {
 
-        @Override
+    public ACustomView customACanvas;
+    public LinearLayout colorPanel;
+
+    @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_a);
@@ -122,7 +125,7 @@ public class A_Activity extends AppCompatActivity {
                 });
 
             }
-            private int getColorForIndex(int index) {
+            public int getColorForIndex(int index) {
                 String[] colorHexCodes = {
                         "#3498db",
                         "#f1c40f",
