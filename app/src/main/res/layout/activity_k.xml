@@ -28,4 +28,60 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView67"
+        android:layout_width="386dp"
+        android:layout_height="455dp"
+        android:layout_marginEnd="180dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/tree2" />
+
+    <ImageView
+        android:id="@+id/imageView66"
+        android:layout_width="495dp"
+        android:layout_height="195dp"
+        android:layout_marginBottom="-21dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/grass1" />
+
+    <ImageView
+        android:id="@+id/imageView68"
+        android:layout_width="215dp"
+        android:layout_height="221dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="-15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/moose" />
+
+    <ImageView
+        android:id="@+id/imageView69"
+        android:layout_width="226dp"
+        android:layout_height="188dp"
+        android:layout_marginEnd="-17dp"
+        android:layout_marginBottom="172dp"
+        android:rotation="15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/speech_b" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="252dp"
+        android:text="Trace and Learn \n the letter K!"
+        android:textColor="@color/black"
+        android:textSize="47px"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
