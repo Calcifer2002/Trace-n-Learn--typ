@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ui_background"
-    tools:context=".Y_Activity">
+    tools:context=".Z_Activity">
 
-    <com.yp.tracenlearn.YCustomView
-        android:id="@+id/customYCanvas"
+    <com.yp.tracenlearn.ZCustomView
+        android:id="@+id/customZCanvas"
         android:layout_width="258dp"
         android:layout_height="272dp"
         android:layout_marginTop="12dp"
@@ -23,7 +23,7 @@
         layout="@layout/colour_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/customYCanvas"
+        android:layout_below="@id/customZCanvas"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

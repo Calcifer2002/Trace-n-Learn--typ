@@ -18,7 +18,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-public class YCustomView extends View {
+public class ZCustomView extends View {
     private Bitmap mBitmap;
 
 
@@ -33,10 +33,10 @@ public class YCustomView extends View {
     public interface NoStrokesCallback {
         void onNoStrokesDetected(String accuracyInfo);
     }
-    private YCustomView.NoStrokesCallback noStrokesCallback;
+    private ZCustomView.NoStrokesCallback noStrokesCallback;
     private Handler handler = new Handler();
 
-    public YCustomView(Context context, AttributeSet attrs) {
+    public ZCustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
@@ -61,7 +61,7 @@ public class YCustomView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
 
         // load the background image
-        BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.letter_y);
+        BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.letter_z);
         mBitmap = drawable.getBitmap();
 
         // scale the background image to fit the new size
@@ -123,7 +123,7 @@ public class YCustomView extends View {
             noStrokesCallback.onNoStrokesDetected(accuracyInfo);
         }
     }
-    public void setOnNoStrokesDetectedCallback(YCustomView.NoStrokesCallback callback) {
+    public void setOnNoStrokesDetectedCallback(ZCustomView.NoStrokesCallback callback) {
         this.noStrokesCallback = callback;
     }
     @Override

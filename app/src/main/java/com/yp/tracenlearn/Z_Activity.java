@@ -18,23 +18,23 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Y_Activity extends AppCompatActivity {
+public class Z_Activity extends AppCompatActivity {
 
     Dialog dialogNo; //popup if not proper letter
     Dialog dialogYes; //popup if proper letter
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_y);
+        setContentView(R.layout.activity_z);
 
-        YCustomView customYCanvas = findViewById(R.id.customYCanvas); //drawing canvas
+        ZCustomView customZCanvas = findViewById(R.id.customZCanvas); //drawing canvas
         LinearLayout colorPanel = findViewById(R.id.colorPanel); //colour dash
         FirebaseAuth auth = FirebaseAuth.getInstance(); //to get user uid so that i can add data under it
         FirebaseUser currentUser = auth.getCurrentUser();
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
         String uid = currentUser.getUid();
-        dialogNo = new Dialog(Y_Activity.this);
-        dialogYes = new Dialog(Y_Activity.this);
+        dialogNo = new Dialog(Z_Activity.this);
+        dialogYes = new Dialog(Z_Activity.this);
         dialogYes.setContentView(R.layout.correct);
         dialogNo.setContentView(R.layout.incorrect);
         dialogYes.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -54,14 +54,14 @@ public class Y_Activity extends AppCompatActivity {
                         child.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                customYCanvas.setStrokeColor(getColorForIndex(colorIndex)); //change colour
+                                customZCanvas.setStrokeColor(getColorForIndex(colorIndex)); //change colour
                             }
                         });
                     }
                 }
             }
         }
-        customYCanvas.setOnNoStrokesDetectedCallback(new YCustomView.NoStrokesCallback() {
+        customZCanvas.setOnNoStrokesDetectedCallback(new ZCustomView.NoStrokesCallback() {
 
             @Override
             public void onNoStrokesDetected(String accuracyInfo) {
@@ -81,9 +81,9 @@ public class Y_Activity extends AppCompatActivity {
 
 
                             float rated = Float.parseFloat(rate);
-                            databaseReference.child("users").child(uid).child("y-incorrect").setValue(rated);
-                            databaseReference.child("users").child(uid).child("y-flower").setValue(0);
-                            Intent intent = new Intent(Y_Activity.this, Y_Activity.class);
+                            databaseReference.child("users").child(uid).child("z-incorrect").setValue(rated);
+                            databaseReference.child("users").child(uid).child("z-flower").setValue(0);
+                            Intent intent = new Intent(Z_Activity.this, Z_Activity.class);
                             startActivity(intent);
                             finish(); //reload activity for kid to retry
                         }
@@ -103,8 +103,8 @@ public class Y_Activity extends AppCompatActivity {
 
 
                     Log.d("accu", accuracyInfo);
-                    databaseReference.child("users").child(uid).child("y").setValue(rated);
-                    databaseReference.child("users").child(uid).child("y-flower").setValue(1);
+                    databaseReference.child("users").child(uid).child("z").setValue(rated);
+                    databaseReference.child("users").child(uid).child("z-flower").setValue(1);
 
                     //we save the accuracy rate for that letter in the db
                     new Handler().postDelayed(new Runnable() {
@@ -112,7 +112,7 @@ public class Y_Activity extends AppCompatActivity {
                         public void run() {
                             dialogYes.dismiss(); // Corrected this line
 
-                            Intent intent = new Intent(Y_Activity.this, Y_Activity.class);
+                            Intent intent = new Intent(Z_Activity.this, Z_Activity.class);
                             startActivity(intent);
                             finish();
                         }
