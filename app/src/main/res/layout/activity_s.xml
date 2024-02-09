@@ -28,4 +28,59 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView101"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="164dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tree2" />
+
+    <ImageView
+        android:id="@+id/imageView100"
+        android:layout_width="475dp"
+        android:layout_height="314dp"
+        android:layout_marginBottom="-84dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/grass1" />
+
+    <ImageView
+        android:id="@+id/imageView102"
+        android:layout_width="186dp"
+        android:layout_height="148dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/penguin" />
+
+    <ImageView
+        android:id="@+id/imageView103"
+        android:layout_width="166dp"
+        android:layout_height="181dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="152dp"
+        android:rotation="15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/speech_b" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="228dp"
+        android:text="Trace and Learn \n the letter S!"
+        android:textColor="@color/black"
+        android:textSize="47px"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
