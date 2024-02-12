@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="184dp"
-        android:layout_marginEnd="172dp"
+        android:layout_marginEnd="204dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tree2" />
@@ -75,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="536dp"
-        android:layout_marginEnd="21dp"
+        android:layout_marginEnd="36dp"
         android:text="Trace and Learn \n the letter X!"
         android:textColor="@color/black"
         android:textSize="47px"
