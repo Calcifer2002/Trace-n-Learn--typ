@@ -71,7 +71,7 @@
         android:layout_width="208dp"
         android:layout_height="50dp"
         android:layout_marginTop="212dp"
-        android:fontFamily="@font/font_family"
+
         android:text="TRACE 'N LEARN"
         android:textColor="@color/black"
         android:textSize="95px"

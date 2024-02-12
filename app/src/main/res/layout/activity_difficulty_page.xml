@@ -18,7 +18,7 @@
             android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="125dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="25dp"
 
             android:text="Trace N' Learn"
@@ -36,7 +36,7 @@
                 android:id="@+id/titleTextView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="170dp"
+                android:layout_marginLeft="150dp"
                 android:text="Easy"
                 android:textSize="23sp"
                 android:textStyle="bold" />
@@ -70,6 +70,7 @@
                 android:textColor="#e0218a"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
             <TextView
                 android:id="@+id/boxE"
@@ -83,6 +84,7 @@
                 android:textColor="#ffa500"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
             <TextView
                 android:id="@+id/boxF"
@@ -95,7 +97,9 @@
                 android:text="F"
                 android:textColor="#42c0fb"
                 android:textSize="35dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:onClick="onLetterClick"
+                />
 
             <TextView
                 android:id="@+id/boxH"
@@ -109,6 +113,7 @@
                 android:textColor="#4169e1"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
 
             <TextView
@@ -123,6 +128,7 @@
                 android:textColor="#e0218a"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
 
             <TextView
@@ -137,6 +143,7 @@
                 android:textColor="#42c0fb"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
             <TextView
                 android:id="@+id/boxM"
@@ -150,6 +157,7 @@
                 android:textColor="#e04006"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
 
             <TextView
@@ -164,6 +172,7 @@
                 android:textColor="#4169e1"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
 
             <TextView
@@ -178,6 +187,7 @@
                 android:textColor="#4169e1"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
 
             <TextView
@@ -192,6 +202,7 @@
                 android:textColor="#e0218a"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
 
             <TextView
@@ -205,6 +216,7 @@
                 android:text="V"
                 android:textColor="#a6d785"
                 android:textSize="35dp"
+                android:onClick="onLetterClick"
                 />
             <TextView
                 android:id="@+id/boxW"
@@ -218,6 +230,7 @@
                 android:textColor="#ffa500"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
 
             <TextView
@@ -231,6 +244,7 @@
                 android:text="X"
                 android:textColor="#42c0fb"
                 android:textSize="35dp"
+                android:onClick="onLetterClick"
                 />
         </GridLayout>
 
@@ -238,7 +252,7 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="130dp"
+        android:layout_marginLeft="110dp"
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/titleTextView3"
@@ -248,6 +262,7 @@
             android:text="Medium"
             android:textSize="23sp"
             android:textStyle="bold"
+            android:onClick="onLetterClick"
 
            />
 
@@ -288,12 +303,8 @@
                 android:textColor="#e04006"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
-
-
-
-
-
 
 
 
@@ -309,6 +320,7 @@
                 android:textColor="#4169e1"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
             <TextView
                 android:id="@+id/boxD"
@@ -322,6 +334,7 @@
                 android:textColor="#a6d785"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
 
 
@@ -339,6 +352,7 @@
                 android:textColor="#a6d785"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
             <TextView
                 android:id="@+id/boxO"
@@ -352,6 +366,7 @@
                 android:textColor="#e0218a"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
             <TextView
                 android:id="@+id/boxP"
@@ -365,6 +380,7 @@
                 android:textColor="#a6d785"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
 
 
@@ -382,6 +398,7 @@
                 android:textColor="#e04006"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
 
 
@@ -398,7 +415,7 @@
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="90dp"
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/titleTextView4"
@@ -407,6 +424,7 @@
                 android:text="Difficult"
                 android:textSize="23sp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                  />
 
             <ImageView
@@ -448,22 +466,9 @@
                 android:textColor="#e04006"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
 
-
-            <TextView
-                android:id="@+id/boxR"
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:background="@xml/border_blue"
-                android:gravity="center"
-                android:text="R"
-                android:textColor="#42c0fb"
-                android:textSize="35dp"
-                android:textStyle="bold"
-                />
             <TextView
                 android:id="@+id/boxK"
                 android:layout_width="0dp"
@@ -476,6 +481,7 @@
                 android:textColor="#ffa500"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
             <TextView
                 android:id="@+id/boxQ"
@@ -489,7 +495,38 @@
                 android:textColor="#ffa500"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
+            <TextView
+                android:id="@+id/boxR"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@xml/border_blue"
+                android:gravity="center"
+                android:text="R"
+                android:textColor="#42c0fb"
+                android:textSize="35dp"
+                android:textStyle="bold"
+                android:onClick="onLetterClick"
+                />
+
+            <TextView
+                android:id="@+id/boxY"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@xml/border_red"
+                android:gravity="center"
+                android:text="Y"
+                android:textColor="#e04006"
+                android:textSize="35dp"
+                android:textStyle="bold"
+                android:onClick="onLetterClick"
+                />
+
             <TextView
                 android:id="@+id/boxZ"
                 android:layout_width="0dp"
@@ -502,6 +539,7 @@
                 android:textColor="#4169e1"
                 android:textSize="35dp"
                 android:textStyle="bold"
+                android:onClick="onLetterClick"
                 />
         </GridLayout>
 
