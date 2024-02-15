@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--The images seen in this code are all used from the Freepik website.
+The image of the animal used can be found at the link below:
+https://www.freepik.com/free-vector/cute-animal-collection-from-different-environmental_5481265.htm#&position=0&from_view=search&track=ais&uuid=9e6df1c4-aebd-474c-b9da-f95bf9e6b2ef
+
+The image of the grass used can be found at the link below:
+https://www.freepik.com/free-vector/seamless-design-grass-rocks_1341527.htm#&position=0&from_view=search&track=ais&uuid=8904298d-3053-4e54-8f9b-59ad4a605252
+
+The image of the tree used can be found at the link below:
+https://www.freepik.com/free-vector/isolated-tree-white-background_4382376.htm#&position=1&from_view=search&track=ais&uuid=9c651602-8f93-443e-a666-84de4bea260e
+
+The image of the speech bubble used can be found at the link below:
+https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illustration_49212535.htm#&position=0&from_view=search&track=ais&uuid=99b6b1a5-52ff-4c4c-ab3d-788b95552c2a -->
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -29,6 +42,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--This image view displays an image of a tree including its height, width, and constraints-->
     <ImageView
         android:id="@+id/imageView124"
         android:layout_width="wrap_content"
@@ -39,6 +53,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tree2" />
 
+    <!--This image view displays an image of grass including its height, width, and constraints-->
     <ImageView
         android:id="@+id/imageView34"
         android:layout_width="462dp"
@@ -49,6 +64,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/grass1" />
 
+    <!--This image view displays an image of a moose including its height, width, and constraints-->
     <ImageView
         android:id="@+id/imageView125"
         android:layout_width="351dp"
@@ -59,6 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/moose" />
 
+    <!--This image view displays an image of a speech bubble including its height, width, rotation, and constraints-->
     <ImageView
         android:id="@+id/imageView126"
         android:layout_width="185dp"
@@ -69,6 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/speech_b" />
 
+    <!--This text view displays text including its height, width, text colour, text size, and constraints-->
     <TextView
         android:id="@+id/textView30"
         android:layout_width="wrap_content"
