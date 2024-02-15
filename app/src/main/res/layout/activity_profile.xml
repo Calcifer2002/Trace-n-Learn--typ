@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ui_background"
+    tools:context=".Profile_Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="25dp"
+            android:text="Trace N' Learn"
+            android:textAlignment="center"
+            android:textSize="30sp"
+
+        />
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textStyle="italic"
+            android:text="Username"
+            android:textAlignment="center"
+            android:textSize="25sp"
+
+        />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="150dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:src="@drawable/flower_yes"
+
+            />
+
+            <TextView
+                android:id="@+id/flower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="26/26"
+                android:textSize="20dp"
+                android:textColor="#E91E63"
+            />
+        </LinearLayout>
+        <GridLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="60dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+           >
+
+        <!-- Replace the content of each item with your TextViews -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A"
+                android:textColor="#e04006"
+                android:textSize="25dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:id="@+id/resultA"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+
+            />
+        </LinearLayout>
+
+        <!-- Repeat the above LinearLayout for each pair of TextViews (letter and text) -->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B"
+                android:textColor="#4169e1"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultB"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+            />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C"
+                android:textColor="#e0218a"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultC"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="D"
+                android:textColor="#a6d785"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultD"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="E"
+                android:textColor="#ffa500"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultE"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="F"
+                android:textColor="#42c0fb"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultF"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="G"
+                android:textColor="#e04006"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultG"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="H"
+                android:textColor="#4169e1"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultH"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I"
+                android:textColor="#e0218a"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultI"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterJ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="J"
+                android:textColor="#a6d785"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultJ"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="K"
+                android:textColor="#ffa500"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultK"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="L"
+                android:textColor="#42c0fb"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultL"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="M"
+                android:textColor="#e04006"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultM"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="N"
+                android:textColor="#4169e1"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultN"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="O"
+                android:textColor="#e0218a"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultO"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P"
+                android:textColor="#a6d785"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultP"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterQ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Q"
+                android:textColor="#ffa500"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultQ"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R"
+                android:textColor="#42c0fb"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultR"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S"
+                android:textColor="#e04006"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultS"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T"
+                android:textColor="#4169e1"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultT"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="U"
+                android:textColor="#e0218a"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultU"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="V"
+                android:textColor="#a6d785"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultV"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterW"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="W"
+                android:textColor="#ffa500"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultW"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X"
+                android:textColor="#42c0fb"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultX"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Y"
+                android:textColor="#e04006"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultY"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/letterZ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Z"
+                android:textColor="#4169e1"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/resultZ"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Incorrect"
+                android:textSize="15dp"
+                android:layout_marginLeft="8dp"
+
+                />
+        </LinearLayout>
+
+        <!-- Repeat the above LinearLayout for each pair of TextViews (letter and text) -->
+
+    </GridLayout>
+    </LinearLayout>
+</ScrollView>
+
