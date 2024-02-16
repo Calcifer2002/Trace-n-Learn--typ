@@ -43,17 +43,19 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--This image view displays an image of a tree including its height, width, and constraints-->
+
+    <!--This image view displays an image of grass including its height, width, and constraints-->
+
     <ImageView
         android:id="@+id/imageView124"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="188dp"
+        android:layout_width="367dp"
+        android:layout_height="681dp"
+        android:layout_marginTop="220dp"
         android:layout_marginEnd="176dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tree2" />
 
-    <!--This image view displays an image of grass including its height, width, and constraints-->
     <ImageView
         android:id="@+id/imageView34"
         android:layout_width="462dp"
@@ -65,34 +67,37 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         app:srcCompat="@drawable/grass1" />
 
     <!--This image view displays an image of a moose including its height, width, and constraints-->
+
+    <!--This image view displays an image of a speech bubble including its height, width, rotation, and constraints-->
+
+    <!--This text view displays text including its height, width, text colour, text size, and constraints-->
+
     <ImageView
         android:id="@+id/imageView125"
-        android:layout_width="351dp"
-        android:layout_height="224dp"
-        android:layout_marginEnd="76dp"
+        android:layout_width="332dp"
+        android:layout_height="206dp"
+        android:layout_marginEnd="88dp"
         android:layout_marginBottom="-15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/moose" />
 
-    <!--This image view displays an image of a speech bubble including its height, width, rotation, and constraints-->
     <ImageView
         android:id="@+id/imageView126"
         android:layout_width="185dp"
         android:layout_height="178dp"
-        android:layout_marginBottom="176dp"
+        android:layout_marginBottom="132dp"
         android:rotation="15"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/speech_b" />
 
-    <!--This text view displays text including its height, width, text colour, text size, and constraints-->
     <TextView
         android:id="@+id/textView30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="252dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="207dp"
         android:text="Trace and Learn \n the letter Z!"
         android:textColor="@color/black"
         android:textSize="47px"

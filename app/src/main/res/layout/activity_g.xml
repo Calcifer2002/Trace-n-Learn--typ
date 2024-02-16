@@ -24,7 +24,7 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         android:id="@+id/customGCanvas"
         android:layout_width="258dp"
         android:layout_height="272dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -43,18 +43,21 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--This image view displays an image of a tree including its height, width, and constraints-->
+
+    <!--This image view displays an image of grass including its height, width, and constraints-->
+
     <ImageView
         android:id="@+id/imageView55"
-        android:layout_width="400dp"
-        android:layout_height="408dp"
+        android:layout_width="384dp"
+        android:layout_height="395dp"
         android:layout_marginStart="208dp"
+        android:layout_marginBottom="-10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/tree2" />
 
-    <!--This image view displays an image of grass including its height, width, and constraints-->
     <ImageView
         android:id="@+id/imageView54"
         android:layout_width="504dp"
@@ -67,35 +70,38 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         app:srcCompat="@drawable/grass1" />
 
     <!--This image view displays an image of a giraffe including its height, width, and constraints-->
+
+    <!--This image view displays an image of a speech bubble including its height, width, rotation, and constraints-->
+
     <ImageView
         android:id="@+id/imageView56"
-        android:layout_width="360dp"
-        android:layout_height="335dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="488dp"
+        android:layout_width="319dp"
+        android:layout_height="316dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="440dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/giraffe" />
 
-    <!--This image view displays an image of a speech bubble including its height, width, rotation, and constraints-->
+    <!--This text view displays text including its height, width, text colour, text size, and constraints-->
+
     <ImageView
         android:id="@+id/imageView57"
         android:layout_width="233dp"
         android:layout_height="182dp"
         android:layout_marginEnd="188dp"
-        android:layout_marginBottom="180dp"
+        android:layout_marginBottom="148dp"
         android:rotation="-15"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/speech_b2" />
 
-    <!--This text view displays text including its height, width, text colour, text size, and constraints-->
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginBottom="264dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginBottom="228dp"
         android:text="Trace and Learn \n the letter G!"
         android:textColor="@color/black"
         android:textSize="47px"

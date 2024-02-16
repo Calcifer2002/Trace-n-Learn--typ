@@ -31,6 +31,10 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/colorPanel" />
 
+    <!--This image view displays an image of a tree including its height, width, and constraints-->
+
+    <!--This image view displays an image of grass including its height, width, and constraints-->
+
     <include
         android:id="@+id/colorPanel"
         layout="@layout/colour_panel"
@@ -39,21 +43,20 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         android:layout_below="@id/customDCanvas"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--This image view displays an image of a tree including its height, width, and constraints-->
     <ImageView
         android:id="@+id/imageView43"
-        android:layout_width="397dp"
-        android:layout_height="455dp"
-        android:layout_marginTop="360dp"
-        android:layout_marginEnd="172dp"
+        android:layout_width="350dp"
+        android:layout_height="395dp"
+        android:layout_marginTop="364dp"
+        android:layout_marginEnd="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tree2" />
 
-    <!--This image view displays an image of grass including its height, width, and constraints-->
     <ImageView
         android:id="@+id/imageView42"
         android:layout_width="522dp"
@@ -66,17 +69,19 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         app:srcCompat="@drawable/grass1" />
 
     <!--This image view displays an image of a penguin including its height, width, and constraints-->
+
+    <!--This image view displays an image of a speech bubble including its height, width, rotation, and constraints-->
+
     <ImageView
         android:id="@+id/imageView44"
         android:layout_width="255dp"
         android:layout_height="150dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginBottom="-9dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/penguin" />
 
-    <!--This image view displays an image of a speech bubble including its height, width, rotation, and constraints-->
     <ImageView
         android:id="@+id/imageView45"
         android:layout_width="166dp"
