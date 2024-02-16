@@ -78,14 +78,24 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/giraffe" />
 
+<<<<<<< HEAD
+    <!--This image view displays an image of a speech bubble including its height, width, rotation, and constraints-->
+
+    <!--This text view displays text including its height, width, text colour, text size, and constraints-->
+=======
     <!--This text view displays text including its height, width, text colour, text size, and constraints-->
 
+>>>>>>> 09558969ae89d512d1ced6f5e103cde6e32bcb22
     <ImageView
         android:id="@+id/imageView111"
         android:layout_width="173dp"
         android:layout_height="293dp"
         android:layout_marginEnd="220dp"
+<<<<<<< HEAD
+        android:layout_marginBottom="68dp"
+=======
         android:layout_marginBottom="88dp"
+>>>>>>> 09558969ae89d512d1ced6f5e103cde6e32bcb22
         android:rotation="-15"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,13 +105,20 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
+=======
         android:layout_marginStart="40dp"
         android:layout_marginBottom="220dp"
+>>>>>>> 09558969ae89d512d1ced6f5e103cde6e32bcb22
         android:text="Trace and Learn \n the letter V!"
         android:textColor="@color/black"
         android:textSize="47px"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView111"
+        app:layout_constraintEnd_toEndOf="@+id/imageView111"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toStartOf="@+id/imageView111"
+        app:layout_constraintTop_toTopOf="@+id/imageView111"
+        app:layout_constraintVertical_bias="0.459" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
