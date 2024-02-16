@@ -16,6 +16,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 public class Profile_Activity extends AppCompatActivity {
 
     @Override
@@ -30,6 +32,7 @@ public class Profile_Activity extends AppCompatActivity {
         DatabaseReference usersRef = database.getReference("users").child(user.getUid()).child("username");
 
         TextView userNameTextView = findViewById(R.id.userName);
+        TextView flowerNumber = findViewById(R.id.flower);
 
         usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -47,36 +50,91 @@ public class Profile_Activity extends AppCompatActivity {
                 Toast.makeText(Profile_Activity.this, "Failed to retrieve username: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
-        // Remove the unnecessary DatabaseReference usersReflower line
-
-        // Reference to the specific UID node under "users"
+        //get db
         DatabaseReference userUidRef = database.getReference("users").child(user.getUid());
 
-        userUidRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                int flowerSum = 0;
+        for (char letter = 'a'; letter <= 'z'; letter++) {
+            final String letterKey = letter + "-flower";
+            final String correctKey = String.valueOf(letter);
+            final String idLetter = "result" + letter;
+            int resId = getResources().getIdentifier(idLetter, "id", getPackageName());
+            TextView resultTextView = findViewById(resId);
+            userUidRef.child(letterKey).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Integer counter = dataSnapshot.getValue(Integer.class);
+                    Log.d("%d", String.valueOf(counter));
 
-                for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
-                    // Assuming the child nodes are integers
-                    Integer childValue = childSnapshot.getValue(Integer.class);
+                    if (counter != null) {
+                        if (counter == 0) {
+                            // Letter is 0, set the text to "Incorrect"
+                            resultTextView.setText("Incorrect");
+                        } else if (counter == 1) {
+                            // Letter is 1, get the value of "correct" and set the text accordingly
+                            userUidRef.child(correctKey).addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot incorrectSnapshot) {
+                                    Double correctValue = incorrectSnapshot.getValue(Double.class);
 
-                    if (childValue != null) {
-                        // Add the numerical value to the sum
-                        flowerSum += childValue;
+                                    if (correctValue != null) {
+                                        // Get the integer part of the value for displaying
+                                        int intValue = correctValue.intValue();
+
+                                        resultTextView.setText("Correct - " + intValue + "%");
+                                        Log.d("meow", "Correct - " + intValue + "%");
+                                    }
+                                }
+
+                                // Handle onCancelled method if needed
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                    Log.e("Error", "Firebase database error: " + databaseError.getMessage());
+                                }
+                            });
+                        }
                     }
                 }
 
-                // Now, 'flowerSum' contains the sum of all children with the word "flower"
-                Log.d("FlowerSumActivity", "Sum of children with 'flower': " + flowerSum);
-            }
+                // Handle onCancelled method if needed
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    Log.e("Error", "Firebase database error: " + databaseError.getMessage());
+                }
+            });
+        }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle errors
-                Log.e("FlowerSumActivity", "Error reading data: " + databaseError.getMessage());
+        userUidRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        int flowerSum = 0;
+
+                        for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+
+
+                            // Get the value of the child
+                            // Get the value of the child
+                            String childKey = childSnapshot.getKey();
+                            Object childValue = childSnapshot.getValue();
+
+                            if (childKey != null && childKey.contains("flower") && childValue instanceof Long) {
+                                Log.d("meoq", childKey);
+                                // Get the value of the child
+
+                                flowerSum += (Long) childValue;
+
+                            }
+                        }
+
+                        String formattedText = String.format("%d/26", flowerSum);
+                        flowerNumber.setText(formattedText);
+                        Log.d("FlowerSumActivity", "Sum of children with 'flower': " + flowerSum);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        // Handle errors
+                        Log.e("FlowerSumActivity", "Error reading data: " + databaseError.getMessage());
+                    }
+                });
             }
-        });
-    }
-}
+        }

@@ -245,7 +245,7 @@ public class CCustomView extends View {
         double accuracy = (double) matchingCount / totalStrokeCoordinates* 100 ;
 
 
-        if (strokeCount <= 2 && totalStrokeCoordinates > 80 && accuracy > 90) {
+        if (strokeCount <= 2 && totalStrokeCoordinates > 90 && accuracy > 90) {
             //kids shud use two strokes
 
             return "Accuracy Score: " + accuracy + "%";

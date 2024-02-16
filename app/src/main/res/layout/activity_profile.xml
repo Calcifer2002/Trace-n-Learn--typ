@@ -42,7 +42,7 @@
             android:orientation="horizontal"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginLeft="150dp"
+            android:layout_marginLeft="140dp"
             android:gravity="center_vertical">
 
             <ImageView
@@ -68,7 +68,7 @@
             android:columnCount="2"
 
             android:layout_marginTop="16dp"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="43dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
            >
@@ -91,7 +91,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultA"
+                android:id="@+id/resulta"
                 android:layout_width="150dp"
                 android:layout_height="30dp"
                 android:text="Incorrect"
@@ -120,7 +120,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultB"
+                android:id="@+id/resultb"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -145,7 +145,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultC"
+                android:id="@+id/resultc"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -170,7 +170,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultD"
+                android:id="@+id/resultd"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -195,7 +195,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultE"
+                android:id="@+id/resulte"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -220,7 +220,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultF"
+                android:id="@+id/resultf"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -245,7 +245,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultG"
+                android:id="@+id/resultg"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -270,7 +270,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultH"
+                android:id="@+id/resulth"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -295,7 +295,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultI"
+                android:id="@+id/resulti"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -310,7 +310,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/letterJ"
+                android:id="@+id/letterj"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="J"
@@ -320,7 +320,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultJ"
+                android:id="@+id/resultj"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -345,7 +345,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultK"
+                android:id="@+id/resultk"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -370,7 +370,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultL"
+                android:id="@+id/resultl"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -395,7 +395,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultM"
+                android:id="@+id/resultm"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -420,7 +420,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultN"
+                android:id="@+id/resultn"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -445,7 +445,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultO"
+                android:id="@+id/resulto"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -470,7 +470,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultP"
+                android:id="@+id/resultp"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -495,7 +495,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultQ"
+                android:id="@+id/resultq"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -520,7 +520,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultR"
+                android:id="@+id/resultr"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -545,7 +545,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultS"
+                android:id="@+id/results"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -570,7 +570,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultT"
+                android:id="@+id/resultt"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -595,7 +595,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultU"
+                android:id="@+id/resultu"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -620,7 +620,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultV"
+                android:id="@+id/resultv"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -645,7 +645,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultW"
+                android:id="@+id/resultw"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -670,7 +670,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultX"
+                android:id="@+id/resultx"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -695,7 +695,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultY"
+                android:id="@+id/resulty"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
@@ -720,7 +720,7 @@
                 />
 
             <TextView
-                android:id="@+id/resultZ"
+                android:id="@+id/resultz"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Incorrect"
