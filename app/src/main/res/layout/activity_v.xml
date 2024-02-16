@@ -50,9 +50,11 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         android:id="@+id/imageView35"
         android:layout_width="366dp"
         android:layout_height="674dp"
-        app:srcCompat="@drawable/tree2"
-        tools:layout_editor_absoluteX="197dp"
-        tools:layout_editor_absoluteY="216dp" />
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/colorPanel"
+        app:srcCompat="@drawable/tree2" />
 
     <ImageView
         android:id="@+id/imageView108"
@@ -68,34 +70,29 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
 
     <!--This image view displays an image of a speech bubble including its height, width, rotation, and constraints-->
 
+
+    <!--This image view displays an image of a speech bubble including its height, width, rotation, and constraints-->
+
+    <!--This text view displays text including its height, width, text colour, text size, and constraints-->
+
+    <!--This text view displays text including its height, width, text colour, text size, and constraints-->
+
     <ImageView
         android:id="@+id/imageView110"
         android:layout_width="191dp"
         android:layout_height="303dp"
         android:layout_marginStart="204dp"
-        android:layout_marginTop="456dp"
+        android:layout_marginTop="488dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/giraffe" />
 
-<<<<<<< HEAD
-    <!--This image view displays an image of a speech bubble including its height, width, rotation, and constraints-->
-
-    <!--This text view displays text including its height, width, text colour, text size, and constraints-->
-=======
-    <!--This text view displays text including its height, width, text colour, text size, and constraints-->
-
->>>>>>> 09558969ae89d512d1ced6f5e103cde6e32bcb22
     <ImageView
         android:id="@+id/imageView111"
         android:layout_width="173dp"
         android:layout_height="293dp"
         android:layout_marginEnd="220dp"
-<<<<<<< HEAD
-        android:layout_marginBottom="68dp"
-=======
         android:layout_marginBottom="88dp"
->>>>>>> 09558969ae89d512d1ced6f5e103cde6e32bcb22
         android:rotation="-15"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,20 +102,15 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-=======
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="220dp"
->>>>>>> 09558969ae89d512d1ced6f5e103cde6e32bcb22
         android:text="Trace and Learn \n the letter V!"
         android:textColor="@color/black"
         android:textSize="47px"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView111"
         app:layout_constraintEnd_toEndOf="@+id/imageView111"
-        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="@+id/imageView111"
         app:layout_constraintTop_toTopOf="@+id/imageView111"
-        app:layout_constraintVertical_bias="0.459" />
+        app:layout_constraintVertical_bias="0.443" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

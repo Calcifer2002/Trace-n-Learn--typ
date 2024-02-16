@@ -95,11 +95,8 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="12dp"
-<<<<<<< HEAD
         android:layout_marginBottom="248dp"
-=======
-        android:layout_marginBottom="244dp"
->>>>>>> 09558969ae89d512d1ced6f5e103cde6e32bcb22
+
         android:text="Trace and Learn \n the letter F!"
         android:textColor="@color/black"
         android:textSize="47px"

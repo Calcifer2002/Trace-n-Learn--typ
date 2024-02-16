@@ -87,7 +87,7 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         android:id="@+id/imageView61"
         android:layout_width="222dp"
         android:layout_height="176dp"
-        android:layout_marginEnd="-15dp"
+        android:layout_marginEnd="52dp"
         android:layout_marginBottom="120dp"
         android:rotation="15"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -98,22 +98,16 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="228dp"
-=======
-        android:layout_marginEnd="23dp"
-        android:layout_marginBottom="196dp"
->>>>>>> 09558969ae89d512d1ced6f5e103cde6e32bcb22
+
         android:text="Trace and Learn \n the letter H!"
         android:textColor="@color/black"
         android:textSize="47px"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView61"
+        app:layout_constraintEnd_toEndOf="@+id/imageView61"
+        app:layout_constraintHorizontal_bias="0.595"
         app:layout_constraintStart_toStartOf="@+id/imageView61"
         app:layout_constraintTop_toTopOf="@+id/imageView61"
-        app:layout_constraintVertical_bias="0.932" />
+        app:layout_constraintVertical_bias="0.404" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
