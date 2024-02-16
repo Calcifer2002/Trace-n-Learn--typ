@@ -37,23 +37,25 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/customECanvas"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--This image view displays an image of a tree including its height, width, and constraints-->
+
+    <!--This image view displays an image of grass including its height, width, and constraints-->
+
     <ImageView
         android:id="@+id/imageView48"
-        android:layout_width="393dp"
-        android:layout_height="380dp"
-        android:layout_marginTop="396dp"
-        android:layout_marginEnd="172dp"
+        android:layout_width="345dp"
+        android:layout_height="370dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginEnd="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tree2" />
 
-    <!--This image view displays an image of grass including its height, width, and constraints-->
     <ImageView
         android:id="@+id/imageView46"
         android:layout_width="551dp"
@@ -65,17 +67,19 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         app:srcCompat="@drawable/grass1" />
 
     <!--This image view displays an image of a kola including its height, width, and constraints-->
+
+    <!--This image view displays an image of a speech bubble including its height, width, rotation, and constraints-->
+
     <ImageView
         android:id="@+id/imageView47"
-        android:layout_width="183dp"
-        android:layout_height="227dp"
-        android:layout_marginStart="64dp"
+        android:layout_width="155dp"
+        android:layout_height="181dp"
+        android:layout_marginStart="108dp"
         android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/kola" />
 
-    <!--This image view displays an image of a speech bubble including its height, width, rotation, and constraints-->
     <ImageView
         android:id="@+id/imageView49"
         android:layout_width="178dp"
@@ -92,7 +96,7 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="240dp"
+        android:layout_marginStart="257dp"
         android:layout_marginBottom="232dp"
         android:text="Trace and Learn \n the letter E!"
         android:textColor="@color/black"

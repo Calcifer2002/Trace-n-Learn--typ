@@ -43,17 +43,19 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--This image view displays an image of a tree including its height, width, and constraints-->
+
+    <!--This image view displays an image of grass including its height, width, and constraints-->
+
     <ImageView
         android:id="@+id/imageView51"
-        android:layout_width="391dp"
-        android:layout_height="514dp"
+        android:layout_width="357dp"
+        android:layout_height="460dp"
         android:layout_marginTop="336dp"
         android:layout_marginEnd="176dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tree2" />
 
-    <!--This image view displays an image of grass including its height, width, and constraints-->
     <ImageView
         android:id="@+id/imageView50"
         android:layout_width="481dp"
@@ -65,15 +67,17 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         app:srcCompat="@drawable/grass1" />
 
     <!--This image view displays an image of a moose including its height, width, and constraints-->
+
+    <!--This image view displays an image of a speech bubble including its height, width, rotation, and constraints-->
     <ImageView
         android:id="@+id/imageView52"
         android:layout_width="308dp"
         android:layout_height="195dp"
+        android:layout_marginBottom="-13dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/moose" />
 
-    <!--This image view displays an image of a speech bubble including its height, width, rotation, and constraints-->
     <ImageView
         android:id="@+id/imageView53"
         android:layout_width="172dp"
@@ -91,7 +95,11 @@ https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illu
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="12dp"
+<<<<<<< HEAD
         android:layout_marginBottom="248dp"
+=======
+        android:layout_marginBottom="244dp"
+>>>>>>> 09558969ae89d512d1ced6f5e103cde6e32bcb22
         android:text="Trace and Learn \n the letter F!"
         android:textColor="@color/black"
         android:textSize="47px"
