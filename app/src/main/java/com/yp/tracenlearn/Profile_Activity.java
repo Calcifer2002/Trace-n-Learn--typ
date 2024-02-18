@@ -40,7 +40,7 @@ public class Profile_Activity extends AppCompatActivity {
                 String username = dataSnapshot.getValue(String.class);
                 if (username != null) {
                     // Set the retrieved username to the TextView
-                    userNameTextView.setText("Hi " + username + "!");
+                    userNameTextView.setText(username);
                 }
             }
 
@@ -77,12 +77,30 @@ public class Profile_Activity extends AppCompatActivity {
                                     Double correctValue = incorrectSnapshot.getValue(Double.class);
 
                                     if (correctValue != null) {
-                                        // Get the integer part of the value for displaying
                                         int intValue = correctValue.intValue();
 
-                                        resultTextView.setText("Correct - " + intValue + "%");
-                                        Log.d("meow", "Correct - " + intValue + "%");
+                                        int normalizedValue;
+
+                                      //normalising
+                                        if (intValue >= 90 && intValue <= 91) {
+                                            normalizedValue = 6;
+                                        } else if (intValue >= 92 && intValue <= 93) {
+                                            normalizedValue = 7;
+                                        } else if (intValue >= 94 && intValue <= 95) {
+                                            normalizedValue = 8;
+                                        } else if (intValue >= 96 && intValue <= 98) {
+                                            normalizedValue = 9;
+                                        } else if (intValue >= 99) {
+                                            normalizedValue = 10;
+                                        } else {
+
+                                            normalizedValue = 0;
+                                        }
+
+                                        resultTextView.setText("Correct - " + normalizedValue + "/10");
+                                        Log.d("meow", "Correct - " + normalizedValue + "/10");
                                     }
+
                                 }
 
                                 // Handle onCancelled method if needed
@@ -125,7 +143,7 @@ public class Profile_Activity extends AppCompatActivity {
                             }
                         }
 
-                        String formattedText = String.format("%d/26", flowerSum);
+                        String formattedText = String.format("Flowers: %d/26", flowerSum);
                         flowerNumber.setText(formattedText);
                         Log.d("FlowerSumActivity", "Sum of children with 'flower': " + flowerSum);
                     }

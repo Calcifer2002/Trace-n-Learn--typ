@@ -20,6 +20,7 @@
             android:layout_marginLeft="100dp"
             android:layout_marginTop="25dp"
             android:text="Trace N' Learn"
+
             android:textAlignment="center"
             android:textSize="30sp"
 
@@ -27,28 +28,40 @@
 
         <TextView
             android:id="@+id/userName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
             android:layout_marginTop="20dp"
-            android:textStyle="italic"
+            android:textStyle="bold"
+
             android:text="Username"
+            android:paddingTop="10dp"
+            android:paddingLeft="40dp"
+            android:layout_marginLeft="45dp"
+            android:background="@xml/block1"
             android:textAlignment="center"
             android:textSize="25sp"
 
+
         />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="140dp"
-            android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="74dp"
+            android:layout_height="94dp"
+
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="-97dp"
+            android:src="@drawable/cat"
+
+            />
+
+
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="70dp"
                 android:src="@drawable/flower_yes"
+                android:layout_marginTop="-80dp"
+                android:layout_marginLeft="285dp"
 
             />
 
@@ -56,19 +69,35 @@
                 android:id="@+id/flower"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="-40dp"
+                android:layout_marginLeft="155dp"
                 android:text="26/26"
                 android:textSize="20dp"
-                android:textColor="#E91E63"
+
             />
-        </LinearLayout>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="55dp"
+    android:text="Results"
+    android:textStyle="bold"
+    android:textSize="22dp"
+    android:textAlignment="center"/>
         <GridLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:columnCount="2"
+            android:background="@xml/block2"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingBottom="10dp"
 
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="43dp"
+
+
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="12dp"
+
             android:orientation="horizontal"
             android:gravity="center_vertical"
            >
@@ -98,6 +127,7 @@
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
 
             />
         </LinearLayout>
@@ -126,7 +156,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
-
+                android:fontFamily="sans-serif-condensed-medium"
             />
         </LinearLayout>
         <LinearLayout
@@ -151,6 +181,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
 
                 />
         </LinearLayout>
@@ -176,6 +207,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
 
                 />
         </LinearLayout>
@@ -201,6 +233,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
 
                 />
         </LinearLayout>
@@ -226,6 +259,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
 
                 />
         </LinearLayout>
@@ -251,6 +285,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
 
                 />
         </LinearLayout>
@@ -276,6 +311,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
 
                 />
         </LinearLayout>
@@ -301,6 +337,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
 
                 />
         </LinearLayout>
@@ -326,6 +363,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
 
                 />
         </LinearLayout>
@@ -351,6 +389,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
 
                 />
         </LinearLayout>
@@ -376,6 +415,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
 
                 />
         </LinearLayout>
@@ -401,6 +441,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
 
                 />
         </LinearLayout>
@@ -426,6 +467,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
 
                 />
         </LinearLayout>
@@ -451,6 +493,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
 
                 />
         </LinearLayout>
@@ -476,7 +519,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
-
+                android:fontFamily="sans-serif-condensed-medium"
                 />
         </LinearLayout>
         <LinearLayout
@@ -501,6 +544,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
 
                 />
         </LinearLayout>
@@ -526,7 +570,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
-
+                android:fontFamily="sans-serif-condensed-medium"
                 />
         </LinearLayout>
         <LinearLayout
@@ -551,7 +595,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
-
+                android:fontFamily="sans-serif-condensed-medium"
                 />
         </LinearLayout>
         <LinearLayout
@@ -576,7 +620,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
-
+                android:fontFamily="sans-serif-condensed-medium"
                 />
         </LinearLayout>
         <LinearLayout
@@ -601,7 +645,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
-
+                android:fontFamily="sans-serif-condensed-medium"
                 />
         </LinearLayout>
         <LinearLayout
@@ -626,7 +670,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
-
+                android:fontFamily="sans-serif-condensed-medium"
                 />
         </LinearLayout>
         <LinearLayout
@@ -651,7 +695,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
-
+                android:fontFamily="sans-serif-condensed-medium"
                 />
         </LinearLayout>
         <LinearLayout
@@ -676,7 +720,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
-
+                android:fontFamily="sans-serif-condensed-medium"
                 />
         </LinearLayout>
         <LinearLayout
@@ -701,7 +745,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
-
+                android:fontFamily="sans-serif-condensed-medium"
                 />
         </LinearLayout>
         <LinearLayout
@@ -726,7 +770,7 @@
                 android:text="Incorrect"
                 android:textSize="15dp"
                 android:layout_marginLeft="8dp"
-
+                android:fontFamily="sans-serif-condensed-medium"
                 />
         </LinearLayout>
 
