@@ -108,7 +108,7 @@
             android:name=".I_Activity"
             android:exported="false" />
         <activity
-            android:name=".UserActivity"
+            android:name=".User_Activity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -3,8 +3,11 @@ package com.yp.tracenlearn;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +28,8 @@ public class Profile_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
@@ -33,6 +38,17 @@ public class Profile_Activity extends AppCompatActivity {
 
         TextView userNameTextView = findViewById(R.id.userName);
         TextView flowerNumber = findViewById(R.id.flower);
+
+        ImageView edtUsername = findViewById(R.id.editUsername);
+
+        edtUsername.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Open User_activity
+                Intent intent = new Intent(Profile_Activity.this, User_Activity.class);
+                startActivity(intent);
+            }
+        });
 
         usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

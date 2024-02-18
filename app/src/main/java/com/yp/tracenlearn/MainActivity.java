@@ -97,12 +97,12 @@ public class MainActivity extends AppCompatActivity {
                                             startActivity(i);
                                             finish();
                                         } else {
-                                            Intent i = new Intent(MainActivity.this, UserActivity.class);
+                                            Intent i = new Intent(MainActivity.this, User_Activity.class);
                                             startActivity(i);
                                             finish();
                                         }
                                     } else {
-                                        Intent i = new Intent(MainActivity.this, UserActivity.class);
+                                        Intent i = new Intent(MainActivity.this, User_Activity.class);
                                         startActivity(i);
                                         finish();
                                     }

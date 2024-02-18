@@ -25,12 +25,19 @@
             android:textSize="30sp"
 
         />
+        <ImageView
+            android:id="@+id/editUsername"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="-119dp"
+            android:layout_marginLeft="-80dp"
+            android:src="@drawable/profile_edit"/>
 
         <TextView
             android:id="@+id/userName"
             android:layout_width="300dp"
             android:layout_height="100dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="-40dp"
             android:textStyle="bold"
 
             android:text="Username"
@@ -79,15 +86,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="55dp"
-    android:text="Results"
+    android:padding="10dp"
+    android:text="RESULTS"
     android:textStyle="bold"
-    android:textSize="22dp"
+    android:textSize="20dp"
     android:textAlignment="center"/>
         <GridLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:columnCount="2"
+
             android:background="@xml/block2"
             android:paddingTop="10dp"
             android:paddingLeft="10dp"
