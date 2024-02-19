@@ -10,41 +10,59 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
         <TextView
             android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="25dp"
-            android:text="Trace N' Learn"
-
+            android:text="TRACE 'N LEARN"
             android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="30sp"
+            android:textStyle="bold"
+            android:typeface="normal"
 
             />
-<ImageView
-    android:id="@+id/profile"
-    android:layout_width="250dp"
-    android:layout_height="200dp"
-    android:layout_marginTop="-119dp"
-    android:layout_marginLeft="-80dp"
-    android:src="@drawable/profile"/>
+
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="-80dp"
+            android:layout_marginTop="-119dp"
+            android:src="@drawable/profile" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45sp"
+            android:layout_marginTop="-40sp"
+            android:layout_marginBottom="20sp"
+            android:text="USER DASHBOARD"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/userName"
-            android:layout_width="300dp"
+            android:layout_width="330dp"
             android:layout_height="100dp"
-            android:layout_marginTop="-40dp"
-            android:textStyle="bold"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="-10dp"
 
-            android:text="Username"
-            android:paddingTop="10dp"
-            android:paddingLeft="40dp"
-            android:layout_marginLeft="45dp"
             android:background="@xml/block1"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:text="Username"
             android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="25sp"
+            android:textStyle="bold"
 
 
             />
@@ -52,21 +70,19 @@
         <ImageView
             android:layout_width="74dp"
             android:layout_height="94dp"
-
-            android:layout_marginLeft="70dp"
+            android:layout_marginLeft="60dp"
             android:layout_marginTop="-97dp"
             android:src="@drawable/cat"
 
             />
 
 
-
         <ImageView
             android:layout_width="50dp"
             android:layout_height="70dp"
-            android:src="@drawable/flower_yes"
+            android:layout_marginLeft="295dp"
             android:layout_marginTop="-80dp"
-            android:layout_marginLeft="285dp"
+            android:src="@drawable/flower_yes"
 
             />
 
@@ -74,74 +90,69 @@
             android:id="@+id/flower"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-40dp"
             android:layout_marginLeft="155dp"
+            android:layout_marginTop="-40dp"
             android:text="26/26"
+            android:textColor="@color/black"
             android:textSize="20dp"
 
             />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="55dp"
-            android:text="SELECT MODE"
-            android:textStyle="bold"
+            android:layout_marginTop="100dp"
+            android:text="SELECT A MODE TO PLAY!"
+            android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="20dp"
-            android:textAlignment="center"/>
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/freeplay"
-            android:layout_width="300dp"
+            android:layout_width="330dp"
             android:layout_height="100dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginTop="20dp"
-            android:textStyle="bold"
 
-            android:text="FREEPLAY"
-            android:paddingTop="10dp"
-            android:paddingLeft="-150dp"
-            android:layout_marginLeft="45dp"
             android:background="@xml/block3"
+            android:paddingLeft="-110dp"
+            android:paddingTop="7dp"
+            android:text="FREEPLAY MODE"
             android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="25sp"
+            android:textStyle="bold"
 
 
             />
 
 
-        <ImageView
-            android:layout_width="330dp"
-            android:layout_height="93dp"
-
-            android:src="@drawable/grass3"
-            android:layout_marginTop="-95dp"
-            android:layout_marginLeft="31dp"/>
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_marginTop="-124dp"
-            android:layout_marginLeft="150dp"
-            android:src="@drawable/lizard"/>
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="-125dp"
+            android:src="@drawable/lizard" />
+
         <TextView
             android:id="@+id/chosen"
-            android:layout_width="300dp"
+            android:layout_width="330dp"
             android:layout_height="100dp"
-            android:layout_marginTop="-20dp"
-            android:textStyle="bold"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="-25dp"
 
-            android:text="OPEN"
-            android:paddingTop="10dp"
-            android:paddingLeft="-200dp"
-            android:layout_marginLeft="45dp"
             android:background="@xml/block2"
+            android:paddingLeft="145dp"
+            android:paddingTop="60dp"
+            android:text="GUIDED MODE"
             android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="25sp"
+            android:textStyle="bold"
 
 
             />
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="170dp"
-            android:layout_marginTop="-140dp"
-            android:layout_marginLeft="150dp"
-            android:src="@drawable/snake"/>
+
     </LinearLayout>
 </ScrollView>
