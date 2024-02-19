@@ -18,20 +18,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
-            android:layout_marginTop="25dp"
-            android:text="Trace N' Learn"
-
+            android:layout_marginTop="35dp"
+            android:text="TRACE 'N LEARN"
             android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="30sp"
+            android:textStyle="bold"
 
-        />
+            />
+
         <ImageView
             android:id="@+id/editUsername"
             android:layout_width="250dp"
             android:layout_height="200dp"
-            android:layout_marginTop="-119dp"
             android:layout_marginLeft="-80dp"
-            android:src="@drawable/profile_edit"/>
+            android:layout_marginTop="-115dp"
+            android:src="@drawable/profile_edit" />
 
         <TextView
             android:id="@+id/userName"
@@ -39,8 +41,8 @@
             android:layout_height="100dp"
             android:layout_marginTop="-40dp"
             android:textStyle="bold"
-
             android:text="Username"
+            android:textColor="@color/black"
             android:paddingTop="10dp"
             android:paddingLeft="40dp"
             android:layout_marginLeft="45dp"
@@ -54,7 +56,6 @@
         <ImageView
             android:layout_width="74dp"
             android:layout_height="94dp"
-
             android:layout_marginLeft="70dp"
             android:layout_marginTop="-97dp"
             android:src="@drawable/cat"
@@ -80,6 +81,7 @@
                 android:layout_marginLeft="155dp"
                 android:text="26/26"
                 android:textSize="20dp"
+                android:textColor="@color/black"
 
             />
 <TextView
@@ -88,704 +90,717 @@
     android:layout_marginTop="55dp"
     android:padding="10dp"
     android:text="RESULTS"
+    android:textColor="@color/black"
     android:textStyle="bold"
     android:textSize="20dp"
     android:textAlignment="center"/>
+
         <GridLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:columnCount="2"
-
-            android:background="@xml/block2"
-            android:paddingTop="10dp"
-            android:paddingLeft="10dp"
-            android:paddingBottom="10dp"
-
-
-
-            android:layout_marginTop="0dp"
             android:layout_marginLeft="12dp"
 
-            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:background="@xml/block2"
+            android:columnCount="2"
             android:gravity="center_vertical"
-           >
 
-        <!-- Replace the content of each item with your TextViews -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/letterA"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <!-- Replace the content of each item with your TextViews -->
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="A"
-                android:textColor="#e04006"
-                android:textSize="25dp"
-                android:textStyle="bold"
+                android:orientation="horizontal">
 
-                />
+                <TextView
+                    android:id="@+id/letterA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A"
+                    android:textColor="#e04006"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
 
-            <TextView
-                android:id="@+id/resulta"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                    />
 
-            />
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/resulta"
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
 
-        <!-- Repeat the above LinearLayout for each pair of TextViews (letter and text) -->
+                    />
+            </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            <!-- Repeat the above LinearLayout for each pair of TextViews (letter and text) -->
 
-            <TextView
-                android:id="@+id/letterB"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="B"
-                android:textColor="#4169e1"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultb"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
-            />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/letterB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="B"
+                    android:textColor="#4169e1"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/letterC"
+                <TextView
+                    android:id="@+id/resultb"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="C"
-                android:textColor="#e0218a"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultc"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                <TextView
+                    android:id="@+id/letterC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="C"
+                    android:textColor="#e0218a"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/resultc"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
 
-            <TextView
-                android:id="@+id/letterD"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="D"
-                android:textColor="#a6d785"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultd"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                <TextView
+                    android:id="@+id/letterD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="D"
+                    android:textColor="#5FA82D"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/resultd"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
 
-            <TextView
-                android:id="@+id/letterE"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="E"
-                android:textColor="#ffa500"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resulte"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                <TextView
+                    android:id="@+id/letterE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="E"
+                    android:textColor="#ffa500"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/resulte"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
 
-            <TextView
-                android:id="@+id/letterF"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="F"
-                android:textColor="#42c0fb"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultf"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                <TextView
+                    android:id="@+id/letterF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="F"
+                    android:textColor="#42c0fb"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/resultf"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
 
-            <TextView
-                android:id="@+id/letterG"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="G"
-                android:textColor="#e04006"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultg"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                <TextView
+                    android:id="@+id/letterG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="G"
+                    android:textColor="#e04006"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/resultg"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
 
-            <TextView
-                android:id="@+id/letterH"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="H"
-                android:textColor="#4169e1"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resulth"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                <TextView
+                    android:id="@+id/letterH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="H"
+                    android:textColor="#4169e1"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/resulth"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
 
-            <TextView
-                android:id="@+id/letterI"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="I"
-                android:textColor="#e0218a"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resulti"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                <TextView
+                    android:id="@+id/letterI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I"
+                    android:textColor="#e0218a"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/resulti"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
 
-            <TextView
-                android:id="@+id/letterj"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="J"
-                android:textColor="#a6d785"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultj"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                <TextView
+                    android:id="@+id/letterj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="J"
+                    android:textColor="#5FA82D"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/resultj"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
 
-            <TextView
-                android:id="@+id/letterK"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="K"
-                android:textColor="#ffa500"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultk"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                <TextView
+                    android:id="@+id/letterK"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="K"
+                    android:textColor="#ffa500"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/resultk"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
 
-            <TextView
-                android:id="@+id/letterL"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="L"
-                android:textColor="#42c0fb"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultl"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                <TextView
+                    android:id="@+id/letterL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="L"
+                    android:textColor="#42c0fb"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/resultl"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
 
-            <TextView
-                android:id="@+id/letterM"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="M"
-                android:textColor="#e04006"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultm"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                <TextView
+                    android:id="@+id/letterM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="M"
+                    android:textColor="#e04006"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/resultm"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
 
-            <TextView
-                android:id="@+id/letterN"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="N"
-                android:textColor="#4169e1"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultn"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                <TextView
+                    android:id="@+id/letterN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="N"
+                    android:textColor="#4169e1"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/resultn"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
 
-            <TextView
-                android:id="@+id/letterO"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="O"
-                android:textColor="#e0218a"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resulto"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                <TextView
+                    android:id="@+id/letterO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="O"
+                    android:textColor="#e0218a"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/resulto"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
 
-            <TextView
-                android:id="@+id/letterP"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="P"
-                android:textColor="#a6d785"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultp"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/letterP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="P"
+                    android:textColor="#5FA82D"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/letterQ"
+                <TextView
+                    android:id="@+id/resultp"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Q"
-                android:textColor="#ffa500"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultq"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                <TextView
+                    android:id="@+id/letterQ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Q"
+                    android:textColor="#ffa500"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/resultq"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
 
-            <TextView
-                android:id="@+id/letterR"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="R"
-                android:textColor="#42c0fb"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultr"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/letterR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="R"
+                    android:textColor="#42c0fb"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/letterS"
+                <TextView
+                    android:id="@+id/resultr"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="S"
-                android:textColor="#e04006"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/results"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/letterS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="S"
+                    android:textColor="#e04006"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/letterT"
+                <TextView
+                    android:id="@+id/results"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="T"
-                android:textColor="#4169e1"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultt"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/letterT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="T"
+                    android:textColor="#4169e1"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/letterU"
+                <TextView
+                    android:id="@+id/resultt"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="U"
-                android:textColor="#e0218a"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultu"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/letterU"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="U"
+                    android:textColor="#e0218a"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/letterV"
+                <TextView
+                    android:id="@+id/resultu"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="V"
-                android:textColor="#a6d785"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultv"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/letterV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V"
+                    android:textColor="#5FA82D"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/letterW"
+                <TextView
+                    android:id="@+id/resultv"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="W"
-                android:textColor="#ffa500"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultw"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/letterW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="W"
+                    android:textColor="#ffa500"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/letterX"
+                <TextView
+                    android:id="@+id/resultw"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="X"
-                android:textColor="#42c0fb"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultx"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/letterX"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="X"
+                    android:textColor="#42c0fb"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/letterY"
+                <TextView
+                    android:id="@+id/resultx"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Y"
-                android:textColor="#e04006"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resulty"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/letterY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Y"
+                    android:textColor="#e04006"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/letterZ"
+                <TextView
+                    android:id="@+id/resulty"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Z"
-                android:textColor="#4169e1"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/resultz"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Incorrect"
-                android:textSize="15dp"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                />
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/letterZ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Z"
+                    android:textColor="#4169e1"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
-        <!-- Repeat the above LinearLayout for each pair of TextViews (letter and text) -->
+                <TextView
+                    android:id="@+id/resultz"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Incorrect"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+            </LinearLayout>
 
-    </GridLayout>
+            <!-- Repeat the above LinearLayout for each pair of TextViews (letter and text) -->
+
+        </GridLayout>
     </LinearLayout>
 </ScrollView>
 
