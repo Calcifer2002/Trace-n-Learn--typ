@@ -17,29 +17,39 @@
             android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginLeft="85dp"
+
+            android:layout_marginTop="25dp"
             android:text="TRACE 'N LEARN"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="30sp"
+            android:textSize="28sp"
             android:textStyle="bold"
+            android:typeface="normal"
 
             />
 
         <ImageView
-            android:id="@+id/editUsername"
-            android:layout_width="250dp"
+            android:id="@+id/profile"
+            android:layout_width="150dp"
             android:layout_height="200dp"
-            android:layout_marginLeft="-80dp"
-            android:layout_marginTop="-115dp"
-            android:src="@drawable/profile_edit" />
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="-120dp"
+            android:src="@drawable/profile" />
+
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="25dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="-148dp"
+            android:src="@drawable/homeicon" />
 
         <TextView
             android:id="@+id/userName"
             android:layout_width="300dp"
             android:layout_height="100dp"
-            android:layout_marginTop="-40dp"
+            android:layout_marginTop="20dp"
             android:textStyle="bold"
             android:text="Username"
             android:textColor="@color/black"
@@ -54,10 +64,17 @@
         />
 
         <ImageView
+            android:id="@+id/editUsername"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="310dp"
+            android:layout_marginTop="-120dp"
+            android:src="@drawable/pencil" />
+        <ImageView
             android:layout_width="74dp"
             android:layout_height="94dp"
             android:layout_marginLeft="70dp"
-            android:layout_marginTop="-97dp"
+            android:layout_marginTop="-27dp"
             android:src="@drawable/cat"
 
             />
@@ -98,7 +115,7 @@
         <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
+            android:layout_marginLeft="4.5dp"
 
             android:layout_marginTop="0dp"
             android:background="@xml/block2"

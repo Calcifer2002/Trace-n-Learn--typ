@@ -86,8 +86,8 @@ public class U_Activity extends AppCompatActivity {
 
                     String rate = accuracyInfo.substring(colonIndex + 1, percentIndex).trim();
                     float rated = Float.parseFloat(rate);
-                    databaseReference.child("users").child(uid).child("u-incorrect").setValue(rated);
-                    databaseReference.child("users").child(uid).child("u-flower").setValue(0);
+                    databaseReference.child("users").child(uid).child("u-freeplay-incorrect").setValue(rated);
+                    databaseReference.child("users").child(uid).child("u-freeplay-flower").setValue(0);
                     databaseReference.child("users").child(uid).child("u-freeplay").setValue("0");
 
                 } else if (freePlay && !accuracyInfo.toLowerCase().contains("no")) {
@@ -96,8 +96,8 @@ public class U_Activity extends AppCompatActivity {
 
                     String rate = accuracyInfo.substring(colonIndex + 1, percentIndex).trim();
                     float rated = Float.parseFloat(rate);
-                    databaseReference.child("users").child(uid).child("u").setValue(rated);
-                    databaseReference.child("users").child(uid).child("u-flower").setValue(1);
+                    databaseReference.child("users").child(uid).child("u-freeplay-correct").setValue(rated);
+                    databaseReference.child("users").child(uid).child("u-freeplay-flower").setValue(1);
                     databaseReference.child("users").child(uid).child("u-freeplay").setValue("1");
 
                 } else if (accuracyInfo.toLowerCase().contains("many")) { // if way too many strokes

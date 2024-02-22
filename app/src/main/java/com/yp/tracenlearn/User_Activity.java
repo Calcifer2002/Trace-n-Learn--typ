@@ -35,6 +35,16 @@ public class User_Activity extends AppCompatActivity {
 
 
                     databaseReference.child("users").child(uid).child("username").setValue(userName.getText().toString());
+
+                    databaseReference.child("users").child(uid).child("a-freeplay").setValue("0");
+                    databaseReference.child("users").child(uid).child("b-freeplay").setValue("0");
+                    databaseReference.child("users").child(uid).child("c-freeplay").setValue("0");
+                    databaseReference.child("users").child(uid).child("d-freeplay").setValue("0");
+                    for (char c = 'e'; c <= 'z'; c++) {
+                        String key = c + "-freeplay";
+                        databaseReference.child("users").child(uid).child(key).setValue("0");
+                    }
+
                     Intent intent = new Intent(User_Activity.this, Base_Activity.class);
                     startActivity(intent);
                 }

@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "90077514325",
+    "firebase_url": "https://trace-n-learn-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "trace-n-learn",
+    "storage_bucket": "trace-n-learn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90077514325:android:a04e0979645a26453522dc",
+        "android_client_info": {
+          "package_name": "com.example.tracenlearn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMGNPfS7itVnUifzKyttH3RcYS74pvNUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90077514325:android:6db5c55b8b2da2803522dc",
+        "android_client_info": {
+          "package_name": "com.yp.tracenlearn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMGNPfS7itVnUifzKyttH3RcYS74pvNUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

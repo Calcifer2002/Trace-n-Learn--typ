@@ -84,8 +84,8 @@ public class G_Activity extends AppCompatActivity {
 
                     String rate = accuracyInfo.substring(colonIndex + 1, percentIndex).trim();
                     float rated = Float.parseFloat(rate);
-                    databaseReference.child("users").child(uid).child("g-incorrect").setValue(rated);
-                    databaseReference.child("users").child(uid).child("g-flower").setValue(0);
+                    databaseReference.child("users").child(uid).child("g-freeplay-incorrect").setValue(rated);
+                    databaseReference.child("users").child(uid).child("g-freeplay-flower").setValue(0);
                     databaseReference.child("users").child(uid).child("g-freeplay").setValue("0");
                 } else if (freePlay && !accuracyInfo.toLowerCase().contains("no")) {
                     int colonIndex = accuracyInfo.indexOf(":");
@@ -93,8 +93,8 @@ public class G_Activity extends AppCompatActivity {
 
                     String rate = accuracyInfo.substring(colonIndex + 1, percentIndex).trim();
                     float rated = Float.parseFloat(rate);
-                    databaseReference.child("users").child(uid).child("g").setValue(rated);
-                    databaseReference.child("users").child(uid).child("g-flower").setValue(1);
+                    databaseReference.child("users").child(uid).child("g-freeplay-correct").setValue(rated);
+                    databaseReference.child("users").child(uid).child("g-freeplay-flower").setValue(1);
                     databaseReference.child("users").child(uid).child("g-freeplay").setValue("1");
                 } else if (accuracyInfo.toLowerCase().contains("many")) { // if way too many strokes
                     dialogNoMany.show(); // so we show too many strokes alert

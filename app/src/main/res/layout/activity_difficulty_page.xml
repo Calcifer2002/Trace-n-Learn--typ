@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ui_background"
-    tools:context=".Difficulty_Page">
+    tools:context=".Difficult_Activity">
 
 
     <LinearLayout
@@ -14,17 +14,41 @@
         android:orientation="vertical"
         android:layout_height="wrap_content">
 
+
         <TextView
             android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginLeft="85dp"
 
-            android:text="Trace N' Learn"
+            android:layout_marginTop="25dp"
+            android:text="TRACE 'N LEARN"
             android:textAlignment="center"
-            android:textSize="30sp"
-          />
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:typeface="normal"
+
+            />
+
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="-120dp"
+            android:src="@drawable/profile" />
+
+
+
+
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="25dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="-148dp"
+            android:src="@drawable/homeicon" />
 
         <LinearLayout
             android:layout_width="match_parent"

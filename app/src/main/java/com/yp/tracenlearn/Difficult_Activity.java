@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 public class Difficult_Activity extends AppCompatActivity {
 
@@ -12,6 +13,26 @@ public class Difficult_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_difficulty_page);
+        ImageView viewProfile = findViewById(R.id.profile);
+
+
+        ImageView homeButton = findViewById(R.id.home);
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Difficult_Activity.this, Base_Activity.class);
+                startActivity(intent);
+                finish(); // If you want to finish the current activity when navigating to Base_Activity
+            }
+        });
+        viewProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Difficult_Activity.this, Profile_Activity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void onLetterClick(View view) {

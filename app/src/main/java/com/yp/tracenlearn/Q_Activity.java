@@ -85,8 +85,8 @@ public class Q_Activity extends AppCompatActivity {
 
                     String rate = accuracyInfo.substring(colonIndex + 1, percentIndex).trim();
                     float rated = Float.parseFloat(rate);
-                    databaseReference.child("users").child(uid).child("q-incorrect").setValue(rated);
-                    databaseReference.child("users").child(uid).child("q-flower").setValue(0);
+                    databaseReference.child("users").child(uid).child("q-freeplay-incorrect").setValue(rated);
+                    databaseReference.child("users").child(uid).child("q-freeplay-flower").setValue(0);
                     databaseReference.child("users").child(uid).child("q-freeplay").setValue("0");
 
                 } else if (freePlay && !accuracyInfo.toLowerCase().contains("no")) {
@@ -95,8 +95,8 @@ public class Q_Activity extends AppCompatActivity {
 
                     String rate = accuracyInfo.substring(colonIndex + 1, percentIndex).trim();
                     float rated = Float.parseFloat(rate);
-                    databaseReference.child("users").child(uid).child("q").setValue(rated);
-                    databaseReference.child("users").child(uid).child("q-flower").setValue(1);
+                    databaseReference.child("users").child(uid).child("q-freeplay-correct").setValue(rated);
+                    databaseReference.child("users").child(uid).child("q-freeplay-flower").setValue(1);
                     databaseReference.child("users").child(uid).child("q-freeplay").setValue("1");
 
                 } else if (accuracyInfo.toLowerCase().contains("many")) { // if way too many strokes

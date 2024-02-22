@@ -63,6 +63,17 @@ public class Base_Activity extends AppCompatActivity {
 
         ImageView viewProfile = findViewById(R.id.profile);
 
+
+        ImageView homeButton = findViewById(R.id.home);
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Base_Activity.this, Base_Activity.class);
+                startActivity(intent);
+                finish(); // If you want to finish the current activity when navigating to Base_Activity
+            }
+        });
         viewProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -145,7 +156,7 @@ public class Base_Activity extends AppCompatActivity {
         });
     }
 
-    private boolean baseActivityStarted = false;
+    private boolean resultActivity = false;
 
     private void startPeriodicLetterChange(final DatabaseReference usersRef,
                                            final Random random) {
@@ -168,8 +179,8 @@ public class Base_Activity extends AppCompatActivity {
     }
 
     private int counter = 0; // Initialize a counter outside of the method
-    private final int MAX_LETTERS = 12; // Set the maximum number of letters to generate
-
+    private final int MAX_LETTERS = 13; // Set the maximum number of letters to generate
+    private int skips = 0;
     private void getNextLetter(final DatabaseReference usersRef) {
         List<String> letters = Arrays.asList("L", "T", "I", "V", "H", "F", "E", "N", "C", "U", "M", "W", "X",
                 "J", "O", "P", "D", "A", "B", "S", "Z", "Y", "K", "Q", "R", "G");
@@ -182,48 +193,93 @@ public class Base_Activity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists() && counter < MAX_LETTERS) {
-                    String letter = letters.get(currentIndex);
-                    String freePlayKey = letter.toLowerCase() + "-freeplay";
+                    final String letter = letters.get(currentIndex);
+                    final String freePlayKey = letter.toLowerCase() + "-freeplay";
 
                     String accuracy = letter.toLowerCase();
                     Object accuracyObject = dataSnapshot.child(accuracy).getValue();
 
-                    Object freePlayValueObject = dataSnapshot.child(freePlayKey).getValue();
-
                     // Check if the value is not null
-                    if (freePlayValueObject != null ) {
+                    Object freePlayValueObject = dataSnapshot.child(freePlayKey).getValue();
+                    if (freePlayValueObject != null) {
                         // Convert the value to String
-                        String freePlayValue = String.valueOf(freePlayValueObject);
-                        Log.d("meow",freePlayValue);
+                        final String initialFreePlayValue = String.valueOf(freePlayValueObject);
+                        Log.d("meow", initialFreePlayValue);
+
+                        // Check if the letter has not been shown before
+                        if (!shownLetters.contains(letter)) {
+                            // Add the letter to the set of shown letters
+                            shownLetters.add(letter);
+                        }
 
                         // Start the letter activity with the current letter
                         startLetterActivity(letter);
 
-                        // Increment the currentIndex based on the value of freePlayValue
-                        if ("1".equals(freePlayValue) ) {
-                            currentIndex += 2;
-                        } else  {
-                            currentIndex++;
-                        }
+                        // Use a Handler to introduce a delay (e.g., 10 seconds) before retrieving freePlayValue
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                // Perform a separate query to get the updated value at freePlayKey
+                                userUidRef.child(freePlayKey).addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot updatedDataSnapshot) {
+                                        // Check if the updated value is not null
+                                        Object updatedFreePlayValueObject = updatedDataSnapshot.getValue();
+                                        if (updatedFreePlayValueObject != null) {
+                                            // Convert the updated value to String
+                                            String updatedFreePlayValue = String.valueOf(updatedFreePlayValueObject);
+                                            Log.d("meow", updatedFreePlayValue);
 
-                        // Increment the counter
-                        counter++;
+                                            // Now you can access the updatedFreePlayValue after the 10-second delay
+                                            // Do whatever you need with the updatedFreePlayValue here
+
+                                            // Increment the currentIndex based on the value of updatedFreePlayValue
+                                            if ("1".equals(updatedFreePlayValue)) {
+                                                currentIndex += 2;
+                                                skips += 2;
+                                            } else {
+                                                currentIndex++;
+                                                skips++;
+                                            }
+
+                                            // Increment the counter
+                                            counter++;
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                                        // Handle the error if needed
+                                    }
+                                });
+                            }
+                        }, 10000); // 10 seconds delay
                     }
-                } else if (counter >= MAX_LETTERS && !baseActivityStarted) {
+                } else if (counter >= MAX_LETTERS && !resultActivity) {
                     startBaseActivity();
-                    baseActivityStarted = true; // Set the flag to true
+                    resultActivity = true; // Set the flag to true
                 }
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                // Handle onCancelled event if needed
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle the error if needed
             }
         });
+
+
     }
 
     private void startBaseActivity() {
-        Intent intent = new Intent(this, Base_Activity.class);
+        Intent intent = new Intent(this, Freeplay_Result.class);
+
+        // Convert the set to ArrayList if needed
+        ArrayList<String> shownLettersList = new ArrayList<>(shownLetters);
+
+        // Pass the ArrayList as an extra
+        intent.putStringArrayListExtra("shownLetters", shownLettersList);
+        intent.putExtra("skips", skips);
+
         startActivity(intent);
         finish();
     }

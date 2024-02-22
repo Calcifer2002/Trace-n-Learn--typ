@@ -84,8 +84,8 @@ public class F_Activity extends AppCompatActivity {
 
                     String rate = accuracyInfo.substring(colonIndex + 1, percentIndex).trim();
                     float rated = Float.parseFloat(rate);
-                    databaseReference.child("users").child(uid).child("f-incorrect").setValue(rated);
-                    databaseReference.child("users").child(uid).child("f-flower").setValue(0);
+                    databaseReference.child("users").child(uid).child("f-freeplay-incorrect").setValue(rated);
+                    databaseReference.child("users").child(uid).child("f-freeplay-flower").setValue(0);
                     databaseReference.child("users").child(uid).child("f-freeplay").setValue("0");
                 }
                 else if (freePlay== true && !accuracyInfo.toLowerCase().contains("no")){
@@ -94,8 +94,8 @@ public class F_Activity extends AppCompatActivity {
 
                     String rate = accuracyInfo.substring(colonIndex + 1, percentIndex).trim();
                     float rated = Float.parseFloat(rate);
-                    databaseReference.child("users").child(uid).child("f").setValue(rated);
-                    databaseReference.child("users").child(uid).child("f-flower").setValue(1);
+                    databaseReference.child("users").child(uid).child("f-freeplay-correct").setValue(rated);
+                    databaseReference.child("users").child(uid).child("f-freeplay-flower").setValue(1);
                     databaseReference.child("users").child(uid).child("f-freeplay").setValue("1");
                 }
 
