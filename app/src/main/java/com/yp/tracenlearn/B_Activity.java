@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -22,28 +23,41 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class B_Activity extends AppCompatActivity {
-    Dialog dialogNo; //popup if not proper letter
-    Dialog dialogYes; //popup if proper letter
+    private Dialog dialogNo;
+    private Dialog dialogYes;
+    private Dialog dialogNoMany;
+    private Dialog dialogNoSlow;
+    private Boolean freePlay = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_b);
 
-        BCustomView customBCanvas = findViewById(R.id.customBCanvas); //drawing canvas
-        LinearLayout colorPanel = findViewById(R.id.colorPanel); //colour dash
-        FirebaseAuth auth = FirebaseAuth.getInstance(); //to get user uid so that i can add data under it
+        BCustomView customBCanvas = findViewById(R.id.customBCanvas); // drawing canvas
+        LinearLayout colorPanel = findViewById(R.id.colorPanel); // color dash
+        FirebaseAuth auth = FirebaseAuth.getInstance(); // get user uid to add data under it
         FirebaseUser currentUser = auth.getCurrentUser();
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
         String uid = currentUser.getUid();
+
+        freePlay = getIntent().getBooleanExtra("freePlay", false);
+
         dialogNo = new Dialog(B_Activity.this);
         dialogYes = new Dialog(B_Activity.this);
+        dialogNoMany = new Dialog(B_Activity.this);
+        dialogNoSlow = new Dialog(B_Activity.this);
         dialogYes.setContentView(R.layout.correct);
         dialogNo.setContentView(R.layout.incorrect);
+        dialogNoMany.setContentView(R.layout.incorrect_many);        // setting the dialog parameters
+        dialogNoSlow.setContentView(R.layout.incorrect_slow);
         dialogYes.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialogNo.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialogNoSlow.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialogYes.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialog_bg));
-        dialogNo.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialog_bg)); //just setting parameters
-
+        dialogNo.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialog_bg)); // just setting parameters
+        dialogNoMany.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialog_bg));
+        dialogNoSlow.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialog_bg));
 
         for (int i = 0; i < colorPanel.getChildCount(); i++) {
             View childLayout = colorPanel.getChildAt(i);
@@ -52,23 +66,113 @@ public class B_Activity extends AppCompatActivity {
                 for (int j = 0; j < ((LinearLayout) childLayout).getChildCount(); j++) {
                     View child = ((LinearLayout) childLayout).getChildAt(j);
                     if (child instanceof ImageView) {
-                        final int colorIndex = i * 3 + j;  //to send to change colour
+                        final int colorIndex = i * 3 + j;  // to send to change color
                         child.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                customBCanvas.setStrokeColor(getColorForIndex(colorIndex)); //change colour
+                                customBCanvas.setStrokeColor(getColorForIndex(colorIndex)); // change color
                             }
                         });
                     }
                 }
             }
         }
-        customBCanvas.setOnNoStrokesDetectedCallback(new BCustomView.NoStrokesCallback() {
 
+        customBCanvas.setOnNoStrokesDetectedCallback(new BCustomView.NoStrokesCallback() {
             @Override
             public void onNoStrokesDetected(String accuracyInfo) {
-                if (accuracyInfo.toLowerCase().contains("no")) { //my accuracy info if incorrect letter has the word no in it
-                    dialogNo.show(); //so we show incorrect letter alert
+                if (freePlay && accuracyInfo.toLowerCase().contains("no")) {
+                    int colonIndex = accuracyInfo.indexOf(":");
+                    int percentIndex = accuracyInfo.indexOf("%");
+
+                    String rate = accuracyInfo.substring(colonIndex + 1, percentIndex).trim();
+                    float rated = Float.parseFloat(rate);
+                    databaseReference.child("users").child(uid).child("b-incorrect").setValue(rated);
+                    databaseReference.child("users").child(uid).child("b-flower").setValue(0);
+                    databaseReference.child("users").child(uid).child("b-freeplay").setValue("0");
+                } else if (freePlay && !accuracyInfo.toLowerCase().contains("no")) {
+                    int colonIndex = accuracyInfo.indexOf(":");
+                    int percentIndex = accuracyInfo.indexOf("%");
+
+                    String rate = accuracyInfo.substring(colonIndex + 1, percentIndex).trim();
+                    float rated = Float.parseFloat(rate);
+                    databaseReference.child("users").child(uid).child("b").setValue(rated);
+                    databaseReference.child("users").child(uid).child("b-flower").setValue(1);
+                    databaseReference.child("users").child(uid).child("b-freeplay").setValue("1");
+                } else if (accuracyInfo.toLowerCase().contains("many")) { // if way too many strokes
+                    dialogNoMany.show(); // so we show too many strokes alert
+                    MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.toomany);
+                    mediaPlayer.start();
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            dialogNoMany.dismiss();
+                            // we dismiss after some time
+                            int colonIndex = accuracyInfo.indexOf(":");
+                            int percentIndex = accuracyInfo.indexOf("%");
+
+                            String rate = accuracyInfo.substring(colonIndex + 1, percentIndex).trim();
+
+                            float rated = Float.parseFloat(rate);
+                            databaseReference.child("users").child(uid).child("b-incorrect").setValue(rated);
+                            databaseReference.child("users").child(uid).child("b-flower").setValue(0);
+                            Intent intent = new Intent(B_Activity.this, B_Activity.class);
+                            startActivity(intent);
+                            finish(); // reload activity for the kid to retry
+                        }
+                    }, 6000);
+
+                } else if (accuracyInfo.toLowerCase().contains("slow")) { // my accuracy info if the letter is drawn too quickly
+                    dialogNoSlow.show(); // so we show an alert to slow down
+                    MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.slowdown);
+                    mediaPlayer.start();
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            dialogNoSlow.dismiss();
+                            // we dismiss after some time
+                            int colonIndex = accuracyInfo.indexOf(":");
+                            int percentIndex = accuracyInfo.indexOf("%");
+
+                            String rate = accuracyInfo.substring(colonIndex + 1, percentIndex).trim();
+
+                            float rated = Float.parseFloat(rate);
+                            databaseReference.child("users").child(uid).child("b-incorrect").setValue(rated);
+                            databaseReference.child("users").child(uid).child("b-flower").setValue(0);
+                            Intent intent = new Intent(B_Activity.this, B_Activity.class);
+                            startActivity(intent);
+                            finish(); // reload activity for the kid to retry
+                        }
+                    }, 6000);
+                } else if (accuracyInfo.toLowerCase().contains("no")) {
+                    dialogNo.show(); // so we show an incorrect letter alert
+                    MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.tryagain);
+                    mediaPlayer.start();
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            dialogNo.dismiss();
+                            // we dismiss after some time
+                            int colonIndex = accuracyInfo.indexOf(":");
+                            int percentIndex = accuracyInfo.indexOf("%");
+
+                            String rate = accuracyInfo.substring(colonIndex + 1, percentIndex).trim();
+
+                            float rated = Float.parseFloat(rate);
+                            databaseReference.child("users").child(uid).child("b-incorrect").setValue(rated);
+                            databaseReference.child("users").child(uid).child("b-flower").setValue(0);
+                            Intent intent = new Intent(B_Activity.this, B_Activity.class);
+                            startActivity(intent);
+                            finish(); // reload activity for the kid to retry
+                        }
+                    }, 6000);
+
+                } else if (accuracyInfo.toLowerCase().contains("no")) {  dialogNo.show(); //so we show incorrect letter alert
+                    MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.tryagain);
+                    mediaPlayer.start();
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -90,9 +194,12 @@ public class B_Activity extends AppCompatActivity {
                             finish(); //reload activity for kid to retry
                         }
                     }, 6000);
-                } else {
-                    dialogYes.show();
 
+                } else {
+                    dialogYes.show(); //if everything is okay
+
+                    MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.goodjob);
+                    mediaPlayer.start();
 
                     int colonIndex = accuracyInfo.indexOf(":");
                     int percentIndex = accuracyInfo.indexOf("%");
@@ -112,7 +219,7 @@ public class B_Activity extends AppCompatActivity {
                         public void run() {
                             dialogYes.dismiss(); // Corrected this line
 
-                            Intent intent = new Intent(B_Activity.this, B_Activity.class);
+                            Intent intent = new Intent(B_Activity.this, Difficult_Activity.class);
                             startActivity(intent);
                             finish();
                         }

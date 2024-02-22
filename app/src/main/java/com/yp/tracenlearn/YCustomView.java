@@ -216,9 +216,16 @@ public class YCustomView extends View {
         //accuracy percentage
         double accuracy = (double) matchingCount / totalStrokeCoordinates* 100 ;
 
+        if (strokeCount <= 4 && totalStrokeCoordinates > 120 && accuracy > 90) {
+            //kids should use 4 max strokes
 
-        if (strokeCount <= 3 && totalStrokeCoordinates > 60 && accuracy > 90) {
-            return "Accuracy Score: " + accuracy + "%"; //letter is proper but also accuracy rate
+            return "Accuracy Score: " + accuracy + "%";
+            //letter is proper but also accuracy rate
+        }
+        else if (strokeCount > 4) {
+            return "NO: " + accuracy + "%" + "many";}
+        else if (totalStrokeCoordinates < 120 && accuracy > 90){
+            return "NO: " + accuracy + "%" + "slow!!";
         }
         else{
             return "NO: " + accuracy + "%"; //if letter is not proper

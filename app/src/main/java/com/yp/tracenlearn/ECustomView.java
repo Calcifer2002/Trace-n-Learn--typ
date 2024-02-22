@@ -215,14 +215,21 @@ public class ECustomView extends View {
 
         //accuracy percentage
         double accuracy = (double) matchingCount / totalStrokeCoordinates* 100 ;
-
-
         if (strokeCount <= 5 && totalStrokeCoordinates > 150 && accuracy > 90) {
-            return "Accuracy Score: " + accuracy + "%"; //letter is proper but also accuracy rate
+            //kids should use five max strokes
+
+            return "Accuracy Score: " + accuracy + "%";
+            //letter is proper but also accuracy rate
+        }
+        else if (strokeCount > 5) {
+            return "NO: " + accuracy + "%" + "many";}
+        else if (totalStrokeCoordinates < 150 && accuracy > 90){
+            return "NO: " + accuracy + "%" + "slow!!";
         }
         else{
             return "NO: " + accuracy + "%"; //if letter is not proper
         }
+
     }
 
 }

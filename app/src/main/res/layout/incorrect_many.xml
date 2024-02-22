@@ -17,38 +17,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="50px"
-            android:text="   Good Job! \n You did so well! \n Here's a flower"
+            android:text="Way too many swipes!"
             android:textColor="@color/black"
             android:textSize="47px"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.731"
+            app:layout_constraintHorizontal_bias="0.921"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.312" />
+            app:layout_constraintVertical_bias="0.418" />
 
         <ImageView
-            android:id="@+id/imageView23"
             android:layout_width="211dp"
             android:layout_height="166dp"
-            android:background="@drawable/yes_ele"
+            android:background="@drawable/no_ele"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-        <!-- https://www.freepik.com/free-vector/cute-elephant-drinking-boba-milk-tea-cartoon-vector-icon-illustration-animal-drink-icon-isolated_31641131.htm?epik=dj0yJnU9TEYwM3dweVgxek9rVUZ3N1RJalhjZnVRWHJUTlZlVW4mcD0wJm49akFhWlVCZzBRSUhCMkVHSUJ3MUFfQSZ0PUFBQUFBR1c5bXc4#query=kawaii%20elephant&position=1&from_view=keyword&track=ais -->
-        <ImageView
-            android:layout_width="90dp"
-            android:layout_height="88dp"
-            android:background="@drawable/flower_yes"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintVertical_bias="0.219" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

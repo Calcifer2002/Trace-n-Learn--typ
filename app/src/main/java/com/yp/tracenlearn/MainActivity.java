@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
                                         if (dataSnapshot.child("username").exists()) {
 
-                                            Intent i = new Intent(MainActivity.this, Profile_Activity.class);
+                                            Intent i = new Intent(MainActivity.this, Base_Activity.class);
                                             startActivity(i);
                                             finish();
                                         } else {

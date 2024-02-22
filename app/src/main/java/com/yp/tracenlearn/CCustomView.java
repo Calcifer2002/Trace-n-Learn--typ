@@ -244,17 +244,24 @@ public class CCustomView extends View {
         //accuracy percentage
         double accuracy = (double) matchingCount / totalStrokeCoordinates* 100 ;
 
-
         if (strokeCount <= 2 && totalStrokeCoordinates > 90 && accuracy > 90) {
-            //kids shud use two strokes
+            //kids should use two strokes
 
             return "Accuracy Score: " + accuracy + "%";
             //letter is proper but also accuracy rate
+        }
+        else if (strokeCount > 2) {
+            return "NO: " + accuracy + "%" + "many";}
+        else if (totalStrokeCoordinates < 90 && accuracy > 90){
+            return "NO: " + accuracy + "%" + "slow!!";
         }
         else{
             return "NO: " + accuracy + "%"; //if letter is not proper
         }
     }
+
+
+
 
 }
 

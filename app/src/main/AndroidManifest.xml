@@ -8,9 +8,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
+        android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -24,7 +24,7 @@
             android:name=".Profile_Activity"
             android:exported="false" />
         <activity
-            android:name=".Difficulty_Page"
+            android:name=".Difficult_Activity"
             android:exported="false" />
         <activity
             android:name=".Z_Activity"
@@ -44,9 +44,7 @@
         <activity
             android:name=".U_Activity"
             android:exported="false" />
-        <activity
-            android:name=".U_Acitivity"
-            android:exported="false" />
+
         <activity
             android:name=".S_Activity"
             android:exported="false" />
