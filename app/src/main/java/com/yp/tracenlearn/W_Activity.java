@@ -96,7 +96,7 @@ public class W_Activity extends AppCompatActivity {
 
                     String rate = accuracyInfo.substring(colonIndex + 1, percentIndex).trim();
                     float rated = Float.parseFloat(rate);
-                    databaseReference.child("users").child(uid).child("w-freeplay").setValue(rated);
+                    databaseReference.child("users").child(uid).child("w-freeplay-correct").setValue(rated);
                     databaseReference.child("users").child(uid).child("w-freeplay-flower").setValue(1);
                     databaseReference.child("users").child(uid).child("w-freeplay").setValue("1");
                 } else if (accuracyInfo.toLowerCase().contains("many")) { // if way too many strokes

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -100,24 +101,33 @@ public class Base_Activity extends AppCompatActivity {
         userUidRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                int counter = 0;
                 int flowerSum = 0;
+                for (char letter = 'a'; letter <= 'z'; letter++) {
+                    counter ++;
+                    String key = letter + "-flower";
 
-                for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
-                    String childKey = childSnapshot.getKey();
-                    Object childValue = childSnapshot.getValue();
 
-                    if (childKey != null && childKey.contains("flower") && childValue instanceof Long) {
-                        flowerSum += (Long) childValue;
+
+
+
+                    // Check if the key exists in the dataSnapshot
+                    if (dataSnapshot.child(key).exists()) {
+                        int letterFlower = dataSnapshot.child(key).getValue(Integer.class);
+
+
+                        flowerSum += letterFlower;
                     }
-                }
-
                 String formattedText = String.format("Flowers: %d/26", flowerSum);
+                // At this point, flowerSum contains the total sum of flowers for the shown letters
                 flowerNumber.setText(formattedText);
-            }
+
+            }}
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle errors
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Handle errors during data retrieval
+                Log.e("meow", "Database error: " + error.getMessage());
             }
         });
 
@@ -140,6 +150,8 @@ public class Base_Activity extends AppCompatActivity {
                 dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialog_bg));
                 dialog.show();
+                MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.freeplay_intro);
+                mediaPlayer.start();
 
                 // timer   10 seconds
                 new Handler().postDelayed(new Runnable() {

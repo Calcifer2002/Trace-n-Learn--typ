@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="50px"
-            android:text="Way too many swipes!"
+            android:text="Way too many strokes!"
             android:textColor="@color/black"
             android:textSize="47px"
             android:textStyle="bold"

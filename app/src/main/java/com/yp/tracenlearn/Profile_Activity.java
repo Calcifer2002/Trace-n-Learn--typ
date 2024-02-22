@@ -69,106 +69,78 @@ public class Profile_Activity extends AppCompatActivity {
         //get db
         DatabaseReference userUidRef = database.getReference("users").child(user.getUid());
 
-        for (char letter = 'a'; letter <= 'z'; letter++) {
-            final String letterKey = letter + "-flower";
-            final String correctKey = String.valueOf(letter);
-            final String idLetter = "result" + letter;
-            int resId = getResources().getIdentifier(idLetter, "id", getPackageName());
-            TextView resultTextView = findViewById(resId);
-            userUidRef.child(letterKey).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    Integer counter = dataSnapshot.getValue(Integer.class);
-                    Log.d("%d", String.valueOf(counter));
-
-                    if (counter != null) {
-                        if (counter == 0) {
-                            // Letter is 0, set the text to "Incorrect"
-                            resultTextView.setText("Incorrect");
-                        } else if (counter == 1) {
-                            // Letter is 1, get the value of "correct" and set the text accordingly
-                            userUidRef.child(correctKey).addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot incorrectSnapshot) {
-                                    Double correctValue = incorrectSnapshot.getValue(Double.class);
-
-                                    if (correctValue != null) {
-                                        int intValue = correctValue.intValue();
-
-                                        int normalizedValue;
-
-                                      //normalising
-                                        if (intValue >= 90 && intValue <= 91) {
-                                            normalizedValue = 6;
-                                        } else if (intValue >= 92 && intValue <= 93) {
-                                            normalizedValue = 7;
-                                        } else if (intValue >= 94 && intValue <= 95) {
-                                            normalizedValue = 8;
-                                        } else if (intValue >= 96 && intValue <= 98) {
-                                            normalizedValue = 9;
-                                        } else if (intValue >= 99) {
-                                            normalizedValue = 10;
-                                        } else {
-
-                                            normalizedValue = 0;
-                                        }
-
-                                        resultTextView.setText("Correct - " + normalizedValue + "/10");
-                                        Log.d("meow", "Correct - " + normalizedValue + "/10");
-                                    }
-
-                                }
-
-                                // Handle onCancelled method if needed
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) {
-                                    Log.e("Error", "Firebase database error: " + databaseError.getMessage());
-                                }
-                            });
-                        }
-                    }
-                }
-
-                // Handle onCancelled method if needed
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Log.e("Error", "Firebase database error: " + databaseError.getMessage());
-                }
-            });
-        }
-
         userUidRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        int flowerSum = 0;
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                int counter = 0;
+                int flowerSum = 0;
+                for (char letter = 'a'; letter <= 'z'; letter++) {
+                    counter ++;
+                    String key = letter + "-flower";
+                    String key2 = String.valueOf(letter);
 
-                        for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+
+                    final String idResult = "result" + letter;
+                    int resId = getResources().getIdentifier(idResult, "id", getPackageName());
 
 
-                            // Get the value of the child
-                            // Get the value of the child
-                            String childKey = childSnapshot.getKey();
-                            Object childValue = childSnapshot.getValue();
+                    TextView resView = findViewById(resId);
 
-                            if (childKey != null && childKey.contains("flower") && childValue instanceof Long) {
-                                Log.d("meoq", childKey);
-                                // Get the value of the child
 
-                                flowerSum += (Long) childValue;
 
+
+                    // Check if the key exists in the dataSnapshot
+                    if (dataSnapshot.child(key).exists()) {
+                        int letterFlower = dataSnapshot.child(key).getValue(Integer.class);
+                        double correctness = dataSnapshot.child(key2).getValue(Double.class);
+
+
+                        flowerSum += letterFlower;
+                        if (letterFlower == 1){
+
+
+                            int intValue = (int) Math.round(correctness);
+
+                            int normalizedValue;
+
+                            //normalising
+                            if (intValue >= 90 && intValue <= 91) {
+                                normalizedValue = 6;
+                            } else if (intValue >= 92 && intValue <= 93) {
+                                normalizedValue = 7;
+                            } else if (intValue >= 94 && intValue <= 95) {
+                                normalizedValue = 8;
+                            } else if (intValue >= 96 && intValue <= 98) {
+                                normalizedValue = 9;
+                            } else if (intValue >= 99) {
+                                normalizedValue = 10;
+                            } else {
+
+                                normalizedValue = 0;
                             }
+
+                            resView.setText("Correct - " + normalizedValue + "/10");
                         }
-
-                        String formattedText = String.format("Flowers: %d/26", flowerSum);
-                        flowerNumber.setText(formattedText);
-                        Log.d("FlowerSumActivity", "Sum of children with 'flower': " + flowerSum);
+                        else if (letterFlower ==0){
+                            resView.setText("Incorrect");
+                        }
+                    } else {
+                        // Handle the case where the key doesn't exist
+                        Log.e("meow", "Key not found in database: " + key);
                     }
+                }
+                String formattedText = String.format("Flowers: %d/26", flowerSum);
+                // At this point, flowerSum contains the total sum of flowers for the shown letters
+                flowerNumber.setText(formattedText);
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        // Handle errors
-                        Log.e("FlowerSumActivity", "Error reading data: " + databaseError.getMessage());
-                    }
-                });
             }
-        }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Handle errors during data retrieval
+                Log.e("meow", "Database error: " + error.getMessage());
+            }
+        });
+    }
+}
+

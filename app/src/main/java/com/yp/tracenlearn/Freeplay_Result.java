@@ -3,6 +3,7 @@ package com.yp.tracenlearn;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -29,6 +30,7 @@ public class Freeplay_Result extends AppCompatActivity {
         Log.d("meow", String.valueOf(receivedSkips));
         TextView flowers = findViewById(R.id.flower);
         TextView title1 = findViewById(R.id.title1);
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
@@ -52,16 +54,58 @@ public class Freeplay_Result extends AppCompatActivity {
         userUidRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                int counter = 0;
                 int flowerSum = 0;
-
                 for (String letter : shownLetters) {
+                    counter ++;
+                    String key = letter.toLowerCase() + "-freeplay-flower";
+                    String key2 = letter.toLowerCase() + "-freeplay-correct";
+                    final String count = String.valueOf(counter);
+                    final String idLetter = "letter" + count;
+                    final String idResult = "result" + count;
+                    int resId = getResources().getIdentifier(idResult, "id", getPackageName());
+                    int letId = getResources().getIdentifier(idLetter, "id", getPackageName());
+                    TextView letterView = findViewById(letId);
+                    TextView resView = findViewById(resId);
+                    letterView.setText(letter);
 
-                    String key = letter + "-freeplay-flower";
+
 
                     // Check if the key exists in the dataSnapshot
                     if (dataSnapshot.child(key).exists()) {
                         int letterFlower = dataSnapshot.child(key).getValue(Integer.class);
+                        double correctness = dataSnapshot.child(key2).getValue(Double.class);
+
+                        Log.d("meow","flower "+ flowerSum+ letter+ letterFlower);
                         flowerSum += letterFlower;
+                        if (letterFlower == 1){
+
+
+                            int intValue = (int) Math.round(correctness);
+
+                            int normalizedValue;
+
+                                //normalising
+                                if (intValue >= 90 && intValue <= 91) {
+                                    normalizedValue = 6;
+                                } else if (intValue >= 92 && intValue <= 93) {
+                                    normalizedValue = 7;
+                                } else if (intValue >= 94 && intValue <= 95) {
+                                    normalizedValue = 8;
+                                } else if (intValue >= 96 && intValue <= 98) {
+                                    normalizedValue = 9;
+                                } else if (intValue >= 99) {
+                                    normalizedValue = 10;
+                                } else {
+
+                                    normalizedValue = 0;
+                                }
+
+                                resView.setText("Correct - " + normalizedValue + "/10");
+                        }
+                        else if (letterFlower ==0){
+                            resView.setText("Incorrect");
+                        }
                     } else {
                         // Handle the case where the key doesn't exist
                         Log.e("meow", "Key not found in database: " + key);
@@ -79,5 +123,7 @@ public class Freeplay_Result extends AppCompatActivity {
                 Log.e("meow", "Database error: " + error.getMessage());
             }
         });
+        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.goodjob);
+        mediaPlayer.start();
     }
 }

@@ -36,14 +36,27 @@ public class User_Activity extends AppCompatActivity {
 
                     databaseReference.child("users").child(uid).child("username").setValue(userName.getText().toString());
 
-                    databaseReference.child("users").child(uid).child("a-freeplay").setValue("0");
-                    databaseReference.child("users").child(uid).child("b-freeplay").setValue("0");
-                    databaseReference.child("users").child(uid).child("c-freeplay").setValue("0");
-                    databaseReference.child("users").child(uid).child("d-freeplay").setValue("0");
-                    for (char c = 'e'; c <= 'z'; c++) {
-                        String key = c + "-freeplay";
-                        databaseReference.child("users").child(uid).child(key).setValue("0");
+
+                    for (char c = 'a'; c <= 'z'; c++) {
+                        String letter = String.valueOf(c);
+
+                        // Set values for "letter-freeplay"
+                        String keyFreeplay = letter + "-freeplay";
+                        databaseReference.child("users").child(uid).child(keyFreeplay).setValue("0");
+
+                        // Set values for "letter-freeplay-correct"
+                        String keyCorrect = letter + "-freeplay-correct";
+                        databaseReference.child("users").child(uid).child(keyCorrect).setValue("0");
+
+                        // Set values for "letter-freeplay-flower"
+                        String keyFlower = letter + "-freeplay-flower";
+                        databaseReference.child("users").child(uid).child(keyFlower).setValue("0");
+
+                        // Set values for "letter-freeplay-incorrect"
+                        String keyIncorrect = letter + "-freeplay-incorrect";
+                        databaseReference.child("users").child(uid).child(keyIncorrect).setValue("0");
                     }
+
 
                     Intent intent = new Intent(User_Activity.this, Base_Activity.class);
                     startActivity(intent);
