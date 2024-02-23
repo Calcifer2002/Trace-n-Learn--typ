@@ -61,7 +61,8 @@ Click on clone
 Import the project into Android Studio. After the cloning has been finished, open the project. Turn on developer settings in your phone which can differ from phone to phone depending on the make and model of them. Once developer settings have been turned on, ensure that the USB Debugging button and Install via USB button is turned on.
 
 ![Debugging](images/DEBUGGING.png)
-**Figure 4. - *Debugging**
+
+**Figure 4. - Debugging**
 
 Connect your phone by USB to your laptop. Choose your phone from the list of available devices.
 
