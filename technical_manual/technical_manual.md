@@ -153,7 +153,7 @@ The storage keys for each user keeps going till z and we have a “username” k
 **Android Studio -** The application was developed using Android Studio which is the official integrated development environment (IDE) for Android app development. It provided tools for designing U.I. writing code, and testing the application.
 <br><br>
 ## 2.3 Interaction Between Components
-**Step 1 - User Installation**
+**Step 1 - User Installation** 
 Please note that out code is not in the code repository, rather it is in a specific structure where there is the app folder with the main code and crucial peripherals outside it. The below instructions will work for the app, but there is no code folder. The code is in the app folder and the gradle file/folders combined as the app does not work when put inside code directory. So we had to put it outside the folder in the app and gradle file/folders.
 
 Find the GitLab Repository URL. This can usually be found after clicking on the clone button of gitlabs project page. Copy the link that is below “clone with HTTPS” under clone button.
@@ -165,7 +165,7 @@ Find the GitLab Repository URL. This can usually be found after clicking on the 
 It should look something like this: https://gitlab.computing.dcu.ie/laukaid2/2024-ca326-dlaukaityte-trace-n-learn.git
 <br><br>
  
-**Step 2 **- Clone the repository in android studio. In order to import the project, Open android studio-> File->New->Project from version control.
+**Step 2**- Clone the repository in android studio. In order to import the project, Open android studio-> File->New->Project from version control.
 
 ![Clone Repo 1](images/CLONE_REPO_1.png)
 
