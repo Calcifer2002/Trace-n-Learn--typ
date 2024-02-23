@@ -127,17 +127,28 @@ The System architecture consists of Firebase and the App itself. The data storag
 ## 2.1 Product / System Functions
 The system architecture is scalable and modular to support both present and future functionality. Key architectural components include:
 
-**User Interface (UI) -** The UI component deals with the presentation layer providing an interactive and intuitive interface for users to trace alphabets. It includes design principles that prioritize simplicity and user engagement while not overstimulating and maintaining neutrality.
+**Frontend** - The frontend authenticates the user and helps in visualizing the data stored in the database in a very attractive and interesting way that the user can easily understand.
+The profile page is an example of this:
 
-**Tracing Engine -** This component is responsible for accurately detecting and understanding user input during alphabet tracing. It interacts with the UI to capture touch gestures or stylus movements ensuring a responsive and precise tracing experience.
+![FRONT_END](technical_manual/images/FRONT_END.png)
 
-**Learning Score Calculation-** The learning score calculation analyzes the traced alphabet patterns and outputs a learning score. It uses an algorithm to evaluate the accuracy of tracing movements which contributes to the user's overall progress.
+**Figure X.** - Front-end
 
-**Difficulty Level Assignment Algorithm -** This algorithm assesses the user's performance on each alphabet and assigns a difficulty score. The score determines the system's recommendations for the next alphabet to trace creating a personalized learning path.
+**Database:** The Firebase database stores the data that the application sends and needs. Below is a screenshot of the users child in the firebase database where the long combination of letters and numbers is the user UID, under which we have stored the relevant keys such as
+If they attempted letters or not,
+Their traced accuracy value
+Flower counter to represent progress of the child
+Free play keys of the same
+The storage keys for each user keeps going till z and we have a “username” key where we store the users username.
 
-**Database Integration -** The system depends on a database to store user profiles, learning scores, and other relevant data. Firebase is the chosen database platform offering secure data storage.
+* **If they attempted letters or not, 
+* **Their traced accuracy value
+* **Flower counter to represent progress of the 
+* **Free play keys of the same
 
-**Sensory Feedback -** The system manages sensory feedback features including vibrations, coloured lines, and sound. It enhances the user experience by providing engaging feedback during tracing activities
+![BACKEND](technical_manual/images/BACKEND.png)
+
+**Figure X.** - Backend
 <br><br>
 ## 2.2 Architectural Components Reuse and Third-Party Integration
 **Firebase Backend -** The system uses Firebase for database integration utilizing Firebase Realtime Database to store and fetch learning scores securely. Firebase Authentication ensures that the user’s data is safely and securely stored.
