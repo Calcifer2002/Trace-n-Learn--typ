@@ -1,6 +1,4 @@
-# Third Year Project Blog
-Written by Dzastina Laukaityte & Malavika Shanker
-
+# Third Year Project Blog - Written by Dzastina Laukaityte & Malavika Shanker
 We are writing a blog to keep track of our progress throughout this project and also to be able to reflect on our achievements.
 <br><br>
 ## Project Idea & Securing a Project Supervisor
