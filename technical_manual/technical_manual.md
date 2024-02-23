@@ -132,23 +132,20 @@ The profile page is an example of this:
 
 ![FRONT_END](technical_manual/images/FRONT_END.png)
 
-**Figure X.** - Front-end
+**Figure 4.** - Front-end
 
-**Database:** The Firebase database stores the data that the application sends and needs. Below is a screenshot of the users child in the firebase database where the long combination of letters and numbers is the user UID, under which we have stored the relevant keys such as
-If they attempted letters or not,
-Their traced accuracy value
-Flower counter to represent progress of the child
-Free play keys of the same
+**Database:** The Firebase database stores the data that the application sends and needs. Below is a screenshot of the users child in the firebase database where the long combination of letters and numbers is the user UID, under which we have stored the relevant keys such as:
+
+* If they attempted letters or not, 
+* Their traced accuracy value
+* Flower counter to represent progress of the 
+* Free play keys of the same
+
 The storage keys for each user keeps going till z and we have a “username” key where we store the users username.
-
-* **If they attempted letters or not, 
-* **Their traced accuracy value
-* **Flower counter to represent progress of the 
-* **Free play keys of the same
 
 ![BACKEND](technical_manual/images/BACKEND.png)
 
-**Figure X.** - Backend
+**Figure 5.** - Backend
 <br><br>
 ## 2.2 Architectural Components Reuse and Third-Party Integration
 **Firebase Backend -** The system uses Firebase for database integration utilizing Firebase Realtime Database to store and fetch learning scores securely. Firebase Authentication ensures that the user’s data is safely and securely stored.
@@ -165,7 +162,7 @@ The system architecture is designed with scalability in mind allowing for the ad
 …
 ![Sequenece Diagram](technical_manual/images/SEQUENCE.png)
 
-**Figure 4.** - Sequenece Diagram**
+**Figure 6.** - Sequenece Diagram**
 <br><br>
 # 4. Problems and Solutions
 ## 4.1 Detecting Letter Strokes
@@ -193,13 +190,13 @@ The parent tested the application by drawing strokes and tracing various letters
 
 ![SURVEY_Q1](technical_manual/images/SURVEY_Q1.png)
 
-**Figure x.** - Google Form Survey Response
+**Figure 7.** - Google Form Survey Response
 
 The above pie chart shows the response to the question being asked “Do you think a child would be able to easily create/draw the strokes?” and the response was 80% said yes and the other 20% said maybe. This is a very positive response which shows that our application can handle the input of a user’s stroke which is the main functionality of our application.
 
 ![SURVEY_Q2](technical_manual/images/SURVEY_Q2.png)
 
-**Figure x.** - Google Form Survey Response
+**Figure 8.** - Google Form Survey Response
 
 The above pie chart shows the response to the question being asked “Do you think a child would be stressed when using the Trace ‘N Learn application?”. This is very important question as our aim for the application was to create a strees free and enjoyable learning environment for children. The responses from the survey shows that we did met our aim of creating an application that is stress free as all participants said their child would not be stressed using the "Trace 'N Learn".  
 <br><br>
