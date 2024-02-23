@@ -180,13 +180,13 @@ Creating constraints using Android Studio for the images proved to be frustratin
 
 The parent tested the application by drawing strokes and tracing various letters at random. Once the testing was completed they were given a Google form to fill out about their experience using the application. The results are as follows:
 
-![SURVEY_Q1](technical_manual/images/SURVEY_Q1.png.png))
+![SURVEY_Q1](technical_manual/images/SURVEY_Q1.png))
 
 **Figure x.** - Google Form Survey Response
 
 The above pie chart shows the response to the question being asked “Do you think a child would be able to easily create/draw the strokes?” and the response was 80% said yes and the other 20% said maybe. This is a very positive response which shows that our application can handle the input of a user’s stroke which is the main functionality of our application.
 
-![SURVEY_Q2](technical_manual/images/SURVEY_Q2.png.png)
+![SURVEY_Q2](technical_manual/images/SURVEY_Q2.png)
 
 **Figure x.** - Google Form Survey Response
 
