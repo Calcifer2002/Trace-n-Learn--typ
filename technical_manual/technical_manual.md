@@ -100,16 +100,16 @@ The article had a very detailed section of which letters were difficult for each
 where the difficulty increases from left to right.
 <br><br>
 ## 1.4 Features
-**Authentication:** Firebase authentication along with the help of firebase data base we were able to implement auth function where the application gets user information and sends it to firebase who sends it back with a token.
-**Colour panel**:The user can switch between different colours while tracing letters
-**Freeplay mode**: In the freeplay mode the user starts off with one letter - letter “L” and depending on their accuracy on that they are given another letter to trace and depending on the accuracy of that letter, another letter and the cycle continues.
+* **Authentication:** Firebase authentication along with the help of firebase data base we were able to implement auth function where the application gets user information and sends it to firebase who sends it back with a token.
+* **Colour panel**:The user can switch between different colours while tracing letters
+* **Freeplay mode**: In the freeplay mode the user starts off with one letter - letter “L” and depending on their accuracy on that they are given another letter to trace and depending on the accuracy of that letter, another letter and the cycle continues.
 At the end of the mode a one time report is generated that tells them how well they did with statistics
-**Classic**: In the classic mode the user can pick their own letter and the accuracy score of that letter is updated in the profile
+* **Classic**: In the classic mode the user can pick their own letter and the accuracy score of that letter is updated in the profile
 Change username: The user can change username any time
 Profile: The profile contains all the data extracted from the user in a very readable way to understand the childs tracing abilities
 Voice feed back: We have consistent voice feed back all throughout the application so that even children who cannot read can use it.
 Vibration : We give haptic feed back via vibrations to keep them more interested.
-**Flowers**: For every accurate letter we increment by one so that we represent the progress of the child in a very friendly way.
+* **Flowers**: For every accurate letter we increment by one so that we represent the progress of the child in a very friendly way.
 <br><br>
 # 2. System Architecture
 The system architecture is a foundational element that outlines the high-level structure and organization of the educational app for tracing English alphabets. A well-designed architecture is essential for scalability, maintainability, and the seamless integration of various components. The system design effectively manages user interactions, data storage, and external dependencies inside the framework of the alphabet tracing application. Below is an overview of the system architecture:
