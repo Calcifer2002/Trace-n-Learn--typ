@@ -47,13 +47,13 @@ It should look something like this: https://gitlab.computing.dcu.ie/laukaid2/202
 ## 2.2 Step 2
 Clone the repository in android studio. In order to import the project, Open android studio-> File->New->Project from version control.
 
-![GitLab Repository URL](images/GitLab_Repository_URL.png)
-**Figure 2. - **
+![Clone Repo 1](images/CLONE_REPO_1.png)
+**Figure 2. - *Cloning repo part 1*
 
 Select “Git” from the options presented after clicking on Project from Version Control and paste the link in
 
-![GitLab Repository URL](images/GitLab_Repository_URL.png)
-**Figure 3. - **
+![Clone Repo 2](images/CLONE_REPO_2.png)
+**Figure 3. - *Cloning repo part 2*
 
 Click on clone
 <br><br>
@@ -66,8 +66,8 @@ Import the project into Android Studio. After the cloning has been finished, ope
 
 Connect your phone by USB to your laptop. Choose your phone from the list of available devices.
 
-![GitLab Repository URL](images/GitLab_Repository_URL.png)
-**Figure 5. - **
+![Device selection](images/DEVICE_SELECTION.png)
+**Figure 5. - *Device selection*
 
 And finally, click on the green run button next to the device selection list. It will take a bit of time, but after compiling the app gets launched on your device.
 <br><br>
@@ -113,8 +113,8 @@ In the results section:
 
 In the profile section users can choose to edit the username using the pen icon.
 
-![GitLab Repository URL](images/GitLab_Repository_URL.png)
-**Figure 10. - Homepage**
+![Profile Activity](images/PROFILE_ACTIVITY.png)
+**Figure 10. - Profile Activity**
 <br><br>
 ## 3.6 Edit Username
 On clicking on the pen icon it lets the user edit their username by taking them back to the username page.In screen 1 we have the profile page and by clicking on the pen icon we are able to move to the username page where we can add a new username. All the history of the user are retained with just the username changed. Once the user puts in the name username and clicks on “Confirm” where it takes the user back to the home page. In screen 4 below you can see that the username in home page and in screen 5 you can see that the username in profile page has also been updated.
