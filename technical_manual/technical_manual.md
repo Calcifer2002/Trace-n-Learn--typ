@@ -104,7 +104,15 @@ where the difficulty increases from left to right.
 The system architecture is a foundational element that outlines the high-level structure and organization of the educational app for tracing English alphabets. A well-designed architecture is essential for scalability, maintainability, and the seamless integration of various components. The system design effectively manages user interactions, data storage, and external dependencies inside the framework of the alphabet tracing application. Below is an overview of the system architecture:
 
 ![System Arch](images/SYSTEM_ARCH.png)
+
 **Figure 2. - System Architecture Diagram**
+
+The System architecture consists of Firebase and the App itself. The data storage and auth takes place within firebase and the above diagram is a detailed view of the data flow between them
+
+<b>App<b> - The application takes the user data, parses it into a form it can reuse and feed it to firebase database.
+
+<b>Database<b> - The database stores the data and makes it usable when ever the app requires it.
+
 
 <br><br>
 ## 2.1 Product / System Functions
