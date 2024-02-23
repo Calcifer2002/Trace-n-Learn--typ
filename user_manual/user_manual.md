@@ -156,5 +156,20 @@ Screen 3 - If the user draws way too quick! The app is meant to help you learn h
 ![Three Cases](images/THREE_CASES.png)
 
 **Figure 14. - Three Cases**
+<br><br>
+## 3.9 Freeplay mode
+In Freeplay mode the users are greeted with a dialog with instructions and the appropriate matching audio as in screen 1 below. They get 9 seconds per letter for 13 letters to make their trace after which based on that letters accuracy level we decide which letter to give next. If you do L incorrectly you get T, that is slightly more complex than L, jumping by 2 if correct so you will get a capital I. Once the 13 letters are hit, based on how well you perform you get your results. The letters for each freeplay is different depending on how you perform in previous letters within the same mode.
+
+Given below are two instances of free play where for each, the letters are different. The profile screen does not change in either as it only stores classic values. Freeplay results are a one time output.
+
+![Instance one](images/FREEPLAY_1.png)
+
+**Figure 14. - Instance 1**
+
+![Instance two](images/FREEPLAY_2.png)
+
+**Figure 14. - Instance 2**
+
+Hope you had as much fun using our app as much as we did making it!
 
 
