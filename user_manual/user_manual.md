@@ -99,6 +99,7 @@ The user is presented with two modes they can play with “Freeplay” or “Cla
 There is a navigation bar to take the user back to the home page which is the same as the one the user is sent to, after setting the username as well as a profile icon (the circle) which will take the user to the profile page for a more detailed break down of results.
 
 ![Home Activity](images/HOME_ACTIVITY.png)
+
 **Figure 9. - Home Activity**
 <br><br>
 ## 3.5 Profile Activity
