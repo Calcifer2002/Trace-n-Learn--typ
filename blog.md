@@ -2,14 +2,14 @@
 Written by Dzastina Laukaityte & Malavika Shanker
 
 We are writing a blog to keep track of our progress throughout this project and also to be able to reflect on our achievements.
-
+<br><br>
 ## Project Idea & Securing a Project Supervisor
 Brainstorming an idea for our third-year project was not an easy task. It took us a bit of time to think through various options but we settled on a project idea. We decided to combine the world of modern learning with digital technology to create an educational application tailored for children known as “Trace ‘N Learn”. The application would specifically focus on facilitating the learning of the English alphabet through interactive and engaging activities. This mobile application would aim to provide a platform in which children can improve their skills in drawing each letter of the alphabet using the touch screen functionality of their devices. 
 
 We decided to choose this project idea as we live in an age where technology is ever-evolving. The idea of creating a system which could help children learn their alphabets digitally would be very impactful and beneficial to them. We knew that choosing this project idea would provide us with a challenge and an interesting learning process from start to finish.
 
 After doing a little bit of research we found a project supervisor that would suit our project perfectly which was Hyowon Lee. We went up to Hyowon after he had finished teaching his class and pitched him our idea. Hyowon was very on board with our project idea and even recommended us some additional ideas which we could implement later down the line in our project.
-
+<br><br>
 ## Project Proposal
 We had to write up a project proposal. This was a document that contained information about the plan of our project and what we hoped to achieve. After having a meeting with the project proposal board our project was approved and we were given the green light to start working on it. They said that our idea was very interesting and were very supportive of our project. All of this set us up for a running start to start working on our project. 
 
