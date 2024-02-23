@@ -38,7 +38,7 @@ Please note that out code is not in the code repository, rather it is in a speci
 
 Find the GitLab Repository URL. This can usually be found after clicking on the clone button of gitlabs project page. Copy the link that is below “clone with HTTPS” under clone button.
 
-![GitLab Repository URL](images/GitLab_Repository_URL.png)
+![GitLab Repository URL](images/GITLAB_REPO_URL.png)
 **Figure 1. - GitLab Repository URL**
 
 It should look something like this: https://gitlab.computing.dcu.ie/laukaid2/2024-ca326-dlaukaityte-trace-n-learn.git
