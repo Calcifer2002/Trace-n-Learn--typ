@@ -27,6 +27,10 @@
 
     3.8 [Classic Mode](#38-classic-mode)
 
+    3.9 [Freeplay Mode](#39-freeplay-mode)
+
+    4.0 [Final Words](#40-final-words)
+
 
 <br><br>
 # 1. Introduction
@@ -170,6 +174,5 @@ Given below are two instances of free play where for each, the letters are diffe
 
 **Figure 14. - Instance 2**
 
+## 4.0 Final Words
 Hope you had as much fun using our app as much as we did making it!
-
-
