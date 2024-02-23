@@ -13,19 +13,25 @@ public class Difficult_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_difficulty_page);
+
+        //Initialising the nav bar elements
         ImageView viewProfile = findViewById(R.id.profile);
 
 
         ImageView homeButton = findViewById(R.id.home);
+
+        //On clicking Home button user is taken to Base_Activity
 
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Difficult_Activity.this, Base_Activity.class);
                 startActivity(intent);
-                finish(); // If you want to finish the current activity when navigating to Base_Activity
+                finish();
             }
         });
+
+        //On clicking viewProfile button user is taken to Profile_Activity no matter where they are
         viewProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,6 +41,9 @@ public class Difficult_Activity extends AppCompatActivity {
         });
     }
 
+
+
+    //This just states - if you click one button for one letter it should take you to letter_Activity
     public void onLetterClick(View view) {
         int textViewId = view.getId();
         Intent intent;

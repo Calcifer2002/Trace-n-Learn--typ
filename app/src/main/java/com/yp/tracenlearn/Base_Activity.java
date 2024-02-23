@@ -118,11 +118,11 @@ public class Base_Activity extends AppCompatActivity {
 
                         flowerSum += letterFlower;
                     }
-                String formattedText = String.format("Flowers: %d/26", flowerSum);
-                // At this point, flowerSum contains the total sum of flowers for the shown letters
-                flowerNumber.setText(formattedText);
+                    String formattedText = String.format("Flowers: %d/26", flowerSum);
+                    // At this point, flowerSum contains the total sum of flowers for the shown letters
+                    flowerNumber.setText(formattedText);
 
-            }}
+                }}
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -306,6 +306,5 @@ public class Base_Activity extends AppCompatActivity {
             startActivity(intent);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        }
-    }
-}
+        }}}
+

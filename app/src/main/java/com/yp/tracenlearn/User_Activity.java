@@ -65,7 +65,7 @@ public class User_Activity extends AppCompatActivity {
 
                                             // Set values for "letter-freeplay-correct"
                                             String keyCorrect = letter + "-freeplay-correct";
-                                            databaseReference.child("users").child(uid).child(keyCorrect).setValue("0");
+                                            databaseReference.child("users").child(uid).child(keyCorrect).setValue(0);
 
                                             // Set values for "letter-freeplay-flower"
                                             String keyFlower = letter + "-freeplay-flower";
