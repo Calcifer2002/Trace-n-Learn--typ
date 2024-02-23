@@ -153,10 +153,10 @@ The storage keys for each user keeps going till z and we have a “username” k
 **Android Studio -** The application was developed using Android Studio which is the official integrated development environment (IDE) for Android app development. It provided tools for designing U.I. writing code, and testing the application.
 <br><br>
 ## 2.3 Interaction Between Components
-* **The interaction between components is very simple and straight
-* **The front end is the way by which the user interacts with the backend
-* **The backend gets and sends information from and to Firebase
-* **The front end is populated by backend with the information the backend gets from Firebase.
+* The interaction between components is very simple and straight
+* The front end is the way by which the user interacts with the backend
+* The backend gets and sends information from and to Firebase
+* The front end is populated by backend with the information the backend gets from Firebase.
 
 <br><br>
 ## 2.4 Scalability and Future Considerations
