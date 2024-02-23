@@ -184,7 +184,6 @@ That way we can get the user's data via uid and also set it via the uid.
 ![FIREBASE_USERID](technical_manual/images/FIREBASE_USERID.png)
 
 **Figure X.** - Firebase userID
-
 <br><br>
 ## 2.3 Interaction Between Components
 * The interaction between components is very simple and straight
