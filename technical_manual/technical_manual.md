@@ -254,14 +254,20 @@ The above pie chart shows the response to the question being asked “Do you thi
 
 **Figure 13.** - Google Form Survey Response
 
-The above pie chart shows the response to the question being asked “Do you think a child would be stressed when using the Trace ‘N Learn application?”. This is very important question as our aim for the application was to create a strees free and enjoyable learning environment for children. The responses from the survey shows that we did met our aim of creating an application that is stress free as all participants said their child would not be stressed using the "Trace 'N Learn".  
+The above pie chart shows the response to the question being asked “Do you think a child would be stressed when using the Trace ‘N Learn application?”. This is very important question as our aim for the application was to create a strees free and enjoyable learning environment for children. The responses from the survey shows that we did met our aim of creating an application that is stress free as all participants said their child would not be stressed using the "Trace 'N Learn". 
+
+![SURVEY_Q3](technical_manual/images/SURVEY_Q3.png)
+
+**Figure 14.** - Google Form Survey Response
+
+The about pie chart shows the response to the question being asked "Do you think that the Trace 'N Learn application would be effective at improving the child's ability to learn the alphabets?". This is also a very important question as is one of main aims for the application. The high agreeability from the responses to the form are as a result of the application having audio, visual, and sensroy feedback. This includes letters being read out aloud as well as the phone vibrating as a letter is being traced.
 <br><br>
 ## 5.3 Unit Testing
 We attempted user testing multiple times but due to Firebase integration and compatibility issues we could not get enough unit testing working. The code below checks checking colour black if an invalid index is given and the colour if the valid index is given.
 
 ![UNIT_TESTING](technical_manual/images/UNIT_TESTING.png)
 
-**Figure 14.** - Test get colour for index
+**Figure 15.** - Test get colour for index
 
 <br><br>
 ## 5.4 Integration Testing
@@ -269,7 +275,7 @@ We made attempts at Integration testing to build the code every time someone com
 
 ![YAMAL](technical_manual/images/YAMAL.png)
 
-**Figure 15.** - Gitlab yamal
+**Figure 16.** - Gitlab yamal
 <br><br>
 # 6. Installation Guide
 ## 6.1 Software Dependencies
@@ -299,7 +305,7 @@ Find the GitLab Repository URL. This can usually be found after clicking on the 
 
 ![GitLab Repository URL](images/GITLAB_REPO_URL.png)
 
-**Figure 16.** - GitLab Repository URL
+**Figure 17.** - GitLab Repository URL
 
 It should look something like this: https://gitlab.computing.dcu.ie/laukaid2/2024-ca326-dlaukaityte-trace-n-learn.git
 <br><br>
@@ -308,13 +314,13 @@ It should look something like this: https://gitlab.computing.dcu.ie/laukaid2/202
 
 ![Clone Repo 1](images/CLONE_REPO_1.png)
 
-**Figure 17. - Cloning repo part 1**
+**Figure 18. - Cloning repo part 1**
 
 Select “Git” from the options presented after clicking on Project from Version Control and paste the link in.
 
 ![Clone Repo 2](images/CLONE_REPO_2.png)
 
-**Figure 18. - Cloning repo part 2**
+**Figure 19. - Cloning repo part 2**
 
 Click on clone.
 <br><br>
@@ -322,13 +328,13 @@ Click on clone.
 
 ![Debugging](images/DEBUGGING.png)
 
-**Figure 19. - Debugging**
+**Figure 20. - Debugging**
 
 Connect your phone by USB to your laptop. Choose your phone from the list of available devices.
 
 ![Device selection](images/DEVICE_SELECTION.png)
 
-**Figure 20. - Device selection**
+**Figure 21. - Device selection**
 
 And finally, click on the green run button next to the device selection list. It will take a bit of time, but after compiling the app gets launched on your device.
 <br><br>
