@@ -8,6 +8,7 @@
     1.3 [Research](#13-research)
 
 2. [System Architecture](#2-system-architecture) 
+
     2.1 [Product / System Functions](#41-product-system-functions) 
 
     2.2 [Architectural Components Reuse and Third-Party Integration](#42-architectural-components-reuse-and-third-party-integration) 
@@ -18,7 +19,8 @@
 
 3. [High-Level Design](#3-high-level-design)
 
-4. [Problems and Solutions](#4-problems-and-solutions)  
+4. [Problems and Solutions](#4-problems-and-solutions) 
+
     4.1 [Detecting Letter Strokes](#41-detecting-letter-strokes) 
 
     4.2 [Detecting Finishing Stroke](#42-detecting-finishing-stroke)
@@ -26,10 +28,9 @@
     4.3 [False Positive Strokes](#43-false-positive-strokes)
 
     4.4 [User Interface](#44-user-interface)
-
-    4.5 [Sensory Feedback](#45-sensory-feedback)
  
 5. [Testing](#5-testing)
+
     5.1 [Unit Testing](#51-unit-testing) 
 
     5.2 [User Testing](#52-user-testing)
@@ -100,7 +101,7 @@ where the difficulty increases from left to right.
 # 2. System Architecture
 The system architecture is a foundational element that outlines the high-level structure and organization of the educational app for tracing English alphabets. A well-designed architecture is essential for scalability, maintainability, and the seamless integration of various components. The system design effectively manages user interactions, data storage, and external dependencies inside the framework of the alphabet tracing application. Below is an overview of the system architecture:
 
-[System Arch](images/LETTER_TRACING.png)
+[System Arch](images/SYSTEM_ARCH.png)
 **Figure 2. - System Architecture Diagram**
 
 <br><br>
@@ -136,6 +137,8 @@ The system architecture is designed with scalability in mind allowing for the ad
 
 # 3. High-Level Design
 …
+[Sequenece Diagram](images/SEQUENCE.png)
+**Figure 2. - Sequenece Diagram**
 
 <br><br>
 # 4. Problems and Solutions
@@ -152,9 +155,7 @@ Another problem we ran into was our application returning false positives if a l
 The User Interface (U.I.) proved to be quite challenging at times. We strived to use images that we were license-free and ended up using the website Freepik for our source of images. It was difficult to find a theme of images that were of similar design styles. We ended up settling on the theme of nature and animals as we wanted the application to create a positive and stress-free learning environment encouraging children to engage with the material at their own pace while simultaneously having fun.
 
 Creating constraints using Android Studio for the images proved to be frustrating at times. When creating the constraints using Android Studio on either a Macbook or a Windows laptop once tested using an Android device the constraints would not align and in turn, it would misplace the U.I. of the application. We spent a lot of time working on the constraints to ensure that they aligned correctly when using an Android device as it greatly impacted the user’s experience
-<br><br>
-## 4.5 Sensory Feedback
-…
+
 <br><br>
 # 5. Testing
 ## 5.1 Unit Testing
