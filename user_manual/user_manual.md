@@ -61,7 +61,7 @@ Click on clone
 Import the project into Android Studio. After the cloning has been finished, open the project. Turn on developer settings in your phone which can differ from phone to phone depending on the make and model of them. Once developer settings have been turned on, ensure that the USB Debugging button and Install via USB button is turned on.
 
 ![Debugging](images/DEBUGGING.png)
-**Figure 4. - *Debugging*
+**Figure 4. - *Debugging**
 
 Connect your phone by USB to your laptop. Choose your phone from the list of available devices.
 
@@ -75,6 +75,7 @@ And finally, click on the green run button next to the device selection list. It
 When you click on the app icon from your apps list, you will be greeted with the introduction page. All you need to do is click on the “Play” button to start the game!
 
 ![Homepage](images/HOMEPAGE.png)
+
 **Figure 6. - Homepage**
 <br><br>
 ## 3.2 Register
@@ -116,14 +117,14 @@ In the profile section users can choose to edit the username using the pen icon.
 ## 3.6 Edit Username
 On clicking on the pen icon it lets the user edit their username by taking them back to the username page.In screen 1 we have the profile page and by clicking on the pen icon we are able to move to the username page where we can add a new username. All the history of the user are retained with just the username changed. Once the user puts in the name username and clicks on “Confirm” where it takes the user back to the home page. In screen 4 below you can see that the username in home page and in screen 5 you can see that the username in profile page has also been updated.
 
-![GitLab Repository URL](images/GitLab_Repository_URL.png)
-**Figure 11. - Homepage**
+![Edit Username](images/EDIT_USERNAME.png)
+**Figure 11. - Edit Username**
 <br><br>
 ## 3.7 Changing Colours
 The colour that is given by default to the users strokes are black. However they can pick out colours from the panel above them and change the colours of the strokes as they feel like. This feature remains in both freeplay and classic mode.
 
-![GitLab Repository URL](images/GitLab_Repository_URL.png)
-**Figure 12. - Homepage**
+![Changing Colours](images/CHANGING_COLOURS.png)
+**Figure 12. - Changing colours**
 <br><br>
 ## 3.8 Classic Mode
 In Classic mode the user gets to choose letters from the 26 options which have been divided into different difficulty levels as seen in screens 2 and 3 below. 
@@ -131,8 +132,8 @@ The one differentiation between freeplay and classic mode is that the classic sc
 
 For each letter that pops up audio is played - if its A then the audio will say “A”, “B” for B and so on. As you can see in screen 4, 5 and 6 if the letter is done correctly a dialog pops up saying “Good job!”, with a matching audio which reads it out loud. The values are then visible in the profile page, with flowers going up by 1 and the value changing for H from unattempted to correct!
 
-![GitLab Repository URL](images/GitLab_Repository_URL.png)
-**Figure 13. - Homepage**
+![Classic Mode](images/CLASSIC_MODE.png)
+**Figure 13. - Classic Mode**
 
 But what if a user does a letter incorrectly? In that case we have 3 dialog boxes which displays with matching audio that plays with the dialog.
 
@@ -141,7 +142,7 @@ Screen 1 - if the user draws an H initially but goes out of bounds or if the use
 Screen 2 - If the user uses way too many strokes - for example “H” should be drawable in 4 strokes or lesser but if you above 4 you get that dialog box.
 Screen 3 - If the user draws way too quick! The app is meant to help you learn how the letter flows, drawing too quick might hinder the learning.
 
-![GitLab Repository URL](images/GitLab_Repository_URL.png)
-**Figure 14. - Homepage**
+![Three Cases](images/THREE_CASES.png)
+**Figure 14. - Three Cases**
 
 
