@@ -154,15 +154,16 @@ The storage keys for each user keeps going till z and we have a “username” k
 **Reusable Frontend:**
 **1.Colour panel component:** The colour panel code U.I is reusable across all 26 letters via the below code. The code just adds the layout colour_panel onto the existing U.I.
 
-![](technical_manual/images/.png)
+![COLOUR_PANEL](technical_manual/images/COLOUR_PANEL.png)
 
-**Figure X.** - 
+**Figure X.** -Colour panel component 
 
 **2.Username component:** The username screen is used more than once - once to add your completely new username and the other time to edit your username.The screenshot below [fig number] and the [gi number] is for adding username
 
-![](technical_manual/images/.png)
+![USERNAME_CODE](technical_manual/images/USERNAME_CODE.png)
+![USERNAME_CODE2](technical_manual/images/USERNAME_CODE2.png)
 
-**Figure X.** - 
+**Figure X.** - Username component
 
 **3.Letter activities:** All 26 letter activities that are being used in the classic mode is also being used for freeplay mode.
 
@@ -173,16 +174,16 @@ The storage keys for each user keeps going till z and we have a “username” k
 
 For third-party integration, we used Firebase for database and authentication.
 
-![](technical_manual/images/.png)
+![FIREBASE_CODE](technical_manual/images/FIREBASE_CODE.png)
 
-**Figure X.** - 
+**Figure X.** - Firebase data code 
 
 After getting the userID(uid) we set it as the main key as then have children below it.
 That way we can get the user's data via uid and also set it via the uid.
 
-![](technical_manual/images/.png)
+![FIREBASE_USERID](technical_manual/images/FIREBASE_USERID.png)
 
-**Figure X.** -
+**Figure X.** - Firebase userID
 
 <br><br>
 ## 2.3 Interaction Between Components
