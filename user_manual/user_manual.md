@@ -1,4 +1,3 @@
-
 # Table Of Contents
 1. [Introduction](#1-introduction)
 
@@ -61,8 +60,8 @@ Click on clone
 ## 2.3 Step 3
 Import the project into Android Studio. After the cloning has been finished, open the project. Turn on developer settings in your phone which can differ from phone to phone depending on the make and model of them. Once developer settings have been turned on, ensure that the USB Debugging button and Install via USB button is turned on.
 
-![GitLab Repository URL](images/GitLab_Repository_URL.png)
-**Figure 4. - **
+![Debugging](images/DEBUGGING.png)
+**Figure 4. - *Debugging*
 
 Connect your phone by USB to your laptop. Choose your phone from the list of available devices.
 
@@ -75,20 +74,20 @@ And finally, click on the green run button next to the device selection list. It
 ## 3.1 Home Page
 When you click on the app icon from your apps list, you will be greeted with the introduction page. All you need to do is click on the “Play” button to start the game!
 
-![GitLab Repository URL](images/GitLab_Repository_URL.png)
+![Homepage](images/HOMEPAGE.png)
 **Figure 6. - Homepage**
 <br><br>
 ## 3.2 Register
 Upon pressing the play button you will be prompted to this stage. The user is required to input a phone number with country code as in screen 1 below and press the “Send OTP” button to receive the otp. Doing so will take you to screen 2 which disappears in 2-3 seconds as it is just a check to ensure you are not a robot by firebase. After a few seconds the user will receive an OTP as seen in screen 3 and the user is expected to put it in the second box and click on “Verify OTP” button. Depending on if the code is correct or not - the user will be taken to the Username Page.
 
-![GitLab Repository URL](images/GitLab_Repository_URL.png)
-**Figure 7. - Homepage**
+![Register](images/REGISTER.png)
+**Figure 7. - Register**
 <br><br>
 ## 3.3 Username
 The user will be prompted to enter a username. This username can or cannot be something that identifies the user, for example, pineapple, chair, or cloud and press on the “confirm” button which will take you to the Home activity. The username provided will be used to create a dashboard which the user will be able to access and see results for each letter as well as the the statistics we draw from it such as flowers, normalised scores to name a few so choose your names wisely!
 
-![GitLab Repository URL](images/GitLab_Repository_URL.png)
-**Figure 8. - Homepage**
+![Username](images/USERNAME.png)
+**Figure 8. - Username**
 <br><br>
 ## 3.4 Home Activity
 Once the user name has been set, it takes the value and populates the home page where you have a mini window into the user’s stats (flower count which is how many letters they have done correctly). Between screen 1 and screen 2 the user has done 4 letters correctly in Classic mode. The flowers from freeplay mode are not shown permanently in the profile, it is shown only once at the end of the sprint which we will talk about later.
@@ -97,8 +96,8 @@ The user is presented with two modes they can play with “Freeplay” or “Cla
 
 There is a navigation bar to take the user back to the home page which is the same as the one the user is sent to, after setting the username as well as a profile icon (the circle) which will take the user to the profile page for a more detailed break down of results.
 
-![GitLab Repository URL](images/GitLab_Repository_URL.png)
-**Figure 9. - Homepage**
+![Home Activity](images/HOME_ACTIVITY.png)
+**Figure 9. - Home Activity**
 <br><br>
 ## 3.5 Profile Activity
 When the user clicks on circle in the top right corner of the profile it will take them to the profile page where they can see a detailed profile breakdown.
