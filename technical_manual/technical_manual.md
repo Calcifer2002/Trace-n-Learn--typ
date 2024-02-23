@@ -7,6 +7,8 @@
 
     1.3 [Research](#13-research)
 
+    1.4 [Features](#13-features)
+
 2. [System Architecture](#2-system-architecture) 
 
     2.1 [Product / System Functions](#41-product-system-functions) 
@@ -50,7 +52,6 @@
     7.1 [Code](#71-code)
 
     7.2 [User Interface](#72-user-interface)
-
 <br><br>
 # 1. Introduction
 ## 1.1 Overview
@@ -59,7 +60,6 @@ The system is an educational application tailored for children, specifically foc
 At its core, the application features traceable lines guiding the users through the process of drawing each letter. This interactive approach assists in letter recognition and also promotes motor skill development. Moreover, the app fosters a positive and stress-free learning environment encouraging children to engage with the material at their own pace while simultaneously having fun.
 
 Standout features of the application include its child-friendly user interface design, non-competitive style to take the pressure off children, audio voices for letters so that they can learn the pronunciation, colour palette for children to change the colours of their strokes, Freeplay mode where they are given 13 letters whose difficulty is based on previous letters difficulty and Custom Play mode where the child can pick the letter they want to trace. The child-friendly user interface consists of vibrant colours, charming illustrations of animals, and nature images creating an inviting and immersive environment for children. Customization options allow children to personalize their learning experience. Children can choose their preferred colours for tracing, adding a layer of creativity to the educational process. Parents can use the accuracy tracking profile page to track the progress of their child’s learning and encourage them to try harder or easier letters as they learn. To ensure a non-competitive environment the children are shown flowers to show how many letters they have done in Custom play mode and some accuracy scores in the Freeplay mode which the parents can decipher as a one-time thing.
-
 <br><br>
 ## 1.2 Glossary
 * **Trace 'N Learn Books -** Physical books used as a reference for tracing and learning the alphabets.
@@ -69,7 +69,6 @@ Standout features of the application include its child-friendly user interface d
 * **Sensory Feedback -** Visual, auditory, and tactile responses provided by the application.
 * **UI/UX -** User Interface/User Experience refers to the design and interaction aspects of the application.
 <br><br>
-
 ## 1.3 Research
 ### Letter Tracing
 In order to get a very clear tracing, we had to experiment with multiple methods.
@@ -100,20 +99,29 @@ The article had a very detailed section of which letters were difficult for each
 
 where the difficulty increases from left to right.
 <br><br>
+## 1.4 Features
+**Authentication: Firebase authentication along with the help of firebase data base we were able to implement auth function where the application gets user information and sends it to firebase who sends it back with a token.
+**Colour panel**:The user can switch between different colours while tracing letters
+**Freeplay mode**: In the freeplay mode the user starts off with one letter - letter “L” and depending on their accuracy on that they are given another letter to trace and depending on the accuracy of that letter, another letter and the cycle continues.
+At the end of the mode a one time report is generated that tells them how well they did with statistics
+**Classic**: In the classic mode the user can pick their own letter and the accuracy score of that letter is updated in the profile
+Change username: The user can change username any time
+Profile: The profile contains all the data extracted from the user in a very readable way to understand the childs tracing abilities
+Voice feed back: We have consistent voice feed back all throughout the application so that even children who cannot read can use it.
+Vibration : We give haptic feed back via vibrations to keep them more interested
+<br><br>
 # 2. System Architecture
 The system architecture is a foundational element that outlines the high-level structure and organization of the educational app for tracing English alphabets. A well-designed architecture is essential for scalability, maintainability, and the seamless integration of various components. The system design effectively manages user interactions, data storage, and external dependencies inside the framework of the alphabet tracing application. Below is an overview of the system architecture:
 
 ![System Arch](images/SYSTEM_ARCH.png)
 
-**Figure 2. - System Architecture Diagram**
+**Figure 3. - System Architecture Diagram**
 
 The System architecture consists of Firebase and the App itself. The data storage and auth takes place within firebase and the above diagram is a detailed view of the data flow between them
 
 **App** - The application takes the user data, parses it into a form it can reuse and feed it to firebase database.
 
 **Database** - The database stores the data and makes it usable when ever the app requires it.
-
-
 <br><br>
 ## 2.1 Product / System Functions
 The system architecture is scalable and modular to support both present and future functionality. Key architectural components include:
@@ -129,28 +137,23 @@ The system architecture is scalable and modular to support both present and futu
 **Database Integration -** The system depends on a database to store user profiles, learning scores, and other relevant data. Firebase is the chosen database platform offering secure data storage.
 
 **Sensory Feedback -** The system manages sensory feedback features including vibrations, coloured lines, and sound. It enhances the user experience by providing engaging feedback during tracing activities
-
 <br><br>
 ## 2.2 Architectural Components Reuse and Third-Party Integration
 **Firebase Backend -** The system uses Firebase for database integration utilizing Firebase Realtime Database to store and fetch learning scores securely. Firebase Authentication ensures that the user’s data is safely and securely stored.
 
 **Android Studio -** The application was developed using Android Studio which is the official integrated development environment (IDE) for Android app development. It provided tools for designing U.I. writing code, and testing the application.
-
 <br><br>
 ## 2.3 Interaction Between Components
 ...
 
 ## 2.4 Scalability and Future Considerations
 The system architecture is designed with scalability in mind allowing for the addition of new features in future releases. The system architecture is robust and flexible for the development of the alphabet tracing application. It ensures efficient data management, accurate letter tracing, and a positive user experience. Future features may include advanced analytics for detailed user progress and expanding language support. Additionally, having a feature to trace words and whole sentences for advanced users.
-
 <br><br>
-
 # 3. High-Level Design
 …
 ![Sequenece Diagram](technical_manual/images/SEQUENCE.png)
 
-**Figure 2. - Sequenece Diagram**
-
+**Figure 4. - Sequenece Diagram**
 <br><br>
 # 4. Problems and Solutions
 ## 4.1 Detecting Letter Strokes
@@ -166,14 +169,19 @@ Another problem we ran into was our application returning false positives if a l
 The User Interface (U.I.) proved to be quite challenging at times. We strived to use images that we were license-free and ended up using the website Freepik for our source of images. It was difficult to find a theme of images that were of similar design styles. We ended up settling on the theme of nature and animals as we wanted the application to create a positive and stress-free learning environment encouraging children to engage with the material at their own pace while simultaneously having fun.
 
 Creating constraints using Android Studio for the images proved to be frustrating at times. When creating the constraints using Android Studio on either a Macbook or a Windows laptop once tested using an Android device the constraints would not align and in turn, it would misplace the U.I. of the application. We spent a lot of time working on the constraints to ensure that they aligned correctly when using an Android device as it greatly impacted the user’s experience
-
 <br><br>
 # 5. Testing
 ## 5.1 Unit Testing
 ...
 <br><br>
 ## 5.2 User Testing
-...
+.The Trace 'N Learn application was tested on 5 participants who were parents who met certain criteria. This critera was that the parent had a child/children in the age range of 3 to 11 years old who was learning their alphabets. The reason for this criteria was for the parent to be able to provide us with their insight on the Trace ‘N Learn application and how their child might interact with it. 
+
+The parent tested the application by drawing strokes and tracing various letters at random. Once the testing was completed they were given a Google form to fill out about their experience using the application. The results are as follows:
+
+![](technical_manual/images/.png)
+**Figure 5. - Sequenece Diagram**
+
 <br><br>
 ## 5.3 Integration Testing
 ...
