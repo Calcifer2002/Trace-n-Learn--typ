@@ -338,8 +338,9 @@ And finally, click on the green run button next to the device selection list. It
 
 [6]Use constraintlayout to design your Android Views: android developers (no date) Android Developers. Available at: https://developer.android.com/codelabs/constraint-layout#0 (Accessed: 05 January 2024). 
 
-[7] says:, H. et al. (no date) Linear Layout tutorial with examples in Android, Abhi Android. Available at: https://abhiandroid.com/ui/linear-layout#gsc.tab=0 (Accessed: 26 December 2023). 
+[7] Linear Layout tutorial with examples in Android, Abhi Android. Available at: https://abhiandroid.com/ui/linear-layout#gsc.tab=0 (Accessed: 26 December 2023). 
 
+[8] Franks, R. (2020) Getting started with drawing on the android canvas, Medium. Available at: https://medium.com/over-engineering/getting-started-with-drawing-on-the-android-canvas-621cf512f4c7 (Accessed: 07 January 2024). 
 <br><br>
 ## 7.2 User Interface
 During the design process of the U.I. for the Trace ‘N Learn application we wanted to use images that had a licence to be used in commercial or personal projects. For this reason, we choose to use Freepik company’s website for all the images and U.I. design. A range of images were used such as animals, trees, grass, letters, and speech bubbles.
