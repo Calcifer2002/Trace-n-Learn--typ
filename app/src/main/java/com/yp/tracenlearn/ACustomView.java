@@ -19,55 +19,66 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ACustomView extends View {
-    private Bitmap mBitmap;
+    private Bitmap mBitmap; //Letter bitmap
 
 
     private Canvas mCanvas;
     private Path mPath;
     private Paint mPaint;
 
-    private List<Point> nonTransparentPixels = new ArrayList<>(); //to check where the letter bitmap is
-    private List<Point> strokeCoordinates = new ArrayList<>(); //to check where the user drawings are
+    private List<Point> nonTransparentPixels = new ArrayList<>(); //To check where the letter bitmap is
+    private List<Point> strokeCoordinates = new ArrayList<>(); //To check where the user drawings are
 
-    private int strokeColor = Color.BLACK;
-    public interface NoStrokesCallback {
+    private int strokeColor = Color.BLACK; //Default stroke colour
+    public interface NoStrokesCallback {      //If no strokes for 3 seconds we have this callback with the accuracy data passed in
         void onNoStrokesDetected(String accuracyInfo);
     }
     private ACustomView.NoStrokesCallback noStrokesCallback;
-    private Handler handler = new Handler();
+    private Handler handler = new Handler(); //To handle delays
 
     public ACustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
+
+    //When the customview begins we initialise it with default stroke properties and code to help keep track of movement
     private void init() {
         mPath = new Path();
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
-        mPaint.setColor(strokeColor); //designing the look for the stroke - which is customisable ofc
+        mPaint.setColor(strokeColor); //Designing the look for the stroke - which is customisable ofc
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeWidth(70f);
 
     }
+
+    //To set stroke colour that we get from A_Activity colour panel so we pass the index into this
     public void setStrokeColor(int color) {
         this.strokeColor = color;
-        mPaint.setColor(color); //we get the int from the colour panel and set it
-        invalidate(); // redraw the canvas with the new stroke color
+        mPaint.setColor(color); //We get the int from the colour panel and set it
+        invalidate(); // Redraw the canvas with the new stroke color
     }
+
+
+        /*
+        When size of view changes we need to redo bitmap accordingly, so we put it in canvas and center it after scaling
+        the image and then we obtain which info about the non transparent pixels which we will be using to calculate
+        accuracy- after seeing how many of non transparent pixels the user drew over*/
+
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
 
-        // load the background image
+        // Load the background image
         BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.letter_a);
         mBitmap = drawable.getBitmap();
 
-        // scale the background image to fit the new size
+        // Scale the background image to fit the new size
         mBitmap = Bitmap.createScaledBitmap(mBitmap, w, h, true);
 
-        // center the image in the canvas
+        // Center the image in the canvas
         int canvasWidth = getWidth();
         int canvasHeight = getHeight();
         int imageWidth = mBitmap.getWidth();
@@ -79,17 +90,19 @@ public class ACustomView extends View {
         mCanvas = new Canvas(mBitmap);
         mCanvas.drawBitmap(mBitmap, left, top, null);
 
-        getNonTransparentPixels();
+        getNonTransparentPixels();//To find the list of over what the image is lying so we can compare it with stroke
 
 
         invalidate();
     }
 
+    //This is responsible for all the drawing in the canvas
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        canvas.drawBitmap(mBitmap, 0, 0, null);
+        canvas.drawBitmap(mBitmap, 0, 0, null); //draw the image
 
         // Draw all paths on the canvas
         for (Path path : mPaths) {
@@ -107,17 +120,18 @@ public class ACustomView extends View {
     private Path mCurrentPath;
     private int strokeCount = 0;
 
-
+//Function to check if no strokes in last 3 seconds
     private void startNoStrokesCountdown() {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 showNoStrokesDialog();
-            } //to help with showing the dialog pop up
+            } //To help with showing the dialog pop up
         }, 3000);
     }
+    // Notify the callback that no strokes were detected
     private void showNoStrokesDialog() {
-        // Notify the callback that no strokes were detected
+
         if (noStrokesCallback != null) {
             String accuracyInfo = getAccuracyInfo();
             noStrokesCallback.onNoStrokesDetected(accuracyInfo);
@@ -126,17 +140,20 @@ public class ACustomView extends View {
     public void setOnNoStrokesDetectedCallback(ACustomView.NoStrokesCallback callback) {
         this.noStrokesCallback = callback;
     }
+   /*This function tracks the path user is drawing, records stroke coordinates, and provides haptic feedback
+   * also ensures the 3 second time out by calling startNoStrokesCountdown();*/
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
         Vibrator vb = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
         float x = event.getX();
-        float y = event.getY();
+        float y = event.getY(); //Haptic feedback
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 vb.vibrate(10000);
-                mCurrentPath = new Path();  // start a new path for the current stroke
+                mCurrentPath = new Path();  // Start a new path for the current stroke
                 mCurrentPath.moveTo(x, y);
                 handler.removeCallbacksAndMessages(null);
                 break;
@@ -145,11 +162,11 @@ public class ACustomView extends View {
                 strokeCoordinates.add(new Point((int) x, (int) y));
                 break;
             case MotionEvent.ACTION_UP:
-                // add the current path to the list of paths
+                // Add the current path to the list of paths
                 vb.cancel();
                 mPaths.add(mCurrentPath);
 
-                //keeping track of count of strokes
+                //Keeping track of count of strokes
                 strokeCount++;
                 Log.d("CustomView", "Stroke Coordinates Size: " + strokeCoordinates.size());
 
@@ -157,7 +174,7 @@ public class ACustomView extends View {
 
 
                 startNoStrokesCountdown();
-                // reset countdown
+                // Reset countdown
 
 
                 break;
@@ -175,7 +192,7 @@ public class ACustomView extends View {
 
 
 
-    //,ethod to find where the bitmap is
+    //Method to find where the bitmap is
     private void getNonTransparentPixels() {
         nonTransparentPixels.clear();
         for (int x = 0; x < mBitmap.getWidth(); x++) {
@@ -190,6 +207,7 @@ public class ACustomView extends View {
         }
     }
 
+    //To troubleshoot we log the coodinates
     public void logCoordinates() {
         // Log both stroke and non-transparent pixel coordinates
         Log.d("CustomView", "Stroke Coordinates: " + strokeCoordinates.toString());
@@ -197,6 +215,9 @@ public class ACustomView extends View {
         Log.d("CustomView", "Non-Transparent Pixel Coordinates: " + nonTransparentPixels.toString());
     }
 
+
+    /*This is the function where we calculate the accuracy information, we see how many stroke points math the
+    same as the ones the image is over and we calculate accuracy*/
     private String getAccuracyInfo() {
         // Ensure non-transparent pixel coordinates are updated
 
@@ -208,25 +229,26 @@ public class ACustomView extends View {
 
 
         for (Point strokePoint : strokeCoordinates) {
-            if (nonTransparentPixels.contains(strokePoint)) {
+            if (nonTransparentPixels.contains(strokePoint)) {  //checking commonality between user stroke and image
                 matchingCount++;
             }
         }
 
-        //accuracy percentage
+        //Accuracy percentage
         double accuracy = (double) matchingCount / totalStrokeCoordinates * 100;
 
 
+        //Different accuracy messages for different situations
         if (strokeCount <= 4 && totalStrokeCoordinates > 120 && accuracy > 90) {
-            return "Accuracy Score: " + accuracy + "%";
-            //letter is proper but also accuracy rate
+            return "Accuracy Score: " + accuracy + "%"; //Accurate letter, max 4 strokes to achieve A
+
         } else if (strokeCount > 4) {
-            return "NO: " + accuracy + "%" + "many"; //if letter is not proper
+            return "NO: " + accuracy + "%" + "many"; //If letter is drawn with way too many strokes
         } else if (totalStrokeCoordinates < 120 && accuracy > 90) {
-            return "NO: " + accuracy + "%" + "slow!!";
+            return "NO: " + accuracy + "%" + "slow!!"; //If the letter was drawn too quick
         }
         else {
-            return "NO: " + accuracy + "%";
+            return "NO: " + accuracy + "%"; //If its completely unproper
         }
 
 

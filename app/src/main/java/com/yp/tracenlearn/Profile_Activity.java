@@ -29,6 +29,7 @@ public class Profile_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
 
+        //Getting current user's user name
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -36,11 +37,15 @@ public class Profile_Activity extends AppCompatActivity {
 
         DatabaseReference usersRef = database.getReference("users").child(user.getUid()).child("username");
 
+
+       //Initialising views
         TextView userNameTextView = findViewById(R.id.userName);
         TextView flowerNumber = findViewById(R.id.flower);
 
         ImageView edtUsername = findViewById(R.id.editUsername);
 
+
+        //If user clicks on this, then they are taken to edit username screen
         edtUsername.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,14 +60,20 @@ public class Profile_Activity extends AppCompatActivity {
 
         ImageView homeButton = findViewById(R.id.home);
 
+
+        //If the user presses home button they are taken to Base_Activity which is home page
+
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Profile_Activity.this, Base_Activity.class);
                 startActivity(intent);
-                finish(); // If you want to finish the current activity when navigating to Base_Activity
+                finish();
             }
         });
+
+
+        //If the user presses profile button they are taken to Profile_Activity which is profile page
         viewProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +81,9 @@ public class Profile_Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        //This just gets the username and sets that value
         usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -86,8 +100,14 @@ public class Profile_Activity extends AppCompatActivity {
                 Toast.makeText(Profile_Activity.this, "Failed to retrieve username: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
+
+
+
         //get db
         DatabaseReference userUidRef = database.getReference("users").child(user.getUid());
+
+        //We are getting the relevant end points- flower, if they attempted or not and accuracy score for every letter and setting them here
 
         userUidRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -96,7 +116,7 @@ public class Profile_Activity extends AppCompatActivity {
                 int flowerSum = 0;
                 for (char letter = 'a'; letter <= 'z'; letter++) {
                     counter ++;
-                    String key = letter + "-flower";
+                    String key = letter + "-flower";     //for loop to get key for every letter
                     String key3 = letter + "-attempted";
                     String key2 = String.valueOf(letter);
 
@@ -105,7 +125,7 @@ public class Profile_Activity extends AppCompatActivity {
                     int resId = getResources().getIdentifier(idResult, "id", getPackageName());
 
 
-                    TextView resView = findViewById(resId);
+                    TextView resView = findViewById(resId); //Setting the value
 
 
 
@@ -119,13 +139,13 @@ public class Profile_Activity extends AppCompatActivity {
 
                         Log.d("meow", String.valueOf(letterAttempt));
                         flowerSum += letterFlower;
-                        if (letterAttempt == 0 ){
+                        if (letterAttempt == 0 ){  //If user has not attempted then set Unattempted
                             resView.setText("Unattempted");}
 
-                        else if (letterFlower ==0){
+                        else if (letterFlower ==0){ //If the letter is incorrectly traced then Incorrect
                             resView.setText("Incorrect");
                         }
-                        else if (letterFlower == 1){
+                        else if (letterFlower == 1){ //If the letter is correctly traced then show normalised value
 
                             int intValue = (int) Math.round(correctness);
 
