@@ -7,7 +7,7 @@
 
     1.3 [Research](#13-research)
 
-    1.4 [Features](#13-features)
+    1.4 [Features](#14-features)
 
 2. [System Architecture](#2-system-architecture) 
 
@@ -79,14 +79,14 @@ While using the digital Ink API the issue was that it was not checking if the le
 
 ![LETTER_V](technical_manual/images/LETTER_V.png)
 
-**Figure 1. - Tracing letter V**
+**Figure 1.** - Tracing letter V
 
 **2. Connecting dots/Image views**
 Another attempt was made at having the user connect Image views or dots. But the issue was that if the user were to make a diagram like the one below- It would be detected as an I, even though the trace does not make an I.
 
 ![DOTS](technical_manual/images/DOTS.png)
 
-**Figure 2. - Connecting dots**
+**Figure 2.** - Connecting dots
 
 **3. Comparing the strokes with the image**
 The final method that worked for us was having a bitmap of a letter - say “A”, getting its coordinates, and then comparing that with the coordinates of the stroke. Though there is room for improvement it worked best from what we had tried.
@@ -108,14 +108,15 @@ At the end of the mode a one time report is generated that tells them how well t
 Change username: The user can change username any time
 Profile: The profile contains all the data extracted from the user in a very readable way to understand the childs tracing abilities
 Voice feed back: We have consistent voice feed back all throughout the application so that even children who cannot read can use it.
-Vibration : We give haptic feed back via vibrations to keep them more interested
+Vibration : We give haptic feed back via vibrations to keep them more interested.
+**Flowers**: For every accurate letter we increment by one so that we represent the progress of the child in a very friendly way.
 <br><br>
 # 2. System Architecture
 The system architecture is a foundational element that outlines the high-level structure and organization of the educational app for tracing English alphabets. A well-designed architecture is essential for scalability, maintainability, and the seamless integration of various components. The system design effectively manages user interactions, data storage, and external dependencies inside the framework of the alphabet tracing application. Below is an overview of the system architecture:
 
 ![System Arch](images/SYSTEM_ARCH.png)
 
-**Figure 3. - System Architecture Diagram**
+**Figure 3.** - System Architecture Diagram
 
 The System architecture consists of Firebase and the App itself. The data storage and auth takes place within firebase and the above diagram is a detailed view of the data flow between them
 
@@ -153,7 +154,7 @@ The system architecture is designed with scalability in mind allowing for the ad
 …
 ![Sequenece Diagram](technical_manual/images/SEQUENCE.png)
 
-**Figure 4. - Sequenece Diagram**
+**Figure 4.** - Sequenece Diagram**
 <br><br>
 # 4. Problems and Solutions
 ## 4.1 Detecting Letter Strokes
@@ -180,8 +181,16 @@ Creating constraints using Android Studio for the images proved to be frustratin
 The parent tested the application by drawing strokes and tracing various letters at random. Once the testing was completed they were given a Google form to fill out about their experience using the application. The results are as follows:
 
 ![](technical_manual/images/.png)
-**Figure 5. - Sequenece Diagram**
 
+**Figure x.** - Google Form Survey Response
+
+The above pie chart shows the response to the question being asked “Do you think a child would be able to easily create/draw the strokes?” and the response was 80% said yes and the other 20% said maybe. This is a very positive response which shows that our application can handle the input of a user’s stroke which is the main functionality of our application.
+
+![](technical_manual/images/.png)
+
+**Figure x.** - Google Form Survey Response
+
+The above pie chart shows the response to the question being asked “Do you think a child would be stressed when using the Trace ‘N Learn application?”. This is very important question as our aim for the application was to create a strees free and enjoyable learning environment for children. The responses from the survey shows that we did met our aim of creating an application that is stress free as all participants said their child would not be stressed using the "Trace 'N Learn".  
 <br><br>
 ## 5.3 Integration Testing
 ...
