@@ -180,7 +180,7 @@ Creating constraints using Android Studio for the images proved to be frustratin
 
 The parent tested the application by drawing strokes and tracing various letters at random. Once the testing was completed they were given a Google form to fill out about their experience using the application. The results are as follows:
 
-![SURVEY_Q1](technical_manual/images/SURVEY_Q1.png))
+![SURVEY_Q1](technical_manual/images/SURVEY_Q1.png)
 
 **Figure x.** - Google Form Survey Response
 
