@@ -151,9 +151,39 @@ The storage keys for each user keeps going till z and we have a “username” k
 **Figure 5.** - Backend
 <br><br>
 ## 2.2 Architectural Components Reuse and Third-Party Integration
-**Firebase Backend -** The system uses Firebase for database integration utilizing Firebase Realtime Database to store and fetch learning scores securely. Firebase Authentication ensures that the user’s data is safely and securely stored.
+**Reusable Frontend:**
+**1.Colour panel component:** The colour panel code U.I is reusable across all 26 letters via the below code. The code just adds the layout colour_panel onto the existing U.I.
 
-**Android Studio -** The application was developed using Android Studio which is the official integrated development environment (IDE) for Android app development. It provided tools for designing U.I. writing code, and testing the application.
+![](technical_manual/images/.png)
+
+**Figure X.** - 
+
+**2.Username component:** The username screen is used more than once - once to add your completely new username and the other time to edit your username.The screenshot below [fig number] and the [gi number] is for adding username
+
+![](technical_manual/images/.png)
+
+**Figure X.** - 
+
+**3.Letter activities:** All 26 letter activities that are being used in the classic mode is also being used for freeplay mode.
+
+**Database Reuse:**
+**1.Username key:** This is used in multiple instances in home, profile etc activities to get the username
+**2. Letter + “-freeplay-flower”:** This key is used to populate the flowers in the freeplay report as well as detect if the letter has been correctly traced or not. If it is a 0 then it means it is not correctly traced. If it is a 1 it means the letter is traced properly.
+**3. Letter + “-flower”:** This key is used to populate the flowers in the profile, and main page as well as detect if the letter has been correctly traced or not. If it is a 0 then it means it is not correctly traced. If it is a 1 it means the letter is traced properly.
+
+For third-party integration, we used Firebase for database and authentication.
+
+![](technical_manual/images/.png)
+
+**Figure X.** - 
+
+After getting the userID(uid) we set it as the main key as then have children below it.
+That way we can get the user's data via uid and also set it via the uid.
+
+![](technical_manual/images/.png)
+
+**Figure X.** -
+
 <br><br>
 ## 2.3 Interaction Between Components
 * The interaction between components is very simple and straight
@@ -165,7 +195,6 @@ The storage keys for each user keeps going till z and we have a “username” k
 The system architecture is designed with scalability in mind allowing for the addition of new features in future releases. The system architecture is robust and flexible for the development of the alphabet tracing application. It ensures efficient data management, accurate letter tracing, and a positive user experience. Future features may include advanced analytics for detailed user progress and expanding language support. Additionally, having a feature to trace words and whole sentences for advanced users.
 <br><br>
 # 3. High-Level Design
-…
 ![Sequenece Diagram](technical_manual/images/SEQUENCE.png)
 
 **Figure 6.** - Sequenece Diagram**
