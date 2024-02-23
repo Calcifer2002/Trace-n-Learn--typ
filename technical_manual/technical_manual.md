@@ -11,13 +11,13 @@
 
 2. [System Architecture](#2-system-architecture) 
 
-    2.1 [Product / System Functions](#41-product-system-functions) 
+    2.1 [Product / System Functions](#21-product-system-functions) 
 
-    2.2 [Architectural Components Reuse and Third-Party Integration](#42-architectural-components-reuse-and-third-party-integration) 
+    2.2 [Architectural Components Reuse and Third-Party Integration](#22-architectural-components-reuse-and-third-party-integration) 
 
-    2.3 [Interaction Between Components](#43-interaction-between-components)
+    2.3 [Interaction Between Components](#23-interaction-between-components)
 
-    2.4 [Scalability and Future Considerations](#44-scalability-and-future-considerations) 
+    2.4 [Scalability and Future Considerations](#24-scalability-and-future-considerations) 
 
 3. [High-Level Design](#3-high-level-design)
 
@@ -35,11 +35,13 @@
  
 5. [Testing](#5-testing)
 
-    5.1 [Unit Testing](#51-unit-testing) 
+    5.1 [Logging & Assert Statement](#51-logging-assert-statement)
 
     5.2 [User Testing](#52-user-testing)
 
-    5.3 [Integration Testing](#53-integration-testing)
+    5.3 [Unit Testing](#53-unit-tetsing)
+
+    5.4 [Integration Testing](#53-integration-testing)
 
 6. [Installation Guide](#6-installation-guide)
 
@@ -223,13 +225,15 @@ The solution used was to use the command line to connect my device with Android 
 adb connect [I.P]:[Port]
 <br><br>
 # 5. Testing
-## 5.1 Unit Testing
-...
+The testing for our app involved a combination of logging, user testing, attempted unit and integration testing.
+<br><br>
+##5.1 Logging & Assert Statements
+Whenever we wanted to test if the values at different points in the code were what we were expecting - we either used assert statements or logging. When we ran into unexpected behaviors we used mainly logging to see what values were being processed.
 <br><br>
 ## 5.2 User Testing
-.The Trace 'N Learn application was tested on 5 participants who were parents who met certain criteria. This critera was that the parent had a child/children in the age range of 3 to 11 years old who was learning their alphabets. The reason for this criteria was for the parent to be able to provide us with their insight on the Trace ‘N Learn application and how their child might interact with it. 
+The Trace 'N Learn application was tested on 5 participants who were parents who met certain criteria. This criterion was that the parent had a child/children in the age range of 3 to 11 years old who was learning their alphabet. The reason for this criteria was for the parent to be able to provide us with their insight on the Trace ‘N Learn application and how their child might interact with it. 
 
-The parent tested the application by drawing strokes and tracing various letters at random. Once the testing was completed they were given a Google form to fill out about their experience using the application. The results are as follows:
+The parent tested the application by drawing strokes and tracing various letters at random, which helped us fine-tune the parameters for the tracing algorithm. Once the testing was completed they were given a Google form to fill out about their experience using the application. The results are as follows:
 
 ![SURVEY_Q1](technical_manual/images/SURVEY_Q1.png)
 
@@ -243,33 +247,40 @@ The above pie chart shows the response to the question being asked “Do you thi
 
 The above pie chart shows the response to the question being asked “Do you think a child would be stressed when using the Trace ‘N Learn application?”. This is very important question as our aim for the application was to create a strees free and enjoyable learning environment for children. The responses from the survey shows that we did met our aim of creating an application that is stress free as all participants said their child would not be stressed using the "Trace 'N Learn".  
 <br><br>
-## 5.3 Integration Testing
-...
+## 5.3 Unit Testing
+We attempted user testing multiple times but due to Firebase integration and compatibility issues we could not get enough unit testing working. The code below checks checking colour black if an invalid index is given and the colour if the valid index is given.
+
+![UNIT_TESTING](technical_manual/images/UNIT_TESTING.png)
+
+**Figure X.** - Test get colour for index
+
+<br><br>
+## 5.4 Integration Testing
+We made attempts at Integration testing to build the code every time someone commits, however, the pipeline kept failing as we could not figure out how to automate accepting for licenses. So we decided to do the pipeline such that if a file was deleted it will spit out which one was deleted as we often had issues with accidentally deleting files.
+
+![YAMAL](technical_manual/images/YAMAL.png)
+
+**Figure X.** - Gitlab yamal
 <br><br>
 # 6. Installation Guide
 ## 6.1 Software Dependencies
-**1. JUnit** (‘junit:junit:4.13.1’) - JUnit is a unit testing framework for the Java programming language.
-**2. Mockito** (‘org.mockito:mockito-core:3.12.4’) - Mockito is a mocking framework that allows to mock objects in tests.
-**3. PowerMock** (‘org.powermock:powermock-module-junit4:2.0.9’, ‘org.powermock:powermock-api-mockito2:2.0.9’) - PowerMock is a framework used to extend other mocking frameworks like Mockito to provide additional features.
-**4. Robolectric** (‘org.robolectric:robolectric:4.7.3’) - Robolectric is a framework that allows for unit testing of Android applications.
-**5. AndroidX Test** (‘androidx.test:rules:1.4.0’, ‘androidx.text.ext:junit:1.1.2’) - AndroidX Test provides testing utilities for Android applications.
-**6. Espresso** (‘androidx.test.espresso:espresso-core:3.3.0’) - Espresso is a testing framework used for Android UI testing.
-**7. Firebase** (‘com.google.firebase:firebase-bom:32.7.0’) - Firebase is a platform provided by Google for building mobile and web applications.
-* **7.1 Firebase Authentication** (‘com.google.firebase:firebase-auth’)
-* **7.2 Firebase Realtime Database** (‘com.google.firebase:firebase-database:20.3.0’)
-* **7.3 Firebase Cloud Storage** (‘com.google.firebase:firebase-storage:20.3.0’)
-* **7.4 Firebase Firestone** (‘com.google.firebase:firebase-firestone:24.10.1’)
-**8. Google Play services** (‘com.google.android.gms:play-services-auth:20.7.0’) - Google Play services provide APIs for Android applications to access Google services.
-**9. AndroidX Libraries**
-* **9.1 AppCompat** (‘androidx.appcompat:appcompat:1.6.1’) 
-* **9.2 Material Design Components** (‘com.google.android.material:material:1.9.0’)
-* **9.3 Constraint Layout** (androidx.constraintlayout:constraintlayout:2.1.4’)
-**10. ML Kit Digital Ink Recognition** (‘com.google.mlkot:digital-ink-recognition:18.1.0’) - ML kit is a mobile SDK provided by Google for integrating machine learning models into mobile applications.
+**1. Firebase** (‘com.google.firebase:firebase-bom:32.7.0’) - Firebase is a platform provided by Google for building mobile and web applications.
+* **1.1 Firebase Authentication** (‘com.google.firebase:firebase-auth’)
+* **1.2 Firebase Realtime Database** (‘com.google.firebase:firebase-database:20.3.0’)
+* **1.3 Firebase Cloud Storage** (‘com.google.firebase:firebase-storage:20.3.0’)
+* **1.4 Firebase Firestone** (‘com.google.firebase:firebase-firestone:24.10.1’)
+**2. Google Play services** (‘com.google.android.gms:play-services-auth:20.7.0’) - Google Play services provide APIs for Android applications to access Google services.
+**3. AndroidX Libraries**
+* **3.1 AppCompat** (‘androidx.appcompat:appcompat:1.6.1’) 
+* **3.2 Material Design Components** (‘com.google.android.material:material:1.9.0’)
+* **3.3 Constraint Layout** (androidx.constraintlayout:constraintlayout:2.1.4’)
 <br><br>
 ## 6.2 Hardware Requirements
 **1. Software Compatibility** -  A developer computer which is compatible with Android Studio.
 
 **2. Operating System** - Run tests on the application using an Android, Mac, or Windows.
+
+**3.Android Phone** - We need a touch screen android phone to test user strokes.
 <br><br>
 ## 6.3 Step By Step
 **Step 1 - User Installation** 
