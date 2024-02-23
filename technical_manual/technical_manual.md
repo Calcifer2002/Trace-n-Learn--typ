@@ -201,6 +201,8 @@ The system architecture is designed with scalability in mind allowing for the ad
 ![Sequenece Diagram](technical_manual/images/SEQUENCE.png)
 
 **Figure 10.** - Sequenece Diagram
+
+This sequence diagram demonstrates the process of how the front-end displays a letter to the user. The user clicks the button free play mode which displays the first letter. The front-end sends a signal with the coordinates of strokes and letter bitmap to the backend. The backend then parses the data and an accuracy rate is sent to the Firebase database.
 <br><br>
 # 4. Problems and Solutions
 ## 4.1 Detecting Letter Strokes
@@ -324,10 +326,20 @@ And finally, click on the green run button next to the device selection list. It
 <br><br>
 # 7. References
 ## 7.1 Code
-[1] Flutter Firebase Authentication (Phone OTP) | Firebase Phone Authentication:
-https://www.youtube.com/watch?v=QieFszQSlSI&t=923s&ab_channel=WsCubeTech 
+[1] Flutter firebase authentication (phone OTP) | firebase phone authentication tutorial (2023) YouTube. Available at: https://www.youtube.com/watch?v=QieFszQSlSI&t=923s&ab_channel=WsCubeTech (Accessed: 27 December 2023). 
 
-[2] 
+[2] Create a simple paint application in Android using Kotlin | GeeksforGeeks (2021) YouTube. Available at: https://www.youtube.com/watch?v=8mjv_iDSLcw&ab_channel=GeeksforGeeks (Accessed: 13 January 2024). 
+
+[3] How to integrate automated tests to Gitlab CI (2023) YouTube. Available at: https://youtu.be/WdghFWIIqdE?si=-cEP2L82mcuqgLJK (Accessed: 04 February 2024). 
+
+[4]Java callback function - javatpoint (no date) www.javatpoint.com. Available at: https://www.javatpoint.com/java-callback-function (Accessed: 09 January 2024). 
+
+[5] Reuse layouts with  <views> Android developers (no date) Android Developers. Available at: https://developer.android.com/develop/ui/views/layout/improving-layouts/reusing-layouts (Accessed: 23 January 2024).
+
+[6]Use constraintlayout to design your Android Views: android developers (no date) Android Developers. Available at: https://developer.android.com/codelabs/constraint-layout#0 (Accessed: 05 January 2024). 
+
+[7] says:, H. et al. (no date) Linear Layout tutorial with examples in Android, Abhi Android. Available at: https://abhiandroid.com/ui/linear-layout#gsc.tab=0 (Accessed: 26 December 2023). 
+
 <br><br>
 ## 7.2 User Interface
 During the design process of the U.I. for the Trace ‘N Learn application we wanted to use images that had a licence to be used in commercial or personal projects. For this reason, we choose to use Freepik company’s website for all the images and U.I. design. A range of images were used such as animals, trees, grass, letters, and speech bubbles.
