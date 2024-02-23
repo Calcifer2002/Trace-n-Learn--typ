@@ -198,9 +198,13 @@ That way we can get the user's data via uid and also set it via the uid.
 The system architecture is designed with scalability in mind allowing for the addition of new features in future releases. The system architecture is robust and flexible for the development of the alphabet tracing application. It ensures efficient data management, accurate letter tracing, and a positive user experience. Future features may include advanced analytics for detailed user progress and expanding language support. Additionally, having a feature to trace words and whole sentences for advanced users.
 <br><br>
 # 3. High-Level Design
-![Sequenece Diagram](technical_manual/images/SEQUENCE.png)
+![SEQUENCE_2](technical_manual/images/SEQUENCE_2.png)
 
 **Figure 10.** - Sequenece Diagram
+
+![SEQUENCE](technical_manual/images/SEQUENCE.png)
+
+**Figure 11.** - Sequenece Diagram
 
 This sequence diagram demonstrates the process of how the front-end displays a letter to the user. The user clicks the button free play mode which displays the first letter. The front-end sends a signal with the coordinates of strokes and letter bitmap to the backend. The backend then parses the data and an accuracy rate is sent to the Firebase database.
 <br><br>
@@ -238,13 +242,13 @@ The parent tested the application by drawing strokes and tracing various letters
 
 ![SURVEY_Q1](technical_manual/images/SURVEY_Q1.png)
 
-**Figure 11.** - Google Form Survey Response
+**Figure 12.** - Google Form Survey Response
 
 The above pie chart shows the response to the question being asked “Do you think a child would be able to easily create/draw the strokes?” and the response was 80% said yes and the other 20% said maybe. This is a very positive response which shows that our application can handle the input of a user’s stroke which is the main functionality of our application.
 
 ![SURVEY_Q2](technical_manual/images/SURVEY_Q2.png)
 
-**Figure 12.** - Google Form Survey Response
+**Figure 13.** - Google Form Survey Response
 
 The above pie chart shows the response to the question being asked “Do you think a child would be stressed when using the Trace ‘N Learn application?”. This is very important question as our aim for the application was to create a strees free and enjoyable learning environment for children. The responses from the survey shows that we did met our aim of creating an application that is stress free as all participants said their child would not be stressed using the "Trace 'N Learn".  
 <br><br>
@@ -253,7 +257,7 @@ We attempted user testing multiple times but due to Firebase integration and com
 
 ![UNIT_TESTING](technical_manual/images/UNIT_TESTING.png)
 
-**Figure 13.** - Test get colour for index
+**Figure 14.** - Test get colour for index
 
 <br><br>
 ## 5.4 Integration Testing
@@ -261,7 +265,7 @@ We made attempts at Integration testing to build the code every time someone com
 
 ![YAMAL](technical_manual/images/YAMAL.png)
 
-**Figure 14.** - Gitlab yamal
+**Figure 15.** - Gitlab yamal
 <br><br>
 # 6. Installation Guide
 ## 6.1 Software Dependencies
@@ -291,7 +295,7 @@ Find the GitLab Repository URL. This can usually be found after clicking on the 
 
 ![GitLab Repository URL](images/GITLAB_REPO_URL.png)
 
-**Figure 15.** - GitLab Repository URL
+**Figure 16.** - GitLab Repository URL
 
 It should look something like this: https://gitlab.computing.dcu.ie/laukaid2/2024-ca326-dlaukaityte-trace-n-learn.git
 <br><br>
@@ -300,13 +304,13 @@ It should look something like this: https://gitlab.computing.dcu.ie/laukaid2/202
 
 ![Clone Repo 1](images/CLONE_REPO_1.png)
 
-**Figure 16. - Cloning repo part 1**
+**Figure 17. - Cloning repo part 1**
 
 Select “Git” from the options presented after clicking on Project from Version Control and paste the link in.
 
 ![Clone Repo 2](images/CLONE_REPO_2.png)
 
-**Figure 17. - Cloning repo part 2**
+**Figure 18. - Cloning repo part 2**
 
 Click on clone.
 <br><br>
@@ -314,13 +318,13 @@ Click on clone.
 
 ![Debugging](images/DEBUGGING.png)
 
-**Figure 18. - Debugging**
+**Figure 19. - Debugging**
 
 Connect your phone by USB to your laptop. Choose your phone from the list of available devices.
 
 ![Device selection](images/DEVICE_SELECTION.png)
 
-**Figure 19. - Device selection**
+**Figure 20. - Device selection**
 
 And finally, click on the green run button next to the device selection list. It will take a bit of time, but after compiling the app gets launched on your device.
 <br><br>
