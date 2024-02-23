@@ -153,8 +153,46 @@ The storage keys for each user keeps going till z and we have a “username” k
 **Android Studio -** The application was developed using Android Studio which is the official integrated development environment (IDE) for Android app development. It provided tools for designing U.I. writing code, and testing the application.
 <br><br>
 ## 2.3 Interaction Between Components
-...
+**Step 1 - User Installation**
+Please note that out code is not in the code repository, rather it is in a specific structure where there is the app folder with the main code and crucial peripherals outside it. The below instructions will work for the app, but there is no code folder. The code is in the app folder and the gradle file/folders combined as the app does not work when put inside code directory. So we had to put it outside the folder in the app and gradle file/folders.
 
+Find the GitLab Repository URL. This can usually be found after clicking on the clone button of gitlabs project page. Copy the link that is below “clone with HTTPS” under clone button.
+
+![GitLab Repository URL](images/GITLAB_REPO_URL.png)
+
+**Figure x. - GitLab Repository URL**
+
+It should look something like this: https://gitlab.computing.dcu.ie/laukaid2/2024-ca326-dlaukaityte-trace-n-learn.git
+<br><br>
+ 
+**Step 2 **- Clone the repository in android studio. In order to import the project, Open android studio-> File->New->Project from version control.
+
+![Clone Repo 1](images/CLONE_REPO_1.png)
+
+**Figure x. - Cloning repo part 1**
+
+Select “Git” from the options presented after clicking on Project from Version Control and paste the link in.
+
+![Clone Repo 2](images/CLONE_REPO_2.png)
+
+**Figure x. - Cloning repo part 2**
+
+Click on clone.
+<br><br>
+**Step 3 ** - Import the project into Android Studio. After the cloning has been finished, open the project. Turn on developer settings in your phone which can differ from phone to phone depending on the make and model of them. Once developer settings have been turned on, ensure that the USB Debugging button and Install via USB button is turned on.
+
+![Debugging](images/DEBUGGING.png)
+
+**Figure 4. - Debugging**
+
+Connect your phone by USB to your laptop. Choose your phone from the list of available devices.
+
+![Device selection](images/DEVICE_SELECTION.png)
+
+**Figure 5. - Device selection**
+
+And finally, click on the green run button next to the device selection list. It will take a bit of time, but after compiling the app gets launched on your device.
+<br><br>
 ## 2.4 Scalability and Future Considerations
 The system architecture is designed with scalability in mind allowing for the addition of new features in future releases. The system architecture is robust and flexible for the development of the alphabet tracing application. It ensures efficient data management, accurate letter tracing, and a positive user experience. Future features may include advanced analytics for detailed user progress and expanding language support. Additionally, having a feature to trace words and whole sentences for advanced users.
 <br><br>
