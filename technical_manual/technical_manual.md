@@ -137,7 +137,7 @@ The system architecture is designed with scalability in mind allowing for the ad
 
 # 3. High-Level Design
 …
-[Sequenece Diagram](images/SEQUENCE.png)
+[Sequenece Diagram](technical_manual/images/SEQUENCE.png)
 **Figure 2. - Sequenece Diagram**
 
 <br><br>
