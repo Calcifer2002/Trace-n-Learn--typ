@@ -202,9 +202,13 @@ The system architecture is designed with scalability in mind allowing for the ad
 
 **Figure 10.** - Sequenece Diagram
 
+Once the user inputs phone number and otp it is sent to Firebase where it is verified. If correct credentials then send it to the login screen which logs the user in and they can move onto the screen after the login screen which is the home page. If the user does not have a previous account we send the credentials to Firebase where we make an account and move user to homepage. It then checks if the credentials are unique or not - if unique then homepage.
+
 ![SEQUENCE](technical_manual/images/SEQUENCE.png)
 
 **Figure 11.** - Sequenece Diagram
+
+Once the user clicks on the freeplay button, they are shown the first letter on which they can make strokes, The coordinates at the end of the strokes is sent  to backend where it is compared with the coordinates over which the letter bitmap lies. The data is parsed and accuracy percentage is calulated which is fed into the database. The data is called on from the db to help decide next letter by the backend. Whichever letter is the output, we show the U.I of that in the frontend.
 
 This sequence diagram demonstrates the process of how the front-end displays a letter to the user. The user clicks the button free play mode which displays the first letter. The front-end sends a signal with the coordinates of strokes and letter bitmap to the backend. The backend then parses the data and an accuracy rate is sent to the Firebase database.
 <br><br>
