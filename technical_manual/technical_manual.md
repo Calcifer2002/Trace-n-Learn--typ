@@ -100,7 +100,7 @@ The article had a very detailed section of which letters were difficult for each
 where the difficulty increases from left to right.
 <br><br>
 ## 1.4 Features
-**Authentication: Firebase authentication along with the help of firebase data base we were able to implement auth function where the application gets user information and sends it to firebase who sends it back with a token.
+**Authentication:** Firebase authentication along with the help of firebase data base we were able to implement auth function where the application gets user information and sends it to firebase who sends it back with a token.
 **Colour panel**:The user can switch between different colours while tracing letters
 **Freeplay mode**: In the freeplay mode the user starts off with one letter - letter “L” and depending on their accuracy on that they are given another letter to trace and depending on the accuracy of that letter, another letter and the cycle continues.
 At the end of the mode a one time report is generated that tells them how well they did with statistics
