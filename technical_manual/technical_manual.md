@@ -79,12 +79,14 @@ Digital Ink API is used to check what letter the user drew using strokes. It mak
 While using the digital Ink API the issue was that it was not checking if the letter was drawn over the tracing outline or not. It was only checking if the user drew a letter “A”, “B” and so on. If it is outside the tracing outline and it outputs- a letter drawn then the “tracing” of the app is made pointless. The diagram here, the letter is still detected as a V even though it is outside the boundary.
 
 ![LETTER_V](technical_manual/images/LETTER_V.png)
+
 **Figure 1. - Tracing letter V**
 
 <b>2. Connecting dots/Image views<b>
 Another attempt was made at having the user connect Image views or dots. But the issue was that if the user were to make a diagram like the one below- It would be detected as an I, even though the trace does not make an I.
 
 ![DOTS](technical_manual/images/DOTS.png)
+
 **Figure 2. - Connecting dots**
 
 <b>3. Comparing the strokes with the image<b>
@@ -138,6 +140,7 @@ The system architecture is designed with scalability in mind allowing for the ad
 # 3. High-Level Design
 …
 ![Sequenece Diagram](technical_manual/images/SEQUENCE.png)
+
 **Figure 2. - Sequenece Diagram**
 
 <br><br>
