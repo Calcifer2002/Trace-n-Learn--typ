@@ -74,7 +74,7 @@ Standout features of the application include its child-friendly user interface d
 ### Letter Tracing
 In order to get a very clear tracing, we had to experiment with multiple methods.
 
-<b>1. Google Digital Ink API.<b> 
+**1. Google Digital Ink API.**
 Digital Ink API is used to check what letter the user drew using strokes. It makes a builder and then processes all the strokes together. This logic is used in writing keyboards where if you write a letter “A” the letter A is outputted instead of you having to type it.
 While using the digital Ink API the issue was that it was not checking if the letter was drawn over the tracing outline or not. It was only checking if the user drew a letter “A”, “B” and so on. If it is outside the tracing outline and it outputs- a letter drawn then the “tracing” of the app is made pointless. The diagram here, the letter is still detected as a V even though it is outside the boundary.
 
@@ -82,14 +82,14 @@ While using the digital Ink API the issue was that it was not checking if the le
 
 **Figure 1. - Tracing letter V**
 
-<b>2. Connecting dots/Image views<b>
+**2. Connecting dots/Image views**
 Another attempt was made at having the user connect Image views or dots. But the issue was that if the user were to make a diagram like the one below- It would be detected as an I, even though the trace does not make an I.
 
 ![DOTS](technical_manual/images/DOTS.png)
 
 **Figure 2. - Connecting dots**
 
-<b>3. Comparing the strokes with the image<b>
+**3. Comparing the strokes with the image**
 The final method that worked for us was having a bitmap of a letter - say “A”, getting its coordinates, and then comparing that with the coordinates of the stroke. Though there is room for improvement it worked best from what we had tried.
 
 ### Difficulty Categorization of Letters for Classic and Free Play Modes
@@ -109,9 +109,9 @@ The system architecture is a foundational element that outlines the high-level s
 
 The System architecture consists of Firebase and the App itself. The data storage and auth takes place within firebase and the above diagram is a detailed view of the data flow between them
 
-<b>App<b> - The application takes the user data, parses it into a form it can reuse and feed it to firebase database.
+**App** - The application takes the user data, parses it into a form it can reuse and feed it to firebase database.
 
-<b>Database<b> - The database stores the data and makes it usable when ever the app requires it.
+**Database** - The database stores the data and makes it usable when ever the app requires it.
 
 
 <br><br>
