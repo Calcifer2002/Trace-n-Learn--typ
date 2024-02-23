@@ -30,6 +30,8 @@
     4.3 [False Positive Strokes](#43-false-positive-strokes)
 
     4.4 [User Interface](#44-user-interface)
+
+    4.5 [Android Studio’s Technical Difficulties](#45-android-studios-technical-difficulties)
  
 5. [Testing](#5-testing)
 
@@ -212,7 +214,13 @@ Another problem we ran into was our application returning false positives if a l
 ## 4.4 User Interface
 The User Interface (U.I.) proved to be quite challenging at times. We strived to use images that we were license-free and ended up using the website Freepik for our source of images. It was difficult to find a theme of images that were of similar design styles. We ended up settling on the theme of nature and animals as we wanted the application to create a positive and stress-free learning environment encouraging children to engage with the material at their own pace while simultaneously having fun.
 
-Creating constraints using Android Studio for the images proved to be frustrating at times. When creating the constraints using Android Studio on either a Macbook or a Windows laptop once tested using an Android device the constraints would not align and in turn, it would misplace the U.I. of the application. We spent a lot of time working on the constraints to ensure that they aligned correctly when using an Android device as it greatly impacted the user’s experience
+Creating constraints using Android Studio for the images proved to be frustrating at times. When creating the constraints using Android Studio on either a Macbook or a Windows laptop once tested using an Android device the constraints would not align and in turn, it would misplace the U.I. of the application. We spent a lot of time working on the constraints to ensure that they aligned correctly when using an Android device as it greatly impacted the user’s experience.
+
+## 4.5 Android Studio’s Technical Difficulties
+Since this is a letter tracing app we needed to test it on a real device, which meant I had to connect my phone to Android Studio via a USB C cable. But the connections were often finicky. In the worst-case scenario, in a 4-hour coding session over 1.5 hours were spent on getting the laptop and Android studio to detect the phone via a USB cable.
+
+The solution used was to use the command line to connect my device with Android studio:
+adb connect [I.P]:[Port]
 <br><br>
 # 5. Testing
 ## 5.1 Unit Testing
