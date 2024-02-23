@@ -3,9 +3,12 @@ package com.yp.tracenlearn;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,6 +38,26 @@ public class Freeplay_Result extends AppCompatActivity {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
 
+        ImageView viewProfile = findViewById(R.id.profile);
+
+
+        ImageView homeButton = findViewById(R.id.home);
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Freeplay_Result.this, Base_Activity.class);
+                startActivity(intent);
+                finish(); // If you want to finish the current activity when navigating to Base_Activity
+            }
+        });
+        viewProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Freeplay_Result.this, Profile_Activity.class);
+                startActivity(intent);
+            }
+        });
         DatabaseReference userUidRef = database.getReference("users").child(user.getUid());
         int score;
         if (receivedSkips >= 26) {

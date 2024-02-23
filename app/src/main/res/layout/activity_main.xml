@@ -24,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="+353...."
         android:inputType="phone"
         app:layout_constraintBottom_toTopOf="@+id/sendOTPButton"
         app:layout_constraintEnd_toEndOf="@+id/sendOTPButton"
@@ -33,6 +34,7 @@
 
     <EditText
         android:id="@+id/editTextOTP"
+        android:hint="Enter OTP here"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"

@@ -134,6 +134,7 @@ public class D_Activity extends AppCompatActivity {
                             databaseReference.child("users").child(uid).child("d-incorrect").setValue(rated);
                             databaseReference.child("users").child(uid).child("d-flower").setValue(0);
                             databaseReference.child("users").child(uid).child("d-freeplay").setValue("0");
+                            databaseReference.child("users").child(uid).child("d-attempted").setValue(1);
                             Intent intent = new Intent(D_Activity.this, D_Activity.class);
                             startActivity(intent);
                             finish(); // Reload activity for the kid to retry
@@ -159,6 +160,7 @@ public class D_Activity extends AppCompatActivity {
                             databaseReference.child("users").child(uid).child("d-incorrect").setValue(rated);//Updating incorrect counters
                             databaseReference.child("users").child(uid).child("d-flower").setValue(0);
                             databaseReference.child("users").child(uid).child("d-freeplay").setValue("0");
+                            databaseReference.child("users").child(uid).child("d-attempted").setValue(1);
                             Intent intent = new Intent(D_Activity.this, D_Activity.class);
                             startActivity(intent);
                             finish(); // Reload activity for the kid to retry
@@ -183,6 +185,7 @@ public class D_Activity extends AppCompatActivity {
                             databaseReference.child("users").child(uid).child("d-incorrect").setValue(rated);//Updating incorrect counters
                             databaseReference.child("users").child(uid).child("d-flower").setValue(0);
                             databaseReference.child("users").child(uid).child("d-freeplay").setValue("0");
+                            databaseReference.child("users").child(uid).child("d-attempted").setValue(1);
                             Intent intent = new Intent(D_Activity.this, D_Activity.class);
                             startActivity(intent);
                             finish(); // Reload activity for the kid to retry
@@ -205,7 +208,8 @@ public class D_Activity extends AppCompatActivity {
                     Log.d("accu", accuracyInfo);
                     databaseReference.child("users").child(uid).child("d").setValue(rated);
                     databaseReference.child("users").child(uid).child("d-flower").setValue(1);
-                    databaseReference.child("users").child(uid).child("d-freeplay").setValue("1");//We save the accuracy rate for that letter in the db
+                    databaseReference.child("users").child(uid).child("d-freeplay").setValue("1");
+                    databaseReference.child("users").child(uid).child("d-attempted").setValue(1);//We save the accuracy rate for that letter in the db
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {

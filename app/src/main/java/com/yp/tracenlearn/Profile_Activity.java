@@ -50,6 +50,26 @@ public class Profile_Activity extends AppCompatActivity {
             }
         });
 
+        ImageView viewProfile = findViewById(R.id.profile);
+
+
+        ImageView homeButton = findViewById(R.id.home);
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Profile_Activity.this, Base_Activity.class);
+                startActivity(intent);
+                finish(); // If you want to finish the current activity when navigating to Base_Activity
+            }
+        });
+        viewProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Profile_Activity.this, Profile_Activity.class);
+                startActivity(intent);
+            }
+        });
         usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -77,6 +97,7 @@ public class Profile_Activity extends AppCompatActivity {
                 for (char letter = 'a'; letter <= 'z'; letter++) {
                     counter ++;
                     String key = letter + "-flower";
+                    String key3 = letter + "-attempted";
                     String key2 = String.valueOf(letter);
 
 
@@ -90,14 +111,21 @@ public class Profile_Activity extends AppCompatActivity {
 
 
                     // Check if the key exists in the dataSnapshot
-                    if (dataSnapshot.child(key).exists()) {
+                    if (dataSnapshot.child(key3).exists()) {
+
                         int letterFlower = dataSnapshot.child(key).getValue(Integer.class);
                         double correctness = dataSnapshot.child(key2).getValue(Double.class);
+                        int letterAttempt = dataSnapshot.child(key3).getValue(Integer.class);
 
-
+                        Log.d("meow", String.valueOf(letterAttempt));
                         flowerSum += letterFlower;
-                        if (letterFlower == 1){
+                        if (letterAttempt == 0 ){
+                            resView.setText("Unattempted");}
 
+                        else if (letterFlower ==0){
+                            resView.setText("Incorrect");
+                        }
+                        else if (letterFlower == 1){
 
                             int intValue = (int) Math.round(correctness);
 
@@ -121,9 +149,7 @@ public class Profile_Activity extends AppCompatActivity {
 
                             resView.setText("Correct - " + normalizedValue + "/10");
                         }
-                        else if (letterFlower ==0){
-                            resView.setText("Incorrect");
-                        }
+
                     } else {
                         // Handle the case where the key doesn't exist
                         Log.e("meow", "Key not found in database: " + key);

@@ -159,7 +159,7 @@
             android:background="@xml/block2"
             android:paddingLeft="145dp"
             android:paddingTop="60dp"
-            android:text="GUIDED MODE"
+            android:text="CLASSIC MODE"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="25sp"
