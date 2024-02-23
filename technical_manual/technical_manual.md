@@ -128,7 +128,10 @@ The System architecture consists of Firebase and the App itself. The data storag
 The system architecture is scalable and modular to support both present and future functionality. Key architectural components include:
 
 **Frontend** - The frontend authenticates the user and helps in visualizing the data stored in the database in a very attractive and interesting way that the user can easily understand.
-The profile page is an example of this:
+
+**Backend** - The backend authenticates the user with the help of the front and takes data from firebase to and sends it to the frontend
+T
+he profile page is an example of this:
 
 ![FRONT_END](technical_manual/images/FRONT_END.png)
 
@@ -157,7 +160,6 @@ The storage keys for each user keeps going till z and we have a “username” k
 * The front end is the way by which the user interacts with the backend
 * The backend gets and sends information from and to Firebase
 * The front end is populated by backend with the information the backend gets from Firebase.
-
 <br><br>
 ## 2.4 Scalability and Future Considerations
 The system architecture is designed with scalability in mind allowing for the addition of new features in future releases. The system architecture is robust and flexible for the development of the alphabet tracing application. It ensures efficient data management, accurate letter tracing, and a positive user experience. Future features may include advanced analytics for detailed user progress and expanding language support. Additionally, having a feature to trace words and whole sentences for advanced users.
