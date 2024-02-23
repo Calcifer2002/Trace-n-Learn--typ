@@ -179,7 +179,7 @@ Select “Git” from the options presented after clicking on Project from Versi
 
 Click on clone.
 <br><br>
-**Step 3 ** - Import the project into Android Studio. After the cloning has been finished, open the project. Turn on developer settings in your phone which can differ from phone to phone depending on the make and model of them. Once developer settings have been turned on, ensure that the USB Debugging button and Install via USB button is turned on.
+**Step 3** - Import the project into Android Studio. After the cloning has been finished, open the project. Turn on developer settings in your phone which can differ from phone to phone depending on the make and model of them. Once developer settings have been turned on, ensure that the USB Debugging button and Install via USB button is turned on.
 
 ![Debugging](images/DEBUGGING.png)
 
