@@ -51,13 +51,13 @@ Clone the repository in android studio. In order to import the project, Open and
 
 **Figure 2. - Cloning repo part 1**
 
-Select “Git” from the options presented after clicking on Project from Version Control and paste the link in
+Select “Git” from the options presented after clicking on Project from Version Control and paste the link in.
 
 ![Clone Repo 2](images/CLONE_REPO_2.png)
 
 **Figure 3. - Cloning repo part 2**
 
-Click on clone
+Click on clone.
 <br><br>
 ## 2.3 Step 3
 Import the project into Android Studio. After the cloning has been finished, open the project. Turn on developer settings in your phone which can differ from phone to phone depending on the make and model of them. Once developer settings have been turned on, ensure that the USB Debugging button and Install via USB button is turned on.
@@ -70,7 +70,7 @@ Connect your phone by USB to your laptop. Choose your phone from the list of ava
 
 ![Device selection](images/DEVICE_SELECTION.png)
 
-**Figure 5. - *Device selection*
+**Figure 5. - Device selection**
 
 And finally, click on the green run button next to the device selection list. It will take a bit of time, but after compiling the app gets launched on your device.
 <br><br>
