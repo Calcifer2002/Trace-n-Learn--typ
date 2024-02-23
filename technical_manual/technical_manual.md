@@ -90,7 +90,7 @@ Another attempt was made at having the user connect Image views or dots. But the
 
 ![DOTS](technical_manual/images/DOTS.png)
 
-**Figure 2.** - Connecting dots
+**Figure 2.** - Connecting Dots
 
 **3. Comparing the strokes with the image**
 The final method that worked for us was having a bitmap of a letter - say “A”, getting its coordinates, and then comparing that with the coordinates of the stroke. Though there is room for improvement it worked best from what we had tried.
@@ -134,8 +134,7 @@ The system architecture is scalable and modular to support both present and futu
 **Frontend** - The frontend authenticates the user and helps in visualizing the data stored in the database in a very attractive and interesting way that the user can easily understand.
 
 **Backend** - The backend authenticates the user with the help of the front and takes data from firebase to and sends it to the frontend
-T
-he profile page is an example of this:
+The profile page is an example of this:
 
 ![FRONT_END](technical_manual/images/FRONT_END.png)
 
@@ -160,14 +159,14 @@ The storage keys for each user keeps going till z and we have a “username” k
 
 ![COLOUR_PANEL](technical_manual/images/COLOUR_PANEL.png)
 
-**Figure X.** -Colour panel component 
+**Figure 6.** - Colour Panel Component 
 
-**2.Username component:** The username screen is used more than once - once to add your completely new username and the other time to edit your username.The screenshot below [fig number] and the [gi number] is for adding username
+**2.Username component:** The username screen is used more than once - once to add your completely new username and the other time to edit your username.The screenshot below shows adding a username.
 
 ![USERNAME_CODE](technical_manual/images/USERNAME_CODE.png)
 ![USERNAME_CODE2](technical_manual/images/USERNAME_CODE2.png)
 
-**Figure X.** - Username component
+**Figure 7.** - Username Component
 
 **3.Letter activities:** All 26 letter activities that are being used in the classic mode is also being used for freeplay mode.
 
@@ -180,14 +179,14 @@ For third-party integration, we used Firebase for database and authentication.
 
 ![FIREBASE_CODE](technical_manual/images/FIREBASE_CODE.png)
 
-**Figure X.** - Firebase data code 
+**Figure 8.** - Firebase Data Code 
 
 After getting the userID(uid) we set it as the main key as then have children below it.
 That way we can get the user's data via uid and also set it via the uid.
 
 ![FIREBASE_USERID](technical_manual/images/FIREBASE_USERID.png)
 
-**Figure X.** - Firebase userID
+**Figure 9.** - Firebase UserID
 <br><br>
 ## 2.3 Interaction Between Components
 * The interaction between components is very simple and straight
@@ -201,7 +200,7 @@ The system architecture is designed with scalability in mind allowing for the ad
 # 3. High-Level Design
 ![Sequenece Diagram](technical_manual/images/SEQUENCE.png)
 
-**Figure 6.** - Sequenece Diagram**
+**Figure 10.** - Sequenece Diagram
 <br><br>
 # 4. Problems and Solutions
 ## 4.1 Detecting Letter Strokes
@@ -237,13 +236,13 @@ The parent tested the application by drawing strokes and tracing various letters
 
 ![SURVEY_Q1](technical_manual/images/SURVEY_Q1.png)
 
-**Figure 7.** - Google Form Survey Response
+**Figure 11.** - Google Form Survey Response
 
 The above pie chart shows the response to the question being asked “Do you think a child would be able to easily create/draw the strokes?” and the response was 80% said yes and the other 20% said maybe. This is a very positive response which shows that our application can handle the input of a user’s stroke which is the main functionality of our application.
 
 ![SURVEY_Q2](technical_manual/images/SURVEY_Q2.png)
 
-**Figure 8.** - Google Form Survey Response
+**Figure 12.** - Google Form Survey Response
 
 The above pie chart shows the response to the question being asked “Do you think a child would be stressed when using the Trace ‘N Learn application?”. This is very important question as our aim for the application was to create a strees free and enjoyable learning environment for children. The responses from the survey shows that we did met our aim of creating an application that is stress free as all participants said their child would not be stressed using the "Trace 'N Learn".  
 <br><br>
@@ -252,7 +251,7 @@ We attempted user testing multiple times but due to Firebase integration and com
 
 ![UNIT_TESTING](technical_manual/images/UNIT_TESTING.png)
 
-**Figure X.** - Test get colour for index
+**Figure 13.** - Test get colour for index
 
 <br><br>
 ## 5.4 Integration Testing
@@ -260,7 +259,7 @@ We made attempts at Integration testing to build the code every time someone com
 
 ![YAMAL](technical_manual/images/YAMAL.png)
 
-**Figure X.** - Gitlab yamal
+**Figure 14.** - Gitlab yamal
 <br><br>
 # 6. Installation Guide
 ## 6.1 Software Dependencies
@@ -290,7 +289,7 @@ Find the GitLab Repository URL. This can usually be found after clicking on the 
 
 ![GitLab Repository URL](images/GITLAB_REPO_URL.png)
 
-**Figure x. - GitLab Repository URL**
+**Figure 15.** - GitLab Repository URL
 
 It should look something like this: https://gitlab.computing.dcu.ie/laukaid2/2024-ca326-dlaukaityte-trace-n-learn.git
 <br><br>
@@ -299,13 +298,13 @@ It should look something like this: https://gitlab.computing.dcu.ie/laukaid2/202
 
 ![Clone Repo 1](images/CLONE_REPO_1.png)
 
-**Figure x. - Cloning repo part 1**
+**Figure 16. - Cloning repo part 1**
 
 Select “Git” from the options presented after clicking on Project from Version Control and paste the link in.
 
 ![Clone Repo 2](images/CLONE_REPO_2.png)
 
-**Figure x. - Cloning repo part 2**
+**Figure 17. - Cloning repo part 2**
 
 Click on clone.
 <br><br>
@@ -313,19 +312,56 @@ Click on clone.
 
 ![Debugging](images/DEBUGGING.png)
 
-**Figure 4. - Debugging**
+**Figure 18. - Debugging**
 
 Connect your phone by USB to your laptop. Choose your phone from the list of available devices.
 
 ![Device selection](images/DEVICE_SELECTION.png)
 
-**Figure 5. - Device selection**
+**Figure 19. - Device selection**
 
 And finally, click on the green run button next to the device selection list. It will take a bit of time, but after compiling the app gets launched on your device.
 <br><br>
 # 7. References
 ## 7.1 Code
-...
+[1] Flutter Firebase Authentication (Phone OTP) | Firebase Phone Authentication:
+https://www.youtube.com/watch?v=QieFszQSlSI&t=923s&ab_channel=WsCubeTech 
+
+[2] 
 <br><br>
 ## 7.2 User Interface
-...
+During the design process of the U.I. for the Trace ‘N Learn application we wanted to use images that had a licence to be used in commercial or personal projects. For this reason, we choose to use Freepik company’s website for all the images and U.I. design. A range of images were used such as animals, trees, grass, letters, and speech bubbles.
+
+[1] All images of the animals used can be found at the link below: 
+https://www.freepik.com/free-vector/cute-animal-collection-from-different-environmental_5481265.htm#&position=0&from_view=search&track=ais&uuid=9e6df1c4-aebd-474c-b9da-f95bf9e6b2ef
+
+[2] An image of the grass used can be found at the link below:  
+https://www.freepik.com/free-vector/seamless-design-grass-rocks_1341527.htm#&position=0&from_view=search&track=ais&uuid=8904298d-3053-4e54-8f9b-59ad4a605252
+
+[3] An image of the tree used can be found at the link below:  
+https://www.freepik.com/free-vector/isolated-tree-white-background_4382376.htm#&position=1&from_view=search&track=ais&uuid=9c651602-8f93-443e-a666-84de4bea260e
+
+[4] An image of the speech bubble used can be found at the link below:  
+https://www.freepik.com/free-vector/hand-drawn-speech-bubble-doodle-drawing-illustration_49212535.htm#&position=0&from_view=search&track=ais&uuid=99b6b1a5-52ff-4c4c-ab3d-788b95552c2a
+
+[5] An image of the elephant drinking boba milk tea can be found at the link below:
+https://www.freepik.com/free-vector/cute-elephant-drinking-boba-milk-tea-cartoon-vector-icon-illustration-animal-drink-icon-isolated_31641131.htm
+
+[6] An image of cat riding a motorcycle can be found at the link below:
+https://www.freepik.com/free-vector/cute-cat-riding-motorcycle-cartoon-vector-icon-illustration-animal-transportation-icon-isolated_26445507.htm#from_view=detail_alsolike
+
+[7] An image of an elephant meditating can be found at the link below:
+https://www.freepik.com/free-vector/cute-elephant-meditation-yoga-cartoon-vector-icon-illustration-animal-sport-icon-concept-isolated_40801199.htm
+
+[8] All the audio voices used can be found at the link below:
+https://elevenlabs.io/
+
+[9] An image of a cat head used can be found at the link below:
+https://www.freepik.com/free-vector/cute-cat-head-flat-cartoon-style_29313239.htm?query=cartoon%20animal%20head#from_view=detail_alsolike
+
+[10] An image of a snake on a branch used can be found at the link below:
+https://www.freepik.com/free-vector/cartoon-snake-wounded-branch-background_4211077.htm#query=cartoon%20snake&position=31&from_view=search&track=ais&uuid=9beeac9e-5f0e-4769-a68e-0dfa8d2dcb87
+
+[11] An image of the lizard used can be found at the link below:
+https://www.freepik.com/free-vector/geckos-lizards-different-color-cartoon-style-isolated_11207758.htm#page=3&query=cartoon%20crocodile&position=30&from_view=search&track=ais&uuid=dd70ca0a-b78f-4ad2-a809-2c291483101a
+
